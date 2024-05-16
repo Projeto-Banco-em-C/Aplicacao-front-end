@@ -131,6 +131,34 @@ function validaConfirmaSenha(elemento) {
 
 }
 
+function validaData(elemento) {
+    let dataNascimento = new Date(elemento.value);
+    let dataAtual = new Date();
+    let idadeMinima = 18;
+
+    if (isNaN(dataNascimento.getTime())) {
+        $(elemento).parent('.inputOrg').css("border-color", "red");
+
+    } else {
+        let diferencaAnos = dataAtual.getFullYear() - dataNascimento.getFullYear();
+        if (
+            diferencaAnos < idadeMinima ||
+            (diferencaAnos === idadeMinima &&
+                (dataAtual.getMonth() < dataNascimento.getMonth() ||
+                    (dataAtual.getMonth() === dataNascimento.getMonth() &&
+                        dataAtual.getDate() < dataNascimento.getDate())))
+        ) {
+            // Usuário tem menos de 18 anos
+            $(elemento).parent('.inputOrg').css("border-color", "red");
+            $("#btnNextInfos").css("opacity", "0.5");
+            $(".msgErroData").css("display", "flex")
+        } else {
+            $(elemento).parent('.inputOrg').css("border-color", "#121212");
+            $(".msgErroData").css("display", "none")
+        }
+    }
+}
+
 function codigoValidacaoPadrao(elemento) {
     let inputParent = $(elemento).parent('.inputOrg')
 
@@ -142,10 +170,6 @@ function codigoValidacaoPadrao(elemento) {
         inputParent.css("border-color", "#121212");
         return true
     }
-}
-
-function validaData(elemento) {
-    codigoValidacaoPadrao(elemento)
 }
 
 function validaEndereco(elemento) {

@@ -101,10 +101,10 @@ $('#btnNextInfos').click(function () {
 
         const cpf = $('#CampoCPF').val();
         console.log(cpf)
-        ValidarCPFServer(cpf)
-        // $(".loading").css("display", "none")
-        // $('.forminfos').css("display", "flex")
-        // $('.formcpf').css("display", "none")
+        //ValidarCPFServer(cpf)
+        $(".loading").css("display", "none")
+        $('.forminfos').css("display", "flex")
+        $('.formcpf').css("display", "none")
     }
 });
 
