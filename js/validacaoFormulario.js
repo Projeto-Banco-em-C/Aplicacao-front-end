@@ -61,31 +61,33 @@ function validaCPF(elemento) {
     // Regex para verificar se o CPF está no formato correto
     let regexCPF = /^(\d{3}\.){2}\d{3}-\d{2}$/;
 
-    let inputParent = $(elemento).parent('.inputOrg')
+    let inputParent = $(elemento).parent('.inputOrg');
 
-    if (regexCPF.test(elemento.value)) {
-        let cpfNumeros = elemento.value.replace(/\D/g, ''); // Remove pontos e traço
+    let cpfSemMascara = elemento.value.replace(/\D/g, '');
 
+    if (regexCPF.test(elemento.value) && cpfSemMascara.length === 11) {
         // Verifica se todos os dígitos do CPF são iguais
-        if (/^(\d)\1{10}$/.test(cpfNumeros)) {
-            inputParent.css("border-color", "red")
+        if (/^(\d)\1{10}$/.test(cpfSemMascara)) {
+            inputParent.css("border-color", "red");
             return;
         }
 
-        let cpfParcial = cpfNumeros.substr(0, 9); // Obtém os primeiros 9 dígitos do CPF
+        let cpfParcial = cpfSemMascara.substr(0, 9);
         let digito1 = calculaDigito(cpfParcial);
 
-        cpfParcial += digito1.toString(); // Adiciona o primeiro dígito à parcial
-        let digito2 = calculaDigito(cpfParcial); // Calcula o segundo dígito verificador
+        cpfParcial += digito1.toString();
+        let digito2 = calculaDigito(cpfParcial);
 
-        if (digito1 === parseInt(cpfNumeros[9]) && digito2 === parseInt(cpfNumeros[10])) {
-            inputParent.css("border-color", "#121212")
+        if (digito1 === parseInt(cpfSemMascara[9]) && digito2 === parseInt(cpfSemMascara[10])) {
+            inputParent.css("border-color", "#121212");
         } else {
             inputParent.css("border-color", "red");
-
         }
+    } else {
+        inputParent.css("border-color", "red");
     }
 }
+
 
 function validaEmail(elemento) {
     let regexEmail = (email) => {
@@ -204,4 +206,5 @@ function validaTelefone(elemento) {
 //mascaras
 $(document).ready(function () {
     $('.maskTelefone').mask('(00) 00000-0000');
+    $('.mCpf').mask('000.000.000-00', { reverse: true });
 })
