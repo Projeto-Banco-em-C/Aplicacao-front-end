@@ -1,0 +1,57 @@
+@media (max-width: 1300px) {
+
+     .imgProp,
+     .container {
+          width: 50%;
+     }
+}
+
+@media (max-width: 786px) {
+     .imgProp {
+          display: none;
+     }
+
+     .container {
+          width: 100%;
+     }
+}
+
+@media (max-width: 425px) {
+     .imgProp {
+          display: none;
+     }
+
+     .container {
+          width: 100%;
+     }
+
+     .title p {
+          text-align: center;
+     }
+
+     .infosContainer {
+          margin: 0 1rem;
+     }
+
+     .smal-width {
+          width: 90% !important;
+     }
+
+     .mostrarFormInfos {
+          display: inline;
+     }
+
+     .inputOrg {
+          border-radius: 0;
+          outline: none;
+          border-bottom: 1px solid var(--background--container);
+          border-right: none;
+          border-top: none;
+          border-left: none;
+     }
+
+     .infos {
+          margin: 0 1rem;
+     }
+
+}

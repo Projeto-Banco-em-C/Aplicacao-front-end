@@ -1,0 +1,351 @@
+main {
+    display: flex;
+    align-items: center;
+}
+
+.imgProp {
+    width: 60%;
+    height: 100vh;
+    background-image: url(../img/testefundo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    width: 40%;
+    height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.containerHead {
+    height: 23%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background--container);
+}
+
+.containerHead h1 {
+    padding: 3rem;
+}
+
+.infos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.parts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+.title h1 {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: var(--font-family-title);
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.title p {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--subtext-color-whitePage);
+}
+
+form {
+    margin-top: 2rem;
+    height: 100%;
+    width: 90%;
+}
+
+.titleInputs {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--subtext-color-whitePage);
+}
+
+.inputText {
+    width: 80%;
+    padding: 10px;
+    font-size: 14px;
+    color: var(--subtext-color-whitePage);
+    background-color: transparent;
+    border: none;
+    user-select: none;
+}
+
+.inputOrg {
+    display: flex;
+    align-items: center;
+    padding: 11px;
+    height: 18px;
+    font-size: 18px;
+    color: var(--primary-color);
+    margin: 0.5rem 0 1rem 0;
+    border-radius: 0.5rem;
+    border: 2px solid var(--background--container);
+    background-color: var(--background-color);
+}
+
+.inputOrg span {
+    color: var(--subtext-color-whitePage);
+    font-size: 26px !important;
+    user-select: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+.alinhaSmallCampos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+select:focus-visible {
+    outline: none;
+}
+
+.infosContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    border-radius: 1rem 1rem 0rem 0rem;
+    margin-top: -1rem;
+}
+
+.btnEntrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 9rem;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: var(--background--container);
+    color: white;
+    font-family: var(--font-family-title);
+    border: none;
+    user-select: none;
+    cursor: pointer;
+    margin: 1rem 0;
+    border-radius: 5px;
+}
+
+.btnProximo span,
+.btnEntrar span {
+    margin-left: 10px;
+}
+
+.alinhabtns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.linkEsqueceuSenha {
+    font-size: 14px;
+    color: var(--subtext-color-whitePage);
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.chacktext {
+    font-size: 14px;
+    color: var(--background--container);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.linkEsqueceuSenha a {
+    font-size: 14px;
+    color: var(--background--container);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.linkEsqueceuSenha a:hover {
+    color: var(--subtext-color-whitePage);
+}
+
+/* .infosContainer::after {
+    content: '';
+    display: flex;
+    width: 100%;
+    margin: 1rem 0;
+    height: 2px;
+    border-radius: 2px;
+    background-color: var(--subtext-color-whitePage);
+} */
+
+.ncont {
+    margin-left: 1rem;
+}
+
+.inputper {
+    width: 100% !important;
+    color: var(--subtext-color-whitePage);
+}
+
+.forminfos {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.elementosInfosForm {
+    display: flex;
+    flex-direction: column;
+}
+
+option {
+    color: var(--primary-color);
+}
+
+.forminfos {
+    display: none;
+}
+
+.formsenha {
+    display: none;
+}
+
+.formcpf {
+    display: block;
+}
+
+.forminfosCep {
+    display: none;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.alinhachecklogin {
+    display: flex;
+    align-items: center;
+}
+
+.alinhachecklogin p {
+    margin-left: 5px;
+}
+
+.loading {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background: #737375cc;
+}
+
+/* loading */
+
+.lds-ring {
+    color: #000000
+}
+
+.lds-ring,
+.lds-ring div {
+    box-sizing: border-box;
+}
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid currentColor;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: var(--background--container) transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.msgErro,
+.msgErroSenha {
+    display: none;
+    font-size: 16px;
+    font-weight: 400;
+    color: red;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+    max-width: 26rem;
+}
+
+.btnCadastarFinal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}

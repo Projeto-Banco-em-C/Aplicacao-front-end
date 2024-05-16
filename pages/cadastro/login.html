@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/login.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js"
+        integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <section class="imgProp"></section>
+        <section class="container">
+            <div class="infosContainer">
+                <div class="title">
+                    <h1>Bem vindo ao nome do banco</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi</p>
+                </div>
+
+                <form encType="multipart/form-data" method="post" action="">
+                    <h2 class="titleInputs">CPF</h2>
+                    <div class="inputOrg">
+                        <span class="material-symbols-outlined">person</span>
+                        <input class="inputText" type="email" name="" id="" placeholder="Digite seu CPF" required
+                            onblur="validaEmail(this);">
+                    </div>
+                    <h2 class="titleInputs">Senha</h2>
+                    <div class="inputOrg">
+                        <span class="material-symbols-outlined">lock</span>
+                        <input class="inputText" type="password" name="" id="" placeholder="Digite sua senha" required
+                            onblur="validaSenha(this);">
+                    </div>
+                    <div class="links">
+                        <div class="alinhachecklogin">
+                            <input type="checkbox">
+                            <p class="chacktext">Relembrar</p>
+                        </div>
+                        <p class="linkEsqueceuSenha"><a href="#">Esqueceu a senha?</a></p>
+                    </div>
+                    <div class="alinhabtncpf">
+                        <input class="btnEntrar" type="submit" id="" value="Entrar">
+                        <p class="linkEsqueceuSenha">Não possui uma conta? <a href="./cadastro.html">Crie sua conta</a>
+                        </p>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

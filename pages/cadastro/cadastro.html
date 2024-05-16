@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/login.css">
+    <link rel="stylesheet" href="../../css/mobile/MobileGlobal.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js"
+        integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+
+
+    <!-- LIBS INTERNAS -->
+    <script src="../../js/libs/LIBSALUS.js"></script>
+    <script src="../../js/libs/jMask.js"></script>
+    <script src="../../js/libs/jMask.min.js"></script>
+    <script src="../../js/libs/jquery.mask.min.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <section class="imgProp"></section>
+        <section class="container">
+            <div class="loading">
+                <div class="lds-ring">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="parts">
+                <div class="containerHead">
+                    <h1>Bem vindo ao nome do banco</h1>
+                </div>
+                <div class="infosContainer">
+                    <div class="infos">
+                        <div class="title">
+                            <h1>Vamos começar</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi</p>
+                        </div>
+                        <form class="formulario" encType="multipart/form-data" method="post">
+                            <section class="formcpf">
+                                <h2 class="titleInputs">CPF</h2>
+                                <div class="inputOrg">
+                                    <span class="material-symbols-outlined">person</span>
+                                    <input class="inputText mCpf obrig" maxlength="14" type="text" name="USU_CPF"
+                                        id="CampoCPF" placeholder="Digite seu CPF" required onblur="validaCPF(this);">
+                                </div>
+                                <p class="msgErro">Já existe uma conta no vinculada a este CPF</p>
+
+                                <div class="alinhabtns">
+                                    <div class="btnEntrar btnProximo" id="btnNextInfos">Próximo<span
+                                            class="material-symbols-outlined">arrow_forward</span></div>
+                                    <p class="linkEsqueceuSenha">Não possui uma conta? <a href="./login.html">Crie sua
+                                            conta</a>
+                                    </p>
+                                </div>
+                            </section>
+
+                            <section class="forminfos">
+                                <div class="elementosInfosForm">
+                                    <h2 class="titleInputs">Nome</h2>
+                                    <div class="inputOrg">
+                                        <span class="material-symbols-outlined">person</span>
+                                        <input class="inputText obrig" type="text" name="USU_NOME" id="nome"
+                                            placeholder="Digite seu nome completo" required onblur="validaNome(this);">
+                                    </div>
+                                </div>
+                                <div class="elementosInfosForm">
+                                    <h2 class="titleInputs">E-Mail</h2>
+                                    <div class="inputOrg">
+                                        <span class="material-symbols-outlined">mail</span>
+                                        <input class="inputText obrig" type="email" name="USU_EMAIL" id="email"
+                                            placeholder="Digite seu E-Mail" required onblur="validaEmail(this);">
+                                    </div>
+                                </div>
+                                <div class="elementosInfosForm">
+                                    <h2 class="titleInputs">Data de Nacimento</h2>
+                                    <div class="inputOrg">
+                                        <input class="inputText inputper obrig" type="date" name="USU_DATA_NASC"
+                                            id="data" required onblur="validaData(this)">
+                                    </div>
+                                </div>
+                                <div class="elementosInfosForm">
+                                    <h2 class="titleInputs">Telefone</h2>
+                                    <div class="inputOrg">
+                                        <input class="inputText inputper maskTelefone obrig" type="text"
+                                            name="USU_TELEFONE" id="tel" placeholder="Digite seu numero" required
+                                            onblur="validaTelefone(this)">
+                                    </div>
+                                </div>
+                                <div class="alinhabtns">
+                                    <div class="btnEntrar valido" id="btnNextCep">Próximo<span
+                                            class="material-symbols-outlined">arrow_forward</span>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="forminfosCep">
+                                <div class="elementosInfosForm">
+                                    <h2 class="titleInputs">CEP</h2>
+                                    <div class="inputOrg">
+                                        <input class="inputText inputper mCep obrig" type="text" name="USU_CEP" id="cep"
+                                            placeholder="Digite o CEP" required maxlength="9"
+                                            onblur="buscaEndereco(this)">
+                                    </div>
+                                </div>
+                                <div class="elementosInfosForm">
+                                    <h2 class="titleInputs">Endereço</h2>
+                                    <div class="inputOrg">
+                                        <span class="material-symbols-outlined">home</span>
+                                        <input class="inputText obrig" type="text" name="USU_LOGRADOURO" id="endereco"
+                                            placeholder="Digite seu endereço" required onblur="validaEndereco(this)">
+                                    </div>
+                                </div>
+                                <div class="alinhaSmallCampos">
+                                    <div class="elementosInfosForm">
+                                        <h2 class="titleInputs">Numero</h2>
+                                        <div class="inputOrg">
+                                            <input class="inputText inputper mNumerico obrig" type="text"
+                                                name="USU_NUM_ENDERECO" id="numero" placeholder="Digite o numero"
+                                                required onblur="validaNumero(this)">
+                                        </div>
+                                    </div>
+                                    <div class="elementosInfosForm">
+                                        <h2 class="titleInputs">Complemento</h2>
+                                        <div class="inputOrg">
+                                            <input class="inputText inputper opcional obrig" type="text"
+                                                name="USU_COMPLEMENTO" id="complemento" placeholder="Ex: Casa" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="elementosInfosForm">
+                                    <h2 class="titleInputs">Bairro</h2>
+                                    <div class="inputOrg">
+                                        <span class="material-symbols-outlined">home</span>
+                                        <input class="inputText obrig" type="text" name="USU_BAIRRO" id="bairro"
+                                            placeholder="Digite seu bairro" required onblur="validaBairro(this)">
+                                    </div>
+                                </div>
+
+                                <div class="elementosInfosForm">
+                                    <h2 class="titleInputs">Cidade</h2>
+                                    <div class="inputOrg">
+                                        <input class="inputText inputper obrig" type="text" name="USU_CIDADE"
+                                            id="cidade" placeholder="Digite seu numero" required
+                                            onblur="validaCidade(this)">
+                                    </div>
+                                </div>
+                                <div class="elementosInfosForm">
+                                    <h2 class="titleInputs">UF</h2>
+                                    <div class="inputOrg">
+                                        <select class="inputText inputper obrig" id="uf" name="USU_UF"
+                                            placeholder="Escolha o UF" required>
+                                            <option value="AC">AC</option>
+                                            <option value="AL">AL</option>
+                                            <option value="AP">AP</option>
+                                            <option value="AM">AM</option>
+                                            <option value="BA">BA</option>
+                                            <option value="CE">CE</option>
+                                            <option value="DF">DF</option>
+                                            <option value="ES">ES</option>
+                                            <option value="GO">GO</option>
+                                            <option value="MA">MA</option>
+                                            <option value="MT">MT</option>
+                                            <option value="MS">MS</option>
+                                            <option value="MG">MG</option>
+                                            <option value="PA">PA</option>
+                                            <option value="PB">PB</option>
+                                            <option value="PR">PR</option>
+                                            <option value="PE">PE</option>
+                                            <option value="PI">PI</option>
+                                            <option value="RJ">RJ</option>
+                                            <option value="RN">RN</option>
+                                            <option value="RS">RS</option>
+                                            <option value="RO">RO</option>
+                                            <option value="RR">RR</option>
+                                            <option value="SC">SC</option>
+                                            <option value="SP">SP</option>
+                                            <option value="SE">SE</option>
+                                            <option value="TO">TO</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                                <div class="alinhabtns">
+                                    <div class="btnEntrar valido" id="btnNextSenha">Próximo<span
+                                            class="material-symbols-outlined">arrow_forward</span>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="formsenha">
+                                <div class="elementosInfosForm">
+                                    <h2 class="titleInputs">Senha de acesso</h2>
+                                    <div class="inputOrg">
+                                        <span class="material-symbols-outlined">lock</span>
+                                        <input class="inputText obrig" type="password" name="USU_SENHA_ACESSO"
+                                            id="senha" placeholder="Digite sua senha" required
+                                            onblur="validaSenha(this)">
+                                    </div>
+                                    <p class="msgErroSenha">Necessario incluir letras maiúsculas, numero, caracteres
+                                        especiais,
+                                        minimo 6 caracteres</p>
+                                </div>
+
+                                <div class="elementosInfosForm">
+                                    <h2 class="titleInputs">Confirmar senha</h2>
+                                    <div class="inputOrg">
+                                        <span class="material-symbols-outlined">lock</span>
+                                        <input class="inputText" type="password" name="confirmSenha" id="confirmSenha"
+                                            placeholder="Confirme sua senha" required
+                                            onblur="validaConfirmaSenha(this)">
+                                    </div>
+                                </div>
+                                <div class="alinhabtns">
+                                    <div class="btnEntrar valido" id="btnNextCadastrar">Criar a conta<span
+                                            class="material-symbols-outlined">arrow_forward</span>
+                                    </div>
+                                </div>
+                            </section>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <script src="../../js/api.js"></script>
+    <script src="../../js/validacaoFormulario.js"></script>
+    <script src="../../js/cadastrar.js"></script>
+</body>
+
+</html>

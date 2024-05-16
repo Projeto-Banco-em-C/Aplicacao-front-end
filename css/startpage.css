@@ -1,0 +1,164 @@
+main{
+    display: flex;
+    align-items: center;
+}
+
+.container{
+    width: 60%;
+    height: 100vh;
+    background-color: var(--background--container);
+}
+
+.infosContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    margin: 0rem 7rem;
+}
+
+.infosContainer h1{
+    font-size: 46px;
+    font-weight: 600;
+    font-family: var(--font-family-title);
+    max-width: 39rem;
+}
+
+.sptext{
+    font-size: 46px;
+    font-weight: 400;
+    font-family: var(--font-family-title);
+    color: var(--color-green);
+    margin: 0 10px;
+}
+
+.icontx{ 
+    font-size: 55px !important;
+}
+
+.title{
+    margin-bottom: 2rem;
+}
+
+.riscospl{
+    display: flex;
+    align-items: flex-end;
+    transform: rotate(30deg);
+    margin-left: -1rem;
+}
+
+.alinhaDetalheTx{
+    display: flex;
+    align-items: flex-start;
+
+}
+
+.glup1, .glup2{
+    display: flex;
+    align-items: center;
+}
+
+.infosContainer p{
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--subtext-color);
+    max-width: 34rem;
+}   
+
+.btnContainer{
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.btncadastrar{
+    width: 12rem;
+    padding: 18px;
+    border: none;
+    font-size: 17px;
+    font-weight: 600;
+    background-color: var(--color-green);
+    color: var(--background--container);
+    font-family: var(--font-family-title);
+    user-select: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btnentrar{
+    width: 15rem;
+    padding: 18px;
+    margin-left: 0.5rem;
+    border: none;
+    font-size: 17px;
+    font-weight: 600;
+    align-items: center;
+    background-color: transparent;
+    color: var(--text-color);
+    font-family: var(--font-family-title);
+    display: flex;
+    user-select: none;
+    cursor: pointer;
+}
+
+.btnentrar span{
+    margin-left: 5px;
+}
+
+.image img{
+    width: 100%;
+    height: 100%;
+}
+
+.imgProp{
+    width: 40%;
+    height: 100vh;
+}
+
+.cartaoAnimado{
+    display: flex;
+    margin-left: -3rem;
+    margin-top: 10rem;
+    height: 19rem;
+    animation: movendo 3s ease-out infinite;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+@keyframes movendo {
+    0%{
+        top: 0; 
+    }
+    
+    50%{
+        top: -2rem;
+    }
+
+    100%{
+        top: 0;
+    }
+}
+
+/* 
+     0%{
+        top: 31rem;
+        left: 25rem;
+    }
+
+    100%{
+        top: 0;
+        left: 0; 
+    }
+
+*/
+
+.test{
+    width: 30rem;
+    height: 17rem;
+    background-color: blue;
+    border: 1px solid white;
+    border-radius: 1rem;
+    transform: rotate(351deg);
+}
+
