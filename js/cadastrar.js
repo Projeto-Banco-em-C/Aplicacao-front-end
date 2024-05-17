@@ -64,7 +64,6 @@ function validaCamposCep() {
     return preenchido
 }
 
-
 function validaCamposCPF() {
     let preenchido = true;
     $(".formcpf input").each(function () {

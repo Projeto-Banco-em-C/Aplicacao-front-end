@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/global.css">
-    <link rel="stylesheet" href="../../css/login.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/mobile/MobileGlobal.css">
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -21,6 +22,14 @@
         integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+
+
+    <!-- LIBS INTERNAS -->
+    <script src="../js/libs/LIBSALUS.js"></script>
+    <script src="../js/libs/jMask.js"></script>
+    <script src="../js/libs/jMask.min.js"></script>
+    <script src="../js/libs/jquery.mask.min.js"></script>
 
     <title>Document</title>
 </head>
@@ -29,42 +38,64 @@
     <main>
         <section class="imgProp"></section>
         <section class="container">
-            <div class="infosContainer">
-                <div class="title">
-                    <h1>Bem vindo ao nome do banco</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi</p>
+            <div class="loading">
+                <div class="lds-ring">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
                 </div>
-
-                <form encType="multipart/form-data" method="post" action="">
-                    <h2 class="titleInputs">CPF</h2>
-                    <div class="inputOrg">
-                        <span class="material-symbols-outlined">person</span>
-                        <input class="inputText" type="email" name="" id="" placeholder="Digite seu CPF" required
-                            onblur="validaEmail(this);">
-                    </div>
-                    <h2 class="titleInputs">Senha</h2>
-                    <div class="inputOrg">
-                        <span class="material-symbols-outlined">lock</span>
-                        <input class="inputText" type="password" name="" id="" placeholder="Digite sua senha" required
-                            onblur="validaSenha(this);">
-                    </div>
-                    <div class="links">
-                        <div class="alinhachecklogin">
-                            <input type="checkbox">
-                            <p class="chacktext">Relembrar</p>
+            </div>
+            <div class="parts">
+                <div class="containerHead">
+                    <h1>Bem vindo ao nome do banco</h1>
+                </div>
+                <div class="infosContainer">
+                    <div class="infos">
+                        <div class="title">
+                            <h1>Faça login</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi</p>
                         </div>
-                        <p class="linkEsqueceuSenha"><a href="#">Esqueceu a senha?</a></p>
-                    </div>
-                    <div class="alinhabtncpf">
-                        <input class="btnEntrar" type="submit" id="" value="Entrar">
-                        <p class="linkEsqueceuSenha">Não possui uma conta? <a href="./cadastro.html">Crie sua conta</a>
-                        </p>
-                    </div>
 
-                </form>
+                        <form class="FormLogin" encType="multipart/form-data" method="post" action="">
+                            <h2 class="titleInputs">CPF</h2>
+                            <div class="inputOrg">
+                                <span class="material-symbols-outlined">person</span>
+                                <input class="inputText mCpf obrig" type="email" name="" id=""
+                                    placeholder="Digite seu CPF" required>
+                            </div>
+                            <h2 class="titleInputs">Senha</h2>
+                            <div class="inputOrg">
+                                <span class="material-symbols-outlined">lock</span>
+                                <input class="inputText obrig" type="password" name="" id=""
+                                    placeholder="Digite sua senha" required>
+                            </div>
+                            <div class="links">
+                                <label class="containerchack">
+                                    <p class="chacktext">Relembrar</p>
+                                    <input type="checkbox" id="Uppercase">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <p class="linkEsqueceuSenha"><a href="#">Esqueceu a senha?</a></p>
+                            </div>
+                            <div class="alinhabtncpf">
+                                <div class="alinhabtns">
+                                    <div class="btnEntrar valido" id="btnLogar">Entrar<span
+                                            class="material-symbols-outlined">arrow_forward</span>
+                                    </div>
+                                </div>
+                                <p class="linkEsqueceuSenha">Não possui uma conta? <a href="./cadastro.html">Crie sua
+                                        conta</a>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
+    <script src="../js/validacaoFormulario.js"></script>
+    <script src="../js/login.js"></script>
 </body>
 
 </html>

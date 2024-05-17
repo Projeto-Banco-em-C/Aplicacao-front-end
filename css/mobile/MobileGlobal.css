@@ -4,6 +4,23 @@
      .container {
           width: 50%;
      }
+
+     /* tela inicial */
+     .elementosContainer {
+          width: 50%;
+     }
+}
+
+@media (max-width: 1024px) {
+
+     /* tela inicial */
+     .menuHead {
+          width: 60%;
+     }
+
+     .menuInfos {
+          width: 60%;
+     }
 }
 
 @media (max-width: 786px) {
@@ -14,6 +31,20 @@
      .container {
           width: 100%;
      }
+
+     /* tela inicial */
+     .menuHead {
+          width: 80%;
+     }
+
+     .menuInfos {
+          width: 80%;
+     }
+
+     .elementosContainer {
+          width: 70%;
+     }
+
 }
 
 @media (max-width: 425px) {
@@ -53,5 +84,64 @@
      .infos {
           margin: 0 1rem;
      }
+
+     /* tela inicial */
+     .menuUser {
+          display: flex;
+          align-items: flex-start;
+          flex-direction: column;
+          margin-left: 1rem;
+     }
+
+     .menuUserName {
+          margin: 1rem 0;
+     }
+
+     .menuUserName h1 {
+          font-size: 14px;
+     }
+
+     #userName {
+          font-size: 15px;
+
+     }
+
+     .menu {
+          width: 100%;
+          border-radius: 0 0 2rem 2rem;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: flex-start;
+     }
+
+     .menuHead {
+          width: 100%;
+     }
+
+     .menuInfos {
+          display: flex;
+          width: 100%;
+          margin-top: 2rem;
+     }
+
+     .menuAlinhaBtns {
+          margin-right: 1rem;
+     }
+
+     .itensMI {
+          margin-left: 1rem;
+     }
+
+     .elementosContainer {
+          width: 90%;
+     }
+
+     .itensTr p {
+          font-size: 11px;
+          font-weight: 500;
+          margin-top: 10px;
+     }
+
 
 }

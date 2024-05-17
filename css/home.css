@@ -1,0 +1,323 @@
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.menu {
+    background-color: var(--background--container);
+    width: 100%;
+    margin: 0;
+    height: 16rem;
+    border-radius: 0 0 3rem 3rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menuHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+}
+
+.menuUser {
+    display: flex;
+    align-items: center;
+}
+
+.menuUserIcon {
+    background-color: var(--subtext-color-whitePage);
+    height: 3rem;
+    width: 3rem;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.menuUserIcon h1 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--subtext-color);
+}
+
+.menuUserName {
+    margin-left: 1rem;
+}
+
+.menuUserName h1 {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+#userName {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text-color);
+}
+
+.userAccount {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    user-select: none;
+    cursor: pointer;
+}
+
+.userAccount p {
+    font-size: 14px;
+    color: var(--subtext-color);
+}
+
+.iconUserAccount {
+    font-size: 17px !important;
+    color: var(--subtext-color);
+    margin-left: 5px;
+}
+
+.menuAlinhaBtns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mbtn {
+    margin-left: 1.3rem;
+    cursor: pointer;
+    user-select: none
+}
+
+.mbtn span {
+    font-size: 28px;
+    color: var(--text-color);
+}
+
+.menuInfos {
+    display: flex;
+    width: 40%;
+    margin-top: 3rem;
+}
+
+.itensMI {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.titleSaldo {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--subtext-color);
+}
+
+.saldo {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.symbolValue {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text-color);
+}
+
+.hiddenvalue {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.hiddenvalue div {
+    background-color: var(--text-color);
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    margin: 4px;
+}
+
+.userSaldo {
+    display: none;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text-color);
+    margin-left: 5px;
+}
+
+.containerHome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.elementosContainer {
+    width: 35%;
+}
+
+.trasferencias {
+    width: 100%;
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alinhaItensTr {
+    overflow-x: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    scroll-behavior: smooth;
+    padding: 12px 0px;
+}
+
+.alinhaItensTr::-webkit-scrollbar {
+    display: none;
+}
+
+.itensTr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    min-width: 5rem;
+    flex-shrink: 0;
+}
+
+.itensTr:hover {
+    transition: 0.2s;
+    transform: scale(1.1);
+}
+
+.itensTr p {
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.iconeItr {
+    background-color: #d7d7d7;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconeItr img {
+    width: 2rem;
+    width: 2rem;
+}
+
+.iconeItr span {
+    font-size: 32px;
+    color: var(--background--container);
+}
+
+.cartoes {
+    margin-bottom: 5rem;
+    margin-top: 4rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.btnMyCards {
+    background-color: #d7d7d7;
+    padding: 12px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.alinhaBmc {
+    display: flex;
+    align-items: center;
+}
+
+.alinhaBmc span {
+    font-size: 26px;
+    color: var(--background--container);
+}
+
+.alinhaBmc h1 {
+    margin-left: 1rem;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.infosCartao {
+    margin-top: 1rem;
+    background-color: var(--background--container);
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 11rem;
+}
+
+.headIc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headIc h1 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.headIc span {
+    font-size: 18px !important;
+    color: var(--text-color);
+    user-select: none;
+    cursor: pointer;
+}
+
+.fatura p {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.fatura .symbolValue {
+    font-size: 15px;
+}
+
+.fatura .hiddenvalue div {
+    background-color: var(--text-color);
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    margin: 3px;
+}
+
+.limite {
+    display: flex;
+    align-items: center;
+}
+
+.limite p {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--subtext-color);
+}
+
+.limite .hiddenvalue div {
+    background-color: var(--subtext-color);
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+    margin: 3px;
+}
