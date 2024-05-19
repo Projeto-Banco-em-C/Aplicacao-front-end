@@ -39,7 +39,7 @@
             <div class="menuHead">
                 <div class="menuUser">
                     <div class="menuUserIcon">
-                        <h1>EF</h1>
+                        <h1 id="fotoPerfil">EF</h1>
                     </div>
                     <div class="menuUserName">
                         <h1>Olá <span id="userName">Eduardo Franco</span></h1>
@@ -50,8 +50,9 @@
                     </div>
                 </div>
                 <div class="menuAlinhaBtns">
-                    <div class="mbtn" id="">
-                        <span class="material-symbols-outlined">visibility</span>
+                    <div class="mbtn hidden" id="visibility">
+                        <span class="material-symbols-outlined visiOff" id="visiTrue">visibility</span>
+                        <span class="material-symbols-outlined" id="visiOff">visibility_off</span>
                     </div>
                     <div class="mbtn" id="">
                         <span class="material-symbols-outlined">notifications</span>
@@ -72,7 +73,7 @@
                             <div></div>
                             <div></div>
                         </div>
-                        <span class="userSaldo">3.425,75</span>
+                        <span class="userSaldo" id="userSaldo">3.425,75</span>
                     </div>
                 </div>
             </div>
@@ -146,7 +147,7 @@
                                 <div></div>
                                 <div></div>
                             </div>
-                            <span class="userSaldo">425,75</span>
+                            <span class="userSaldo">1.324,75</span>
                         </div>
                     </div>
                 </div>
@@ -156,6 +157,8 @@
     <footer>
 
     </footer>
+
+    <script src="../js/home.js"></script>
 </body>
 
 </html>

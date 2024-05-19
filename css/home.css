@@ -174,7 +174,7 @@ body::-webkit-scrollbar {
     justify-content: space-between;
     width: 100%;
     scroll-behavior: smooth;
-    padding: 12px 0px;
+    padding: 12px 4px;
 }
 
 .alinhaItensTr::-webkit-scrollbar {
@@ -295,6 +295,10 @@ body::-webkit-scrollbar {
     font-size: 15px;
 }
 
+.fatura .userSaldo {
+    font-size: 18px;
+}
+
 .fatura .hiddenvalue div {
     background-color: var(--text-color);
     width: 7px;
@@ -320,4 +324,13 @@ body::-webkit-scrollbar {
     height: 6px;
     border-radius: 100%;
     margin: 3px;
+}
+
+.limite .userSaldo {
+    font-size: 14px;
+    color: var(--subtext-color);
+}
+
+.visiOff {
+    display: none !important;
 }

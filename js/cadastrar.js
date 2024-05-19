@@ -122,7 +122,6 @@ $('#btnNextCep').click(function () {
     }
 });
 
-
 $('#btnNextSenha').click(function () {
     const camposOk = validaCamposCep();
 
@@ -172,7 +171,6 @@ function buscaDados() {
                 campos[inputName] = senhaCriptografada;
             }
         }
-
     });
 
     return JSON.stringify(campos)
@@ -193,6 +191,7 @@ $("#btnNextCadastrar").click(async function (event) {
                 body: dataJSON,
 
             });
+
             const isOk = JSON.parse(await response.text());
             console.log(isOk)
 
