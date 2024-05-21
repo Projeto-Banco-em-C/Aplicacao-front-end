@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/mobile/MobileGlobal.css">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/transferencias.css">
+    <link rel="stylesheet" href="../../css/mobile/MobileGlobal.css">
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -26,19 +27,94 @@
 
 
     <!-- LIBS INTERNAS -->
-    <script src="../js/libs/LIBSALUS.js"></script>
-    <script src="../js/libs/jMask.js"></script>
-    <script src="../js/libs/jMask.min.js"></script>
-    <script src="../js/libs/jquery.mask.min.js"></script>
+    <script src="../../js/libs/LIBSALUS.js"></script>
+    <script src="../../js/libs/jMask.js"></script>
+    <script src="../../js/libs/jMask.min.js"></script>
+    <script src="../../js/libs/jquery.mask.min.js"></script>
 </head>
 
 <body>
     <main>
         <section class="containerPix">
+            <section class="areaPix">
+                <div class="titleAp">
+                    <h1>Para quem você quer transferir?</h1>
+                    <p>Escolha o tipo de dado e preencha o campo.</p>
+                </div>
+                <div class="FormPix">
+                    <div class="alinhaFormPix">
+                        <h2 class="titleInputs">Tipo de chave</h2>
+                        <div class="selectPersonalizado">
+                            <div class="inputOrgPensonalizado">
+                                <div class="alinhaIop">
+                                    <span class="material-symbols-outlined" id="iconeAtual">person</span>
+                                    <h1 class="inputChave" id="valorAtual"></h1>
+                                </div>
+                                <span class="material-symbols-outlined" id="iconeArrow">keyboard_arrow_down</span>
+                            </div>
+                        </div>
+                        <div class="options">
+                            <div class="alinhaOp">
+                                <div class="itensOptions" data-icon="person" data-value="CPF" data-mask="mCpf">
+                                    <span class="material-symbols-outlined">person</span>
+                                    <p>CPF</p>
+                                </div>
+                                <div class="itensOptions" data-icon="smartphone" data-value="Celular"
+                                    data-mask="maskTelefone">
+                                    <span class="material-symbols-outlined">smartphone</span>
+                                    <p>Celular</p>
+                                </div>
+                                <div class="itensOptions" data-icon="mail" data-value="E-mail" data-mask="semValidacao">
+                                    <span class="material-symbols-outlined">mail</span>
+                                    <p>E-mail</p>
+                                </div>
+                                <div class="itensOptions" data-icon="person_pin" data-value="Chave aleatoria"
+                                    data-mask="semValidacao">
+                                    <span class="material-symbols-outlined">person_pin</span>
+                                    <p>Chave aleatoria</p>
+                                </div>
+                                <div class="itensOptions" data-icon="group" data-value="CNPJ" data-mask="mCnpj">
+                                    <span class="material-symbols-outlined">group</span>
+                                    <p>CNPJ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <h2 class="titleInputs">Chave Pix</h2>
+                    <div class="inputOrg">
+                        <span class="material-symbols-outlined" id="iconeAtualPix">person</span>
+                        <input class="inputText obrig" type="text" name="pix" id="chaveRecebida"
+                            placeholder="Digite sua chave pix" onblur="teste(this)">
+                    </div>
+                    <div class="alinhabtn">
+                        <div class="alinhabtns">
+                            <div class="btnChavePix valido" id="btnLogar">Próximo<span
+                                    class="material-symbols-outlined">arrow_forward</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contatos">
+                    <div class="elementosContatos">
+
+                    </div>
+                </div>
+            </section>
+            <section class="areaValor">
+
+            </section>
+            <section class="confirmaInfos">
+
+            </section>
+            <section class="pedesenha">
+
+            </section>
         </section>
     </main>
     <footer></footer>
+
+    <script src="../../js/transferencias/pix.js"></script>
 </body>
 
 </html>

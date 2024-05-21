@@ -1,0 +1,236 @@
+/* pix */
+
+.containerPix {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.areaPix {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titleAp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titleAp h1 {
+    font-size: 34px;
+    font-weight: 600;
+    color: var(--background--container);
+}
+
+.titleAp p {
+    margin-top: 0.5rem;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--subtext-color-whitePage);
+    max-width: 33rem;
+    text-align: center;
+}
+
+.FormPix {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.titleInputs {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--subtext-color-whitePage);
+}
+
+.inputOrg {
+    display: flex;
+    align-items: center;
+    padding: 11px;
+    height: 18px;
+    font-size: 18px;
+    color: var(--primary-color);
+    margin: 0.5rem 0 1rem 0;
+    border-radius: 0.5rem;
+    border: 2px solid var(--background--container);
+    background-color: var(--background-color);
+}
+
+.inputOrg span {
+    color: var(--subtext-color-whitePage);
+    font-size: 26px !important;
+    user-select: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+.alinhaSmallCampos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.alinhabtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.alinhabtns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btnChavePix {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 9rem;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: var(--background--container);
+    color: white;
+    font-family: var(--font-family-title);
+    border: none;
+    user-select: none;
+    cursor: pointer;
+    margin: 1rem 0;
+    border-radius: 5px;
+}
+
+.inputText {
+    width: 80%;
+    padding: 10px;
+    font-size: 14px;
+    color: var(--subtext-color-whitePage);
+    background-color: transparent;
+    border: none;
+    user-select: none;
+}
+
+.inputSelect {
+    display: flex;
+    align-items: center;
+    color: var(--subtext-color-whitePage);
+    border: none;
+    user-select: none;
+    padding: 19.5px;
+    font-size: 14px;
+    height: 18px;
+    margin: 0.5rem 0 1rem 0;
+    border-radius: 0.5rem;
+    border: 2px solid var(--background--container);
+    background-color: var(--background-color);
+}
+
+.btnChavePix span {
+    margin-left: 10px;
+    color: var(--text-color);
+}
+
+.itensOptions {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+}
+
+.itensOptions:hover {
+    background-color: #e6e6e6;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 5px;
+}
+
+
+.hidden,
+.options {
+    display: none;
+}
+
+.visibility {
+    display: block;
+    background-color: var(--text-color);
+    border-radius: 0.5rem 0.5rem 1rem 1rem;
+    margin-top: -1rem;
+    align-items: center;
+    width: 100%;
+}
+
+.selectPersonalizado {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.inputChave {
+    font-size: 14px !important;
+    color: var(--subtext-color-whitePage);
+    padding: 10px;
+}
+
+.inputOrgPensonalizado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px;
+    height: 18px;
+    font-size: 18px;
+    color: var(--primary-color);
+    margin: 0.5rem 0 1rem 0;
+    border-radius: 0.5rem;
+    border: 2px solid var(--background--container);
+    background-color: var(--background-color);
+    cursor: pointer;
+    user-select: none;
+}
+
+.alinhaIop {
+    display: flex;
+    align-items: center;
+}
+
+.itensOptions p {
+    margin-left: 10px;
+}
+
+.alinhaFormPix {
+    position: relative;
+}
+
+.options {
+    position: absolute;
+    left: 0;
+    z-index: 2;
+}
+
+.alinhaOp {
+    margin: 1rem;
+}
+
+.itensOptions span,
+.itensOptions p,
+.alinhaIop span {
+    color: var(--subtext-color-whitePage);
+}
+
+.contatos {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.elementosContatos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
