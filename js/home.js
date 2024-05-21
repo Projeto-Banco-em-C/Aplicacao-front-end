@@ -27,7 +27,7 @@ async function PegarDados(id) {
 
     } catch (error) {
         console.error('Erro Servidor:', error.message);
-        //window.location.href = "./erros.html";
+        window.location.href = "./erros.html";
     }
 }
 
@@ -45,8 +45,13 @@ function obterIniciais(nomeCompleto) {
     return iniciais.toUpperCase();
 }
 
+var usuId = localStorage.getItem('USU_ID');
 
-PegarDados('15')
+if (usuId !== null) {
+    PegarDados(usuId)
+} else {
+    window.location.href = "./erros.html";
+}
 
 $("#visibility").click(function () {
     if ($(this).hasClass("visibility")) {

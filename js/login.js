@@ -12,6 +12,11 @@ function validaCamposLogin() {
     return preenchido
 }
 
+function CriptografarSenha(senha) {
+    senhaCriptografada = CryptoJS.SHA256(senha).toString()
+    return senhaCriptografada
+}
+
 function buscaDadosLogin() {
     const camposLogin = {
         USU_CPF: "",
@@ -31,8 +36,7 @@ function buscaDadosLogin() {
         }
 
     });
-
-    return JSON.stringify(camposLogin)
+    return camposLogin;
 }
 
 $("#btnLogar").click(async function (event) {
@@ -40,8 +44,9 @@ $("#btnLogar").click(async function (event) {
     const camposOk = validaCamposLogin();
 
     if (camposOk) {
-        const dataJSON = buscaDadosLogin();
-        console.log(dataJSON)
+        const camposLogin = buscaDadosLogin();
+        const dataJSON = JSON.stringify(camposLogin);
+        console.log("Meu json" + dataJSON)
         try {
             $(".loading").css("display", "flex");
 
@@ -51,17 +56,27 @@ $("#btnLogar").click(async function (event) {
 
             });
             const isOk = JSON.parse(await response.text());
-            console.log(isOk)
+            console.log("json server" + isOk)
 
             if (isOk['mensagem'] == 'ok') {
                 console.log('Logado');
-                //Mensagem de SUCESSO e botão para entrar.
+                if ($('#Uppercase').is(':checked')) {
+                    localStorage.setItem('USU_ID', isOk.USU_ID);
+                    localStorage.setItem('USU_CPF', camposLogin.USU_CPF);
+                }
+
+                setTimeout(function () {
+                    window.location.href = "./home.html";
+                }, 500)
 
             } else if (isOk['mensagem'] == 'senha incorreta') {
                 console.log('senha ou email icorretos.');
-
+                $(".msgErroS").css("display", "flex")
+                $(".loading").css("display", "none");
             } else {
                 console.log('Usuario não cadastrado.');
+                $(".msgErroE").css("display", "flex")
+                $(".loading").css("display", "none");
             }
 
         } catch (error) {

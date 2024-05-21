@@ -17,7 +17,7 @@ async function ValidarCPFServer(cpf) {
         if (isOk['mensagem'] == 'erro') {
             console.log('CPF válido:', cpf);
             $(".loading").css("display", "none")
-            $('.forminfos').addClass("mostrarFormInfos")
+            $('.forminfos').css("display", "flex")
             $('.infosContainer').css("justify-content", "normal")
             $('.formcpf').css("display", "none")
 

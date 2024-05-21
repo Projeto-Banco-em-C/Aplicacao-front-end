@@ -222,13 +222,6 @@ select:focus-visible {
     color: var(--subtext-color-whitePage);
 }
 
-.forminfos {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-}
-
 .elementosInfosForm {
     display: flex;
     flex-direction: column;
@@ -240,6 +233,9 @@ option {
 
 .forminfos {
     display: none;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .formsenha {
@@ -270,6 +266,7 @@ option {
     width: inherit;
     height: inherit;
     background: #737375cc;
+    z-index: 1;
 }
 
 /* loading */
@@ -327,7 +324,9 @@ option {
 
 .msgErro,
 .msgErroSenha,
-.msgErroData {
+.msgErroData,
+.msgErroS,
+.msgErroE {
     display: none;
     font-size: 16px;
     font-weight: 400;
@@ -400,4 +399,9 @@ option {
 
 .containerchack input:checked~.checkmark:after {
     display: block;
+}
+
+.msgErroS,
+.msgErroE {
+    display: none;
 }
