@@ -1,7 +1,5 @@
-///////////////////////////////////////////////////
-//AQUI OTARIO
-/////////////////
-//LEMBRAR DE VALIDA HORA COM JS PARA MANDAR VALOR DO PIX
+var valorDoPixFormatado = 0
+
 
 $(".inputOrgPensonalizado").click(function (event) {
     event.preventDefault();
@@ -13,7 +11,6 @@ $(".inputOrgPensonalizado").click(function (event) {
         $("#iconeArrow").text("keyboard_arrow_up");
     }
 })
-
 
 $(".options").on("click", ".itensOptions", function () {
     var icon = $(this).data("icon");
@@ -32,10 +29,10 @@ $(".options").on("click", ".itensOptions", function () {
         $("#chaveRecebida").addClass(maskClass);
     }
 
-    teste("#chaveRecebida");
+    mudarmascara("#chaveRecebida");
 });
 
-function teste(elemento) {
+function mudarmascara(elemento) {
     $(elemento).unmask();
 
     if (!$(elemento).hasClass("semValidacao")) {
@@ -57,9 +54,6 @@ function teste(elemento) {
 
 
 //contatos
-//api
-
-
 
 
 
@@ -72,3 +66,108 @@ function teste(elemento) {
 //     `
 //     $('.cards').append(projeto);
 // }
+
+//armazenar esses dados numa variavel global e usar nas outras telas do pix
+
+//Tela valor
+
+$(document).ready(function () {
+    $('#valorRecebido').on('input', function () {
+        var valor = $(this).val().replace(/\D/g, ''); // Remove valores não numericos characters
+        if (valor.length > 2) {
+            var parteInteira = valor.slice(0, -2);
+            var centavos = valor.slice(-2);
+        } else {
+            var parteInteira = 0;
+            var centavos = ('00' + valor).slice(-2);
+        }
+
+        $('#valorD').text(parseFloat(parteInteira).toLocaleString('pt-BR'));
+        $('#valorC').text(centavos);
+
+        var valorNumerico = parseFloat(valor) / 100
+        valorDoPixFormatado = valorNumerico.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+    });
+});
+
+
+async function PegarSaldo(id) {
+    const dataJSON = JSON.stringify({ "USU_ID": id });
+    try {
+        $(".areaValor").addClass("skeletonLoading")
+        const response = await fetch('http://localhost:9000/dados', {
+            method: 'POST',
+            body: dataJSON,
+        });
+
+        const isOk = JSON.parse(await response.text());
+
+        console.log(isOk)
+
+        if (isOk['mensagem'] == 'erro') {
+            console.log('ERRO');
+            window.location.href = "../erros.html";
+        } else {
+            console.log('Certo');
+            $('#meuSaldo').text(parseFloat(isOk.USU_SALDO.trim()).toLocaleString('pt-BR'));
+            $(".areaValor").removeClass("skeletonLoading")
+        }
+
+    } catch (error) {
+        console.error('Erro Servidor:', error.message);
+        //window.location.href = "../erros.html";
+    }
+}
+
+var usuId = localStorage.getItem('USU_ID');
+//PegarSaldo(usuId)
+
+function ValidaValor(elemento) {
+    let preenchido = true;
+    $(".formularios input").each(function () {
+        if ($(this).val() == "") {
+            preenchido = false;
+            $(this).parent("div").css("border-color", 'red');
+        }
+        if ($(this).parent("div").css("border-color") === 'rgb(255, 0, 0)') {
+            preenchido = false;
+        }
+    })
+
+    $(elemento).parent("div").css("border-color", '#121212');
+    $(".msgErroE").css("display", 'none');
+
+    return preenchido
+}
+
+$("#btnConfirmarPix").click(function (event) {
+    event.preventDefault();
+    const camposOk = ValidaValor();
+
+    if (camposOk) {
+        const saldoUserFloat = parseFloat($("#meuSaldo").text().replace(/\./g, '').replace(',', '.'));
+        const valorPixFloat = parseFloat($("#valorRecebido").val().replace(/\./g, '').replace(',', '.'));
+
+        if (saldoUserFloat < valorPixFloat) {
+            $("#valorRecebido").parent("div").css("border-color", 'red');
+            $(".msgErroE").css("display", 'flex');
+        } else {
+            $(".areaValor").css("display", 'none');
+            $(".confirmaInfos").css("display", 'flex');
+        }
+    }
+})
+
+$("#btnPedirSenha").click(function (event) {
+    event.preventDefault();
+    $(".confirmaInfos").css("display", 'none');
+    $(".pedesenha").css("display", 'flex');
+
+})
+
+if ($('#Uppercase').is(':checked')) {
+    //manda para api add contatos
+}
+
+
+

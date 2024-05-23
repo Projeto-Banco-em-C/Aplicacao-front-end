@@ -85,7 +85,7 @@
                     <div class="inputOrg">
                         <span class="material-symbols-outlined" id="iconeAtualPix">person</span>
                         <input class="inputText obrig" type="text" name="pix" id="chaveRecebida"
-                            placeholder="Digite sua chave pix" onblur="teste(this)">
+                            placeholder="Digite sua chave pix" onblur="mudarmascara(this)">
                     </div>
                     <div class="alinhabtn">
                         <div class="alinhabtns">
@@ -96,16 +96,134 @@
                     </div>
                 </div>
                 <div class="contatos">
+                    <div class="titleCon">
+                        <p>Seus contatos adicionados</p>
+                        <div class="filtros">
+                            <span class="material-symbols-outlined">filter_alt</span>
+                            <input type="text" id="nomefiltro" name="nomefiltro" placeholder="Filtrar pelo nome">
+                        </div>
+                    </div>
                     <div class="elementosContatos">
+                        <div class="contatoCe">
+                            <div class="elementosCce">
+                                <div class="contatoIcon">
+                                    <h1 id="fotoPerfil">EF</h1>
+                                </div>
+                                <div class="infosCce">
+                                    <h1>Eduardo Franco</h1>
+                                    <p>Chave PIX: <span>(19) 99130-3806</span></p>
+                                </div>
+                            </div>
+                            <button class="btnContato"><span
+                                    class="material-symbols-outlined">arrow_forward_ios</span></button>
+                        </div>
+                        <div class="barra"></div>
+                        <div class="contatoCe">
+                            <div class="elementosCce">
+                                <div class="contatoIcon">
+                                    <h1 id="fotoPerfil">EF</h1>
+                                </div>
+                                <div class="infosCce">
+                                    <h1>Eduardo Franco</h1>
+                                    <p>Chave PIX: <span>(19) 99130-3806</span></p>
+                                </div>
+                            </div>
+                            <button class="btnContato"><span
+                                    class="material-symbols-outlined">arrow_forward_ios</span></button>
+                        </div>
+                        <div class="barra"></div>
+                    </div>
 
+                    <div class="noContacts">
+                        <div class="elementosNc">
+                            <img src="../../img/svg/undraw_add_files_re_v09g.svg" alt="">
+                            <h1>Nenhum contato adicionado!</h1>
+                            <p>Para adicionar contatos bastar selecionar a opção de adicionar contato na tela de
+                                confirmação do pix!</p>
+                        </div>
                     </div>
                 </div>
             </section>
             <section class="areaValor">
-
+                <div class="titleAp sl">
+                    <h1 class="">Quanto você quer transferir?</h1>
+                    <p class="">Escolha o valor desejado e preencha o campo.</p>
+                </div>
+                <div class="formValor">
+                    <div class="destinatario">
+                        <div class="contatoIcon sl">
+                            <h1 id="fotoPerfil">EF</h1>
+                        </div>
+                        <div class="infosCce sl">
+                            <h1 class="">Eduardo Franco</h1>
+                            <p class="">Chave PIX: <span>(19) 99130-3806</span></p>
+                        </div>
+                    </div>
+                    <div class="areaViewValor sl">
+                        <div class="campoViewValor">
+                            <p>R$</p>
+                            <h1 id="valorD">0</h1>
+                            <p id="valorC">00</p>
+                        </div>
+                        <div class="saldoAtual">
+                            <p>R$ <span id="meuSaldo">5,43</span> diponiveis</p>
+                        </div>
+                    </div>
+                    <div class="formularios">
+                        <h2 class="titleInputs sl">Valor</h2>
+                        <div class="inputOrg sl">
+                            <span class="material-symbols-outlined">payments</span>
+                            <input class="inputText mValor obrig" type="text" name="valor" id="valorRecebido"
+                                placeholder="Digite o valor desejado, apenas numeros! " maxlength="12"
+                                onblur="ValidaValor(this)">
+                        </div>
+                        <p class="msgErroE">Saldo insuficiente para transição</p>
+                        <div class="alinhabtn">
+                            <div class="alinhabtns">
+                                <div class="btnChavePix sl valido" id="btnConfirmarPix">Próximo<span
+                                        class="material-symbols-outlined">arrow_forward</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
             <section class="confirmaInfos">
+                <div class="titleAp sl">
+                    <h1>Confirme se está tudo certo</h1>
+                    <p>Antes de realizar o pix confirme se esta enviado para o destinatario correto!</p>
+                </div>
+                <div class="infosCf">
+                    <div class="userCf">
+                        <div class="destinatarioCf">
+                            <div class="contatoIconCf sl">
+                                <h1 id="fotoPerfil">EF</h1>
+                            </div>
+                            <div class="infosUserCf sl">
+                                <h1>Eduardo Franco</h1>
+                                <p>Chave PIX: <span>(19) 99130-3806</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mostraValorCf sl">
+                        <h1>R$ <span>45,83</span></h1>
+                    </div>
+                    <div class="links sl">
+                        <label class="containerchack">
+                            <p class="chacktext">Adicionar contato</p>
+                            <input type="checkbox" id="Uppercase">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
 
+                    <div class="alinhabtn">
+                        <div class="alinhabtns">
+                            <div class="btnChavePix sl valido" id="btnPedirSenha">Transferir<span
+                                    class="material-symbols-outlined">arrow_forward</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
             <section class="pedesenha">
 

@@ -118,7 +118,7 @@ $('#btnNextCep').click(function () {
             $('.forminfos').css("display", "none")
             $('.forminfosCep').css("display", "block")
             $('.infosContainer').css("justify-content", "center")
-        }, 2000)
+        }, 1000)
     }
 });
 
@@ -133,7 +133,7 @@ $('#btnNextSenha').click(function () {
             $('.forminfosCep').css("display", "none")
             $('.formsenha').css("display", "block")
             $('.infosContainer').css("justify-content", "center")
-        }, 2000)
+        }, 1000)
     }
 });
 

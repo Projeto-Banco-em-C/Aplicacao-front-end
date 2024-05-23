@@ -1,11 +1,12 @@
-/* pix */
-
+/* PIX */
 .containerPix {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    margin-top: 4rem;
 }
+
+/* Tela Chave PIX */
 
 .areaPix {
     display: flex;
@@ -225,12 +226,479 @@ input:focus {
 .contatos {
     margin-top: 2rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
 }
 
 .elementosContatos {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.contatoCe {
+    width: 100%;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    margin-top: 1rem;
+}
+
+.contatoIcon {
+    border: 1px solid var(--subtext-color-whitePage);
+    /* background-color: var(--subtext-color-whitePage); */
+    height: 3rem;
+    width: 3rem;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.contatoIcon h1 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--subtext-color-whitePage);
+}
+
+.elementosCce {
+    display: flex;
+    align-items: center;
+}
+
+.infosCce {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0.5rem;
+}
+
+.infosCce h1 {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--background--container);
+}
+
+.infosCce p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: var(--subtext-color-whitePage);
+}
+
+.infosCce p span {
+    font-size: 15px;
+    color: var(--subtext-color-whitePage);
+}
+
+.btnContato {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    padding: 10px;
+    border-radius: 100%;
+}
+
+.btnContato span {
+    font-size: 16px !important;
+    color: var(--background--container);
+}
+
+.barra {
+    width: 100%;
+    height: 1px;
+    background-color: #d5d5d5;
+    border-radius: 1px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.titleCon {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.titleCon p {
+    font-size: 16px;
+    color: var(--subtext-color-whitePage);
+}
+
+.filtros {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    color: var(--primary-color);
+    border-radius: 0.5rem;
+    border: 2px solid var(--background--container);
+    background-color: var(--background-color);
+    width: 10rem;
+}
+
+.filtros input {
+    padding: 5px;
+    font-size: 14px;
+    color: var(--primary-color);
+    background-color: transparent;
+    border: none;
+    width: 100%;
+}
+
+.filtros span {
+    font-size: 22px;
+    color: var(--subtext-color-whitePage);
+    user-select: none;
+}
+
+.elementosContatos {
+    display: none;
+}
+
+.noContacts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.elementosNc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.elementosNc img {
+    width: 6rem;
+    height: 6rem;
+}
+
+.elementosNc h1 {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--subtext-color-whitePage);
+    margin-top: 1rem;
+}
+
+.elementosNc p {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--subtext-color-whitePage);
+    max-width: 28rem;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.areaPix {
+    display: none;
+}
+
+/* Tela Chave PIX */
+.areaValor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formValor {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.destinatario {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.formularios {
+    margin-top: 2rem;
+}
+
+.areaViewValor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.campoViewValor {
+    display: flex;
+    align-items: center;
+}
+
+.campoViewValor h1 {
+    font-size: 54px;
+    font-weight: 500;
+    color: var(--background--container);
+    margin: 0 7px;
+}
+
+.campoViewValor p {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--background--container);
+}
+
+#valorC {
+    margin-top: -1rem;
+}
+
+.saldoAtual {
+    margin-top: 10px;
+}
+
+/* Skeleton Loading */
+
+.areaValor.skeletonLoading * {
+    position: relative;
+    border: none;
+    user-select: none;
+}
+
+.areaValor.skeletonLoading .sl::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(-45deg, #8d8d8d, #CCCCCC, #d0d0d0);
+    width: 100%;
+    height: 100%;
+    background-size: 400%;
+    border-radius: 3px;
+    animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 0%;
+    }
+
+    50% {
+        background-position: 100%;
+    }
+
+    100% {
+        background-position: 0%;
+    }
+}
+
+.msgErroE {
+    display: none;
+    font-size: 16px;
+    font-weight: 400;
+    color: red;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+    max-width: 26rem;
+}
+
+.areaValor {
+    display: none;
+}
+
+/* Confirmar as informações */
+
+.confirmaInfos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infosCf {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.userCf {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.textUser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.containerchack {
+    position: relative;
+    padding-left: 2rem;
+    cursor: pointer;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+.chacktext {
+    font-size: 14px;
+    color: var(--background--container);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.containerchack input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: var(--background-color);
+    border: 2px solid var(--background--container);
+    border-radius: 2px;
+}
+
+.containerchack input:checked~.checkmark {
+    background-color: var(--background--container);
+}
+
+.containerchack .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 3px;
+    height: 8px;
+    border: solid var(--text-color);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.containerchack input:checked~.checkmark:after {
+    display: block;
+}
+
+.mostraValorCf {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mostraValorCf h1,
+.mostraValorCf span {
+    font-size: 38px;
+    font-weight: 500;
+    color: var(--background--container);
+}
+
+.infosUserCf {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.destinatarioCf {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contatoIconCf {
+    border: 1px solid var(--subtext-color-whitePage);
+    height: 5rem;
+    width: 5rem;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.contatoIconCf h1 {
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--background--container);
+}
+
+.infosUserCf h1 {
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--background--container);
+    max-width: 22rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.infosUserCf p,
+.infosUserCf span {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--subtext-color-whitePage);
+    max-width: 22rem;
+    text-align: center;
+    margin-top: 0.6rem;
+}
+
+.confirmaInfos.skeletonLoading * {
+    position: relative;
+    border: none;
+    user-select: none;
+}
+
+.confirmaInfos.skeletonLoading .sl::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(-45deg, #8d8d8d, #CCCCCC, #d0d0d0);
+    width: 100%;
+    height: 100%;
+    background-size: 400%;
+    border-radius: 3px;
+    animation: loadingcf 1s linear infinite;
+}
+
+@keyframes loadingcf {
+    0% {
+        background-position: 0%;
+    }
+
+    50% {
+        background-position: 100%;
+    }
+
+    100% {
+        background-position: 0%;
+    }
 }
