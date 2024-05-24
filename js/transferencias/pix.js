@@ -169,5 +169,46 @@ if ($('#Uppercase').is(':checked')) {
     //manda para api add contatos
 }
 
+// confirmSenha
 
+
+$("#confirmSenha").click(function (event) {
+    event.preventDefault();
+    $(".pedesenha").css("display", 'none');
+    $(".pedesenha").css("display", 'flex');
+
+})
+
+
+//comprovante
+
+
+$('#printButton').on('click', function () {
+    printDiv('printableArea');
+});
+
+function printDiv(divId) {
+    var divToPrint = $('#' + divId).html();
+    var newWin = window.open('', 'Print-Window');
+
+    newWin.document.open();
+    newWin.document.write('<html><head><title>Imprimir</title>');
+
+    // Copia os estilos da página principal
+    $('link[rel="stylesheet"]').each(function () {
+        newWin.document.write('<link rel="stylesheet" href="' + $(this).attr('href') + '">');
+    });
+
+    // Inclui estilos específicos de impressão
+    newWin.document.write('<style>@media print { body { -webkit-print-color-adjust: exact; } #alinhabtn { display: none; } }</style>');
+
+    newWin.document.write('</head><body onload="window.print()">');
+    newWin.document.write(divToPrint);
+    newWin.document.write('</body></html>');
+    newWin.document.close();
+
+    setTimeout(function () {
+        newWin.close();
+    }, 100);
+}
 

@@ -1,14 +1,26 @@
+body::-webkit-scrollbar {
+    display: none;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
 /* PIX */
 .containerPix {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 4rem;
+    width: 100%;
 }
 
 /* Tela Chave PIX */
 
-.areaPix {
+.areaPix,
+.pedesenha {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,7 +47,9 @@
     text-align: center;
 }
 
-.FormPix {
+.FormPix,
+.FormPixSenha,
+.formValor {
     margin-top: 3rem;
     display: flex;
     flex-direction: column;
@@ -359,10 +373,6 @@ input:focus {
     user-select: none;
 }
 
-.elementosContatos {
-    display: none;
-}
-
 .noContacts {
     display: flex;
     justify-content: center;
@@ -398,22 +408,11 @@ input:focus {
     margin-top: 0.5rem;
 }
 
-.areaPix {
-    display: none;
-}
-
 /* Tela Chave PIX */
 .areaValor {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.formValor {
-    margin-top: 3rem;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
 }
 
 .destinatario {
@@ -502,10 +501,6 @@ input:focus {
     margin-top: -0.5rem;
     margin-bottom: 1rem;
     max-width: 26rem;
-}
-
-.areaValor {
-    display: none;
 }
 
 /* Confirmar as informações */
@@ -701,4 +696,342 @@ input:focus {
     100% {
         background-position: 0%;
     }
+}
+
+/* comprovante */
+
+.comprovante {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2rem;
+}
+
+.infosCpr {
+    width: 36rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--text-color);
+    border-radius: 1rem;
+    height: 100%;
+}
+
+.iconCfr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-green);
+    border-radius: 100%;
+    margin-top: 3rem;
+    padding: 20px;
+    box-shadow: 0px 2px 30px 0px rgb(79 255 128);
+    user-select: none;
+}
+
+.iconCfr span {
+    font-size: 46px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.textInfosCpr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.textInfosCpr h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--background--container);
+}
+
+.textInfosCpr p {
+    margin-top: 0.5rem;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--subtext-color-whitePage);
+    max-width: 21rem;
+    text-align: center;
+}
+
+.barraCpr {
+    width: 100%;
+    height: 1px;
+    background-color: #eeeef0;
+    border-radius: 1px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.scrollCpr {
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.valorCpr {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 2rem;
+}
+
+.txtValorCpr {
+    margin-left: 13px;
+}
+
+.txtValorCpr h1,
+.txtValorCpr span {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--background--container);
+}
+
+.txtValorCpr p {
+    margin-top: 4px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--subtext-color-whitePage);
+    text-align: center;
+}
+
+.tpVcpr {
+    font-size: 40px !important;
+    color: var(--subtext-color-whitePage);
+    user-select: none;
+}
+
+.enviadoCpr {
+    display: flex;
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
+
+.userCpr,
+.alinhaEcpr {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.userCpr h2,
+.otcElement h2 {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--background--container);
+}
+
+.userCpr p,
+.otcElement p {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--subtext-color-whitePage);
+}
+
+.userCpr h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--background--container);
+}
+
+.txtUserCpr *,
+.otcElement * {
+    padding: 3px;
+}
+
+.alinhaEcpr {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+}
+
+.prxElemUserCpr {
+    margin-top: 1rem;
+}
+
+.othersIforsCpr {
+    display: flex;
+    margin: 2rem 0 2rem 2rem;
+}
+
+.otcElement:not(:first-child) {
+    margin-top: 1rem;
+}
+
+.comprovante {
+    display: flex;
+}
+
+.elementosContatos {
+    display: none;
+}
+
+.areaPix {
+    display: none;
+}
+
+.areaValor {
+    display: none;
+}
+
+.confirmaInfos {
+    display: none;
+}
+
+.pedesenha {
+    display: none;
+}
+
+
+
+/* menu */
+
+.menu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 25%;
+    background-color: var(--background--container);
+    overflow: scroll;
+    height: 100%;
+}
+
+.menu::-webkit-scrollbar {
+    display: none;
+}
+
+.itensMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1rem;
+    width: 100%;
+}
+
+.linksBanckUser {
+    display: flex;
+    align-items: center;
+}
+
+.menuUserIcon {
+    background-color: var(--subtext-color-whitePage);
+    height: 3rem;
+    width: 3rem;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.menuUserName {
+    margin-left: 1rem;
+}
+
+.menuUserName h1 {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.userAccount {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.userAccount p {
+    font-size: 14px;
+    color: var(--subtext-color);
+}
+
+.iconUserAccount {
+    font-size: 17px !important;
+    color: var(--subtext-color);
+    margin-left: 5px;
+}
+
+.menuUserIcon h1 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--subtext-color);
+}
+
+#userName {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text-color);
+}
+
+.barraCprMenu {
+    width: 100%;
+    height: 1px;
+    background-color: #434343;
+    margin: 1rem 0rem;
+}
+
+.eleOpb a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.eleOpb a h1 {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-color);
+    margin-left: 0.5rem;
+}
+
+.eleOpb a span {
+    font-size: 26px;
+    color: var(--subtext-color);
+}
+
+.eleOpb a svg {
+    width: 24px;
+    height: 24px;
+}
+
+.opcoesBanck {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    user-select: none;
+}
+
+.opcoesBanck li {
+    list-style: none;
+    width: 100%;
+}
+
+.opcoesBanck li a {
+    padding: 14px;
+}
+
+.opcoesBanck li a:hover {
+    background-color: var(--subtext-color-whitePage);
+    border-radius: 10px;
+}
+
+.homeOb,
+.sair {
+    width: 100%;
+}
+
+.linksBanck {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }

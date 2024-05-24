@@ -35,6 +35,101 @@
 
 <body>
     <main>
+        <section class="menu">
+            <div class="itensMenu">
+                <div class="linksBanckUser">
+                    <div class="menuUserIcon">
+                        <h1 id="fotoPerfil">EF</h1>
+                    </div>
+                    <div class="menuUserName">
+                        <h1>Olá <span id="userName">Eduardo</span></h1>
+                        <div class="userAccount">
+                            <p>Perfil</p>
+                            <span class="material-symbols-outlined iconUserAccount">arrow_forward</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="barraCprMenu"></div>
+
+                <ul class="opcoesBanck">
+                    <div class="homeOb">
+                        <li class="eleOpb">
+                            <a href="#">
+                                <span class="material-symbols-outlined">home</span>
+                                <h1>Início</h1>
+                            </a>
+                        </li>
+                        <div class="barraCprMenu"></div>
+                    </div>
+                    <div class="linksBanck">
+                        <li class="eleOpb">
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                    <path
+                                        d="M242.4 292.5C247.8 287.1 257.1 287.1 262.5 292.5L339.5 369.5C353.7 383.7 372.6 391.5 392.6 391.5H407.7L310.6 488.6C280.3 518.1 231.1 518.1 200.8 488.6L103.3 391.2H112.6C132.6 391.2 151.5 383.4 165.7 369.2L242.4 292.5zM262.5 218.9C256.1 224.4 247.9 224.5 242.4 218.9L165.7 142.2C151.5 127.1 132.6 120.2 112.6 120.2H103.3L200.7 22.76C231.1-7.586 280.3-7.586 310.6 22.76L407.8 119.9H392.6C372.6 119.9 353.7 127.7 339.5 141.9L262.5 218.9zM112.6 142.7C126.4 142.7 139.1 148.3 149.7 158.1L226.4 234.8C233.6 241.1 243 245.6 252.5 245.6C261.9 245.6 271.3 241.1 278.5 234.8L355.5 157.8C365.3 148.1 378.8 142.5 392.6 142.5H430.3L488.6 200.8C518.9 231.1 518.9 280.3 488.6 310.6L430.3 368.9H392.6C378.8 368.9 365.3 363.3 355.5 353.5L278.5 276.5C264.6 262.6 240.3 262.6 226.4 276.6L149.7 353.2C139.1 363 126.4 368.6 112.6 368.6H80.78L22.76 310.6C-7.586 280.3-7.586 231.1 22.76 200.8L80.78 142.7H112.6z"
+                                        fill="#adadad" />
+                                </svg>
+                                <h1>Área Pix</h1>
+                            </a>
+                        </li>
+                        <li class="eleOpb">
+                            <a href="#">
+                                <span class="material-symbols-outlined">barcode_scanner</span>
+                                <h1>Pagar</h1>
+                            </a>
+                        </li>
+                        <li class="eleOpb">
+                            <a href="#">
+                                <span class="material-symbols-outlined">sync_alt</span>
+                                <h1>Transferir</h1>
+                            </a>
+                        </li>
+                        <li class="eleOpb">
+                            <a href="#">
+                                <span class="material-symbols-outlined">payments</span>
+                                <h1>Depositar</h1>
+                            </a>
+                        </li>
+                        <li class="eleOpb">
+                            <a href="#">
+                                <span class="material-symbols-outlined">monitoring</span>
+                                <h1>Investimento</h1>
+                            </a>
+                        </li>
+                        <li class="eleOpb">
+                            <a href="#">
+                                <span class="material-symbols-outlined">credit_card</span>
+                                <h1>Cartões</h1>
+                            </a>
+                        </li>
+                        <li class="eleOpb">
+                            <a href="#">
+                                <span class="material-symbols-outlined">receipt_long</span>
+                                <h1>Extrato</h1>
+                            </a>
+                        </li>
+                        <li class="eleOpb">
+                            <a href="#">
+                                <span class="material-symbols-outlined">help</span>
+                                <h1>Suporte</h1>
+                            </a>
+                        </li>
+                    </div>
+                    <div class="barraCprMenu"></div>
+                    <div class="sair">
+                        <li class="eleOpb">
+                            <a href="#">
+                                <span class="material-symbols-outlined">logout</span>
+                                <h1>Encerrar sessão</h1>
+                            </a>
+                        </li>
+                    </div>
+                    <div class="barraCprMenu"></div>
+                </ul>
+
+
+            </div>
+        </section>
         <section class="containerPix">
             <section class="areaPix">
                 <div class="titleAp">
@@ -218,7 +313,7 @@
 
                     <div class="alinhabtn">
                         <div class="alinhabtns">
-                            <div class="btnChavePix sl valido" id="btnPedirSenha">Transferir<span
+                            <div class="btnChavePix sl valido" id="btnPedirSenha">Próximo<span
                                     class="material-symbols-outlined">arrow_forward</span>
                             </div>
                         </div>
@@ -226,11 +321,100 @@
                 </div>
             </section>
             <section class="pedesenha">
+                <div class="titleAp">
+                    <h1>Insira sua senha</h1>
+                    <p>Insira sua senha para confirmação da transferência pix.</p>
+                </div>
+                <div class="FormPixSenha">
+                    <div class="alinhaFormPix">
+                        <h2 class="titleInputs">Senha</h2>
+                        <div class="inputOrg">
+                            <span class="material-symbols-outlined">lock</span>
+                            <input class="inputText obrig" type="password" name="senha" id="confirmSenha"
+                                placeholder="Digite sua chave pix">
+                        </div>
+                        <div class="alinhabtn">
+                            <div class="alinhabtns">
+                                <div class="btnChavePix valido" id="btnLogar">Transferir<span
+                                        class="material-symbols-outlined">arrow_forward</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+            </section>
+            <section class="comprovante" id="printableArea">
+                <div class="infosCpr">
+                    <div class="iconCfr">
+                        <span class="material-symbols-outlined">check</span>
+                    </div>
+                    <div class="textInfosCpr">
+                        <h1>Transferência realizada</h1>
+                        <p>A transferência Pix foi realizada com sucesso</p>
+                    </div>
+                    <div class="barraCpr"></div>
+                    <div class="scrollCpr">
+                        <div class="valorCpr">
+                            <span class="material-symbols-outlined tpVcpr">monetization_on</span>
+                            <div class="txtValorCpr">
+                                <h1>R$ <span id="">168,00</span></h1>
+                                <p>valor transferido via Pix</p>
+                            </div>
+                        </div>
+                        <div class="enviadoCpr">
+                            <span class="material-symbols-outlined tpVcpr">send</span>
+                            <div class="alinhaEcpr">
+                                <div class="userCpr">
+                                    <div class="txtUserCpr">
+                                        <p>para</p>
+                                        <h1 id="">Eduardo Franco seco</h1>
+                                        <h2>cpf <span>161.327.546-36</span></h2>
+                                        <h2>chave Pix <span>(19) 99130-3806</span></h2>
+                                    </div>
+                                </div>
+                                <div class="userCpr prxElemUserCpr">
+                                    <div class="txtUserCpr">
+                                        <p>de</p>
+                                        <h1 id="">Igor Albiero</h1>
+                                        <h2>cpf <span>523.123.342-23</span></h2>
+                                        <h2>ag <span>0043</span> | conta <span>0034231-9</span></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="othersIforsCpr">
+                            <span class="material-symbols-outlined tpVcpr">format_list_bulleted</span>
+                            <div class="alinhaEcpr">
+                                <div class="otcElement">
+                                    <p>realizado em</p>
+                                    <h2>09/11/2023 ás 18:18:34</h2>
+                                </div>
+                                <div class="otcElement">
+                                    <p>via</p>
+                                    <h2>PinguimBanck</h2>
+                                </div>
+                                <div class="otcElement">
+                                    <p>ID da transação</p>
+                                    <h2>E60834574523TSD232CXR234</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alinhabtn" id="alinhabtn">
+                        <div class="alinhabtns">
+                            <div class="btnChavePix valido" id="printButton">Imprimir<span
+                                    class="material-symbols-outlined">arrow_forward</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </section>
     </main>
-    <footer></footer>
+    <footer>
+
+    </footer>
 
     <script src="../../js/transferencias/pix.js"></script>
 </body>
