@@ -62,13 +62,13 @@
                             <div class="inputOrg">
                                 <span class="material-symbols-outlined">person</span>
                                 <input class="inputText mCpf obrig" type="text" name="USU_CPF" id=""
-                                    placeholder="Digite seu CPF" required>
+                                    placeholder="Digite seu CPF" onblur="validaCPFLo(this)">
                             </div>
                             <h2 class="titleInputs">Senha</h2>
                             <div class="inputOrg">
                                 <span class="material-symbols-outlined">lock</span>
                                 <input class="inputText obrig" type="password" name="USU_SENHA_ACESSO" id=""
-                                    placeholder="Digite sua senha" required>
+                                    placeholder="Digite sua senha" onblur="validaSenhaLo(this)">
                             </div>
                             <p class="msgErroS">Senha ou E-mail incorretos!</p>
                             <p class="msgErroE">CPF não cadastrado no sitema, porfavor crie uma conta ou verifique o

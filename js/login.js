@@ -84,3 +84,14 @@ $("#btnLogar").click(async function (event) {
         }
     }
 })
+
+
+function validaCPFLo(elemento) {
+    let inputParent = $(elemento).parent('.inputOrg')
+    inputParent.css("border-color", "#121212");
+}
+
+function validaSenhaLo(elemento) {
+    let inputParent = $(elemento).parent('.inputOrg')
+    inputParent.css("border-color", "#121212");
+}

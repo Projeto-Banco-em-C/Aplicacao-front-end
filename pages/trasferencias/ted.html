@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Transferir</title>
     <link rel="stylesheet" href="../../css/global.css">
     <link rel="stylesheet" href="../../css/transferencias.css">
     <link rel="stylesheet" href="../../css/mobile/MobileGlobal.css">
+    <link rel="stylesheet" href="../../css/ted.css">
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -135,8 +136,6 @@
                     </div>
                     <div class="barraCprMenu"></div>
                 </ul>
-
-
             </div>
         </section>
         <section class="containerPix">
@@ -148,111 +147,32 @@
                     <div></div>
                 </div>
             </div>
-            <section class="areaPix">
+            <section class="areaTed">
                 <div class="titleAp aptxt">
                     <h1>Para quem você quer transferir?</h1>
                     <p>Escolha o tipo de dado e preencha o campo.</p>
                 </div>
                 <div class="FormPix">
-                    <div class="alinhaFormPix">
-                        <h2 class="titleInputs">Tipo de chave</h2>
-                        <div class="selectPersonalizado">
-                            <div class="inputOrgPensonalizado">
-                                <div class="alinhaIop">
-                                    <span class="material-symbols-outlined" id="iconeAtual">person</span>
-                                    <h1 class="inputChave" id="valorAtual"></h1>
-                                </div>
-                                <span class="material-symbols-outlined" id="iconeArrow">keyboard_arrow_down</span>
-                            </div>
-                        </div>
-                        <div class="options">
-                            <div class="alinhaOp">
-                                <div class="itensOptions" data-icon="person" data-value="CPF" data-mask="mCpf">
-                                    <span class="material-symbols-outlined">person</span>
-                                    <p>CPF</p>
-                                </div>
-                                <div class="itensOptions" data-icon="smartphone" data-value="Celular"
-                                    data-mask="maskTelefone">
-                                    <span class="material-symbols-outlined">smartphone</span>
-                                    <p>Celular</p>
-                                </div>
-                                <div class="itensOptions" data-icon="mail" data-value="E-mail" data-mask="semValidacao">
-                                    <span class="material-symbols-outlined">mail</span>
-                                    <p>E-mail</p>
-                                </div>
-                                <div class="itensOptions" data-icon="person_pin" data-value="Chave aleatoria"
-                                    data-mask="semValidacao">
-                                    <span class="material-symbols-outlined">person_pin</span>
-                                    <p>Chave aleatoria</p>
-                                </div>
-                                <div class="itensOptions" data-icon="group" data-value="CNPJ" data-mask="mCnpj">
-                                    <span class="material-symbols-outlined">group</span>
-                                    <p>CNPJ</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h2 class="titleInputs">Chave Pix</h2>
+                    <h2 class="titleInputs">Numero da Agências</h2>
                     <div class="inputOrg">
                         <span class="material-symbols-outlined" id="iconeAtualPix">person</span>
-                        <input class="inputText obrig" type="text" name="pix" id="chaveRecebida"
-                            placeholder="Digite sua chave pix" onblur="mudarmascara(this)"
-                            oninput="validaValoresChavePix(this)">
+                        <input class="inputText obrig" type="text" name="agencia" id="numAgenciaId"
+                            placeholder="Digite o numero de agências" onblur="validaAgencia(this)">
                     </div>
-                    <p class="msgErroEasa">Chave Pix inexistente!</p>
+                    <h2 class="titleInputs">Numero da Conta</h2>
+                    <div class="inputOrg">
+                        <span class="material-symbols-outlined" id="iconeAtualPix">person</span>
+                        <input class="inputText obrig" type="text" name="conta" id="numContaId"
+                            placeholder="Digite o Numero da conta" onblur="validaConta(this)">
+                    </div>
+                    <p class="msgErroETed">Conta inexistente!</p>
+
                     <div class="alinhabtn">
                         <div class="alinhabtns">
-                            <div class="btnChavePix valido" id="btnEnviaChavePix">
+                            <div class="btnChavePix valido" id="btnEnviaTed">
                                 Próximo
                                 <span class="material-symbols-outlined">arrow_forward</span>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="contatos">
-                    <div class="titleCon">
-                        <p>Seus contatos adicionados</p>
-                        <div class="filtros">
-                            <span class="material-symbols-outlined">filter_alt</span>
-                            <input type="text" id="nomefiltro" name="nomefiltro" placeholder="Filtrar pelo nome">
-                        </div>
-                    </div>
-                    <div class="elementosContatos">
-                        <div class="contatoCe sl">
-                            <div class="elementosCce">
-                                <div class="contatoIcon">
-                                    <h1 id="fotoPerfil"></h1>
-                                </div>
-                                <div class="infosCce">
-                                    <h1></h1>
-                                    <p>Chave PIX: <span></span></p>
-                                </div>
-                            </div>
-                            <button class="btnContato"><span
-                                    class="material-symbols-outlined">arrow_forward_ios</span></button>
-                        </div>
-                        <div class="contatoCe sl">
-                            <div class="elementosCce">
-                                <div class="contatoIcon">
-                                    <h1 id="fotoPerfil"></h1>
-                                </div>
-                                <div class="infosCce">
-                                    <h1></h1>
-                                    <p>Chave PIX: <span></span></p>
-                                </div>
-                            </div>
-                            <button class="btnContato"><span
-                                    class="material-symbols-outlined">arrow_forward_ios</span></button>
-                        </div>
-                    </div>
-
-                    <div class="noContacts">
-                        <div class="elementosNc">
-                            <img src="../../img/svg/undraw_add_files_re_v09g.svg" alt="">
-                            <h1>Nenhum contato adicionado!</h1>
-                            <p>Para adicionar contatos bastar selecionar a opção de adicionar contato na tela de
-                                confirmação do pix!</p>
                         </div>
                     </div>
                 </div>
@@ -263,15 +183,6 @@
                     <p class="">Escolha o valor desejado e preencha o campo.</p>
                 </div>
                 <div class="formValor">
-                    <div class="destinatario">
-                        <div class="contatoIcon sl">
-                            <h1 id="fotoPerfilArV">EF</h1>
-                        </div>
-                        <div class="infosCce sl">
-                            <h1 id="nomeUserCheve">Eduardo Franco</h1>
-                            <p id="PixUserCheve">Chave PIX: <span>(19) 99130-3806</span></p>
-                        </div>
-                    </div>
                     <div class="areaViewValor sl">
                         <div class="campoViewValor">
                             <p>R$</p>
@@ -312,27 +223,22 @@
                 </div>
                 <div class="infosCf">
                     <div class="userCf">
-                        <div class="destinatarioCf">
+                        <div class="destinatarioCfTed">
                             <div class="contatoIconCf sl">
                                 <h1 id="fotoPerfilICf">EF</h1>
                             </div>
-                            <div class="infosUserCf sl">
+                            <div class="infosUserCfTed sl">
                                 <h1 id="nomeUserCheveICf">Eduardo Franco</h1>
-                                <p>Chave PIX: <span id="PixUserCheveICf">(19) 99130-3806</span></p>
+                                <div class="dadosConta">
+                                    <p>Agencia: <span id="agenciaInfos">0043</span></p>
+                                    <p>Conta: <span id="contaInfos">0034231-9</span></p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="mostraValorCf sl">
                         <h1>R$ <span id="valorDoPix">45,83</span></h1>
                     </div>
-                    <div class="links sl">
-                        <label class="containerchack">
-                            <p class="chacktext">Adicionar contato</p>
-                            <input type="checkbox" id="Uppercase">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-
                     <div class="alinhabtn">
                         <div class="alinhabtns">
                             <div class="btnChavePix sl valido" id="btnPedirSenha">Próximo<span
@@ -366,13 +272,13 @@
                         <p class="msgErroSenha">Senha Incorreta</p>
                         <div class="alinhabtn">
                             <div class="alinhabtns">
-                                <div class="btnChavePix valido" id="btnConfirmaTraferencia">Transferir<span
+                                <div class="btnChavePix valido" id="btnConfirmaTraferenciaTed">Transferir<span
                                         class="material-symbols-outlined">arrow_forward</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                </div>
             </section>
             <section class="comprovante" id="printableArea">
                 <div class="infosCpr">
@@ -381,7 +287,7 @@
                     </div>
                     <div class="textInfosCpr">
                         <h1>Transferência realizada</h1>
-                        <p>A transferência Pix foi realizada com sucesso</p>
+                        <p>A transferência Ted foi realizada com sucesso</p>
                     </div>
                     <div class="barraCpr"></div>
                     <div class="scrollCpr">
@@ -389,7 +295,7 @@
                             <span class="material-symbols-outlined tpVcpr">monetization_on</span>
                             <div class="txtValorCpr">
                                 <h1>R$ <span id="valorComp">168,00</span></h1>
-                                <p>valor transferido via Pix</p>
+                                <p>valor transferido via Ted</p>
                             </div>
                         </div>
                         <div class="enviadoCpr">
@@ -400,7 +306,8 @@
                                         <p>para</p>
                                         <h1 id="nomeCompDest">Eduardo Franco seco</h1>
                                         <h2>cpf <span id="cpfCompDest">161.327.546-36</span></h2>
-                                        <h2>chave Pix <span id="chavePixCompDest">(19) 99130-3806</span></h2>
+                                        <h2>ag <span id="agenciaCompDest">0043</span> | conta <span
+                                                id="contaCompDes">0034231-9</span></h2>
                                     </div>
                                 </div>
                                 <div class="userCpr prxElemUserCpr">
@@ -495,8 +402,10 @@
         </div>
     </footer>
 
+    <script src="../../js/transferencias/ted.js"></script>
     <script src="../../js/transferencias/pix.js"></script>
     <script src="../../js/animacoes.js"></script>
+
 </body>
 
 </html>

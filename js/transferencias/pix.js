@@ -13,6 +13,8 @@ var DadosComprovante = {
     agenciaComp: "",
     contaComp: "",
     IDUserChave: "",
+    agenciaCompDest: "",
+    contaCompDest: ""
 };
 
 //areaPix
@@ -92,6 +94,7 @@ $('#btnEnviaChavePix').click(function () {
 
 async function ValidarCPFServer(chavPix) {
     const dataJSON = JSON.stringify({ "CHA_CODIGO": chavPix });
+    $(".loading").css("display", "flex")
     try {
         const response = await fetch('http://localhost:9000/consulta_info_pix', {
             method: 'POST',
@@ -102,6 +105,8 @@ async function ValidarCPFServer(chavPix) {
 
         if (isOk['mensagem'] == 'chave nao existente') {
             console.log('ERRO');
+            $(".loading").css("display", "none")
+            $(".msgErroETed").css("display", "flex")
 
         } else {
             console.log('Certo');
@@ -118,12 +123,13 @@ async function ValidarCPFServer(chavPix) {
             DadosComprovante.chavePixCompDest = ChavePixUserChave
             DadosComprovante.cpfCompDest = CpfserChave
             DadosComprovante.IDUserChave = IDUserChave
+
+            $(".loading").css("display", "none")
         }
     } catch (error) {
         console.error('Erro Servidor:', error.message);
         window.location.href = "../erros.html";
     }
-
 }
 
 //contatos
@@ -289,6 +295,7 @@ async function PegarSaldo(id) {
             DadosComprovante.cpfComp = isOk.USU_CPF
             DadosComprovante.agenciaComp = isOk.USU_NUM_AGENCIA
             DadosComprovante.contaComp = isOk.USU_NUM_CONTA
+
         }
 
     } catch (error) {
@@ -408,6 +415,7 @@ $("#btnConfirmaTraferencia").click(function () {
 
 async function confirmarSenhaServer(chavePix, senha) {
     const camposOk = validaCamposSenha();
+    $(".loading").css("display", "flex")
     if (camposOk) {
         const dataJSON = JSON.stringify({ "USU_CPF": chavePix, "USU_SENHA_ACESSO": senha });
         try {
@@ -418,10 +426,12 @@ async function confirmarSenhaServer(chavePix, senha) {
 
             const isOk = JSON.parse(await response.text());
             if (isOk['mensagem'] == 'ok') {
+                $(".loading").css("display", "none")
                 realizarTransferencias(usuId, idDestino, parseFloat(valorDoPixFormatado.replace(/\./g, '').replace(',', '.')))
             } else if (isOk['mensagem'] == 'senha incorreta') {
                 $("#confirmSenha").parent("div").css("border-color", 'red');
                 $("#msgErroSenha").css("display", "flex")
+                $(".loading").css("display", "none")
             }
 
         } catch (error) {

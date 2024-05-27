@@ -33,6 +33,7 @@ main {
     background: #737375cc;
     z-index: 2;
     width: 80%;
+    height: 100%;
 }
 
 .lds-ring {
@@ -593,7 +594,8 @@ input:focus {
 .msgErroL,
 .msgErroH,
 .msgErroSenha,
-.msgErroConf {
+.msgErroConf,
+.msgErroEasa {
     display: none;
     font-size: 16px;
     font-weight: 400;

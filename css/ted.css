@@ -1,0 +1,55 @@
+.areaTed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.destinatarioCfTed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infosUserCfTed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.infosUserCfTed h1 {
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--background--container);
+    max-width: 22rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.infosUserCfTed p,
+.infosUserCfTed p span {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--subtext-color-whitePage);
+    max-width: 22rem;
+    text-align: center;
+    margin-top: 0.6rem;
+}
+
+.dadosConta {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.msgErroETed {
+    display: none;
+    font-size: 16px;
+    font-weight: 400;
+    color: red;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+    max-width: 26rem;
+
+}
