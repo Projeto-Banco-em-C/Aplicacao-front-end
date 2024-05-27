@@ -260,6 +260,8 @@ option {
     margin-top: 1.5rem;
 }
 
+/* loading */
+
 .loading {
     display: none;
     justify-content: center;
@@ -271,8 +273,6 @@ option {
     background: #737375cc;
     z-index: 1;
 }
-
-/* loading */
 
 .lds-ring {
     color: #000000

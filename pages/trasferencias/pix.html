@@ -24,6 +24,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
     <!-- LIBS INTERNAS -->
@@ -44,7 +45,7 @@
                     <div class="menuUserName">
                         <h1>Olá <span id="userName">Eduardo</span></h1>
                         <div class="userAccount">
-                            <p>Perfil</p>
+                            <p><a href="#">Perfil</a></p>
                             <span class="material-symbols-outlined iconUserAccount">arrow_forward</span>
                         </div>
                     </div>
@@ -54,7 +55,7 @@
                 <ul class="opcoesBanck">
                     <div class="homeOb">
                         <li class="eleOpb">
-                            <a href="#">
+                            <a href="../home.html">
                                 <span class="material-symbols-outlined">home</span>
                                 <h1>Início</h1>
                             </a>
@@ -63,10 +64,18 @@
                     </div>
                     <div class="linksBanck">
                         <li class="eleOpb">
-                            <a href="#">
+                            <a href="./pix.html">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                     <path
-                                        d="M242.4 292.5C247.8 287.1 257.1 287.1 262.5 292.5L339.5 369.5C353.7 383.7 372.6 391.5 392.6 391.5H407.7L310.6 488.6C280.3 518.1 231.1 518.1 200.8 488.6L103.3 391.2H112.6C132.6 391.2 151.5 383.4 165.7 369.2L242.4 292.5zM262.5 218.9C256.1 224.4 247.9 224.5 242.4 218.9L165.7 142.2C151.5 127.1 132.6 120.2 112.6 120.2H103.3L200.7 22.76C231.1-7.586 280.3-7.586 310.6 22.76L407.8 119.9H392.6C372.6 119.9 353.7 127.7 339.5 141.9L262.5 218.9zM112.6 142.7C126.4 142.7 139.1 148.3 149.7 158.1L226.4 234.8C233.6 241.1 243 245.6 252.5 245.6C261.9 245.6 271.3 241.1 278.5 234.8L355.5 157.8C365.3 148.1 378.8 142.5 392.6 142.5H430.3L488.6 200.8C518.9 231.1 518.9 280.3 488.6 310.6L430.3 368.9H392.6C378.8 368.9 365.3 363.3 355.5 353.5L278.5 276.5C264.6 262.6 240.3 262.6 226.4 276.6L149.7 353.2C139.1 363 126.4 368.6 112.6 368.6H80.78L22.76 310.6C-7.586 280.3-7.586 231.1 22.76 200.8L80.78 142.7H112.6z"
+                                        d="M242.4 292.5C247.8 287.1 257.1 287.1 262.5 292.5L339.5 369.5C353.7 383.7 
+                                        372.6 391.5 392.6 391.5H407.7L310.6 488.6C280.3 518.1 231.1 518.1 200.8 488.6L103.3
+                                        391.2H112.6C132.6 391.2 151.5 383.4 165.7 369.2L242.4 292.5zM262.5 218.9C256.1 224.4 247.9 
+                                        224.5 242.4 218.9L165.7 142.2C151.5 127.1 132.6 120.2 112.6 120.2H103.3L200.7 22.76C231.1-7.586 
+                                        280.3-7.586 310.6 22.76L407.8 119.9H392.6C372.6 119.9 353.7 127.7 339.5 141.9L262.5 218.9zM112.6 
+                                        142.7C126.4 142.7 139.1 148.3 149.7 158.1L226.4 234.8C233.6 241.1 243 245.6 252.5 245.6C261.9 245.6 271.3 
+                                        241.1 278.5 234.8L355.5 157.8C365.3 148.1 378.8 142.5 392.6 142.5H430.3L488.6 200.8C518.9 231.1 518.9 280.3 
+                                        488.6 310.6L430.3 368.9H392.6C378.8 368.9 365.3 363.3 355.5 353.5L278.5 276.5C264.6 262.6 240.3 262.6 226.4 
+                                        276.6L149.7 353.2C139.1 363 126.4 368.6 112.6 368.6H80.78L22.76 310.6C-7.586 280.3-7.586 231.1 22.76 200.8L80.78 142.7H112.6z"
                                         fill="#adadad" />
                                 </svg>
                                 <h1>Área Pix</h1>
@@ -132,7 +141,15 @@
         </section>
         <section class="containerPix">
             <section class="areaPix">
-                <div class="titleAp">
+                <div class="loading">
+                    <div class="lds-ring">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="titleAp aptxt">
                     <h1>Para quem você quer transferir?</h1>
                     <p>Escolha o tipo de dado e preencha o campo.</p>
                 </div>
@@ -180,12 +197,14 @@
                     <div class="inputOrg">
                         <span class="material-symbols-outlined" id="iconeAtualPix">person</span>
                         <input class="inputText obrig" type="text" name="pix" id="chaveRecebida"
-                            placeholder="Digite sua chave pix" onblur="mudarmascara(this)">
+                            placeholder="Digite sua chave pix" onblur="mudarmascara(this)"
+                            oninput="validaValoresChavePix(this)">
                     </div>
                     <div class="alinhabtn">
                         <div class="alinhabtns">
-                            <div class="btnChavePix valido" id="btnLogar">Próximo<span
-                                    class="material-symbols-outlined">arrow_forward</span>
+                            <div class="btnChavePix valido" id="btnEnviaChavePix">
+                                Próximo
+                                <span class="material-symbols-outlined">arrow_forward</span>
                             </div>
                         </div>
                     </div>
@@ -199,34 +218,32 @@
                         </div>
                     </div>
                     <div class="elementosContatos">
-                        <div class="contatoCe">
+                        <div class="contatoCe sl">
                             <div class="elementosCce">
                                 <div class="contatoIcon">
-                                    <h1 id="fotoPerfil">EF</h1>
+                                    <h1 id="fotoPerfil"></h1>
                                 </div>
                                 <div class="infosCce">
-                                    <h1>Eduardo Franco</h1>
-                                    <p>Chave PIX: <span>(19) 99130-3806</span></p>
+                                    <h1></h1>
+                                    <p>Chave PIX: <span></span></p>
                                 </div>
                             </div>
                             <button class="btnContato"><span
                                     class="material-symbols-outlined">arrow_forward_ios</span></button>
                         </div>
-                        <div class="barra"></div>
-                        <div class="contatoCe">
+                        <div class="contatoCe sl">
                             <div class="elementosCce">
                                 <div class="contatoIcon">
-                                    <h1 id="fotoPerfil">EF</h1>
+                                    <h1 id="fotoPerfil"></h1>
                                 </div>
                                 <div class="infosCce">
-                                    <h1>Eduardo Franco</h1>
-                                    <p>Chave PIX: <span>(19) 99130-3806</span></p>
+                                    <h1></h1>
+                                    <p>Chave PIX: <span></span></p>
                                 </div>
                             </div>
                             <button class="btnContato"><span
                                     class="material-symbols-outlined">arrow_forward_ios</span></button>
                         </div>
-                        <div class="barra"></div>
                     </div>
 
                     <div class="noContacts">
@@ -247,11 +264,11 @@
                 <div class="formValor">
                     <div class="destinatario">
                         <div class="contatoIcon sl">
-                            <h1 id="fotoPerfil">EF</h1>
+                            <h1 id="fotoPerfilArV">EF</h1>
                         </div>
                         <div class="infosCce sl">
-                            <h1 class="">Eduardo Franco</h1>
-                            <p class="">Chave PIX: <span>(19) 99130-3806</span></p>
+                            <h1 id="nomeUserCheve">Eduardo Franco</h1>
+                            <p id="PixUserCheve">Chave PIX: <span>(19) 99130-3806</span></p>
                         </div>
                     </div>
                     <div class="areaViewValor sl">
@@ -273,6 +290,10 @@
                                 onblur="ValidaValor(this)">
                         </div>
                         <p class="msgErroE">Saldo insuficiente para transição</p>
+                        <p class="msgErroL">Não é possível transferir esse valor</p>
+                        <p class="msgErroH">A partir das 20h não são permitidos o envio de Pix no valor acima de
+                            R$1.000,00 (Mil Reais) para sua segurança. Por favor insira um valor menor ou tente amanhã.
+                        </p>
                         <div class="alinhabtn">
                             <div class="alinhabtns">
                                 <div class="btnChavePix sl valido" id="btnConfirmarPix">Próximo<span
@@ -292,16 +313,16 @@
                     <div class="userCf">
                         <div class="destinatarioCf">
                             <div class="contatoIconCf sl">
-                                <h1 id="fotoPerfil">EF</h1>
+                                <h1 id="fotoPerfilICf">EF</h1>
                             </div>
                             <div class="infosUserCf sl">
-                                <h1>Eduardo Franco</h1>
-                                <p>Chave PIX: <span>(19) 99130-3806</span></p>
+                                <h1 id="nomeUserCheveICf">Eduardo Franco</h1>
+                                <p>Chave PIX: <span id="PixUserCheveICf">(19) 99130-3806</span></p>
                             </div>
                         </div>
                     </div>
                     <div class="mostraValorCf sl">
-                        <h1>R$ <span>45,83</span></h1>
+                        <h1>R$ <span id="valorDoPix">45,83</span></h1>
                     </div>
                     <div class="links sl">
                         <label class="containerchack">
@@ -321,6 +342,14 @@
                 </div>
             </section>
             <section class="pedesenha">
+                <div class="loading">
+                    <div class="lds-ring">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
                 <div class="titleAp">
                     <h1>Insira sua senha</h1>
                     <p>Insira sua senha para confirmação da transferência pix.</p>
@@ -331,11 +360,12 @@
                         <div class="inputOrg">
                             <span class="material-symbols-outlined">lock</span>
                             <input class="inputText obrig" type="password" name="senha" id="confirmSenha"
-                                placeholder="Digite sua chave pix">
+                                placeholder="Digite sua chave pix" onblur="validaCamposSenha(this)">
                         </div>
+                        <p class="msgErroSenha">Senha Incorreta</p>
                         <div class="alinhabtn">
                             <div class="alinhabtns">
-                                <div class="btnChavePix valido" id="btnLogar">Transferir<span
+                                <div class="btnChavePix valido" id="btnConfirmaTraferencia">Transferir<span
                                         class="material-symbols-outlined">arrow_forward</span>
                                 </div>
                             </div>
@@ -357,7 +387,7 @@
                         <div class="valorCpr">
                             <span class="material-symbols-outlined tpVcpr">monetization_on</span>
                             <div class="txtValorCpr">
-                                <h1>R$ <span id="">168,00</span></h1>
+                                <h1>R$ <span id="valorComp">168,00</span></h1>
                                 <p>valor transferido via Pix</p>
                             </div>
                         </div>
@@ -367,17 +397,18 @@
                                 <div class="userCpr">
                                     <div class="txtUserCpr">
                                         <p>para</p>
-                                        <h1 id="">Eduardo Franco seco</h1>
-                                        <h2>cpf <span>161.327.546-36</span></h2>
-                                        <h2>chave Pix <span>(19) 99130-3806</span></h2>
+                                        <h1 id="nomeCompDest">Eduardo Franco seco</h1>
+                                        <h2>cpf <span id="cpfCompDest">161.327.546-36</span></h2>
+                                        <h2>chave Pix <span id="chavePixCompDest">(19) 99130-3806</span></h2>
                                     </div>
                                 </div>
                                 <div class="userCpr prxElemUserCpr">
                                     <div class="txtUserCpr">
                                         <p>de</p>
-                                        <h1 id="">Igor Albiero</h1>
-                                        <h2>cpf <span>523.123.342-23</span></h2>
-                                        <h2>ag <span>0043</span> | conta <span>0034231-9</span></h2>
+                                        <h1 id="nomeComp">Igor Albiero</h1>
+                                        <h2>cpf <span id="cpfComp">523.123.342-23</span></h2>
+                                        <h2>ag <span id="agenciaComp">0043</span> | conta <span
+                                                id="contaComp">0034231-9</span></h2>
                                     </div>
                                 </div>
                             </div>
@@ -388,7 +419,8 @@
                             <div class="alinhaEcpr">
                                 <div class="otcElement">
                                     <p>realizado em</p>
-                                    <h2>09/11/2023 ás 18:18:34</h2>
+                                    <h2><span id="dataComp">09/11/2023</span> ás <span id="horasComp">18:18:34</span>
+                                    </h2>
                                 </div>
                                 <div class="otcElement">
                                     <p>via</p>
@@ -413,10 +445,57 @@
         </section>
     </main>
     <footer>
-
+        <div class="itensFooter">
+            <ul>
+                <li class="itensIfooter">
+                    <a href="./pix.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path
+                                d="M242.4 292.5C247.8 287.1 257.1 287.1 262.5 
+                                292.5L339.5 369.5C353.7 383.7 372.6 391.5 392.6 391.5H407.7L310.6 488.6C280.3 
+                                518.1 231.1 518.1 200.8 488.6L103.3 391.2H112.6C132.6 391.2 151.5 383.4 165.7 
+                                369.2L242.4 292.5zM262.5 218.9C256.1 224.4 247.9 224.5 242.4 218.9L165.7 142.2C151.5 
+                                127.1 132.6 120.2 112.6 120.2H103.3L200.7 22.76C231.1-7.586 280.3-7.586 310.6 22.76L407.8
+                                119.9H392.6C372.6 119.9 353.7 127.7 339.5 141.9L262.5 218.9zM112.6 142.7C126.4 142.7 139.1 148.3 149.7 
+                                158.1L226.4 234.8C233.6 241.1 243 245.6 252.5 245.6C261.9 245.6 271.3 241.1 278.5 234.8L355.5 157.8C365.3
+                                148.1 378.8 142.5 392.6 142.5H430.3L488.6 200.8C518.9 231.1 518.9 280.3 488.6 310.6L430.3 368.9H392.6C378.8
+                                368.9 365.3 363.3 355.5 353.5L278.5 276.5C264.6 262.6 240.3 262.6 226.4 276.6L149.7 353.2C139.1 363 126.4
+                                368.6 112.6 368.6H80.78L22.76 310.6C-7.586 280.3-7.586 231.1 22.76 200.8L80.78 142.7H112.6z"
+                                fill="#adadad" />
+                        </svg>
+                        <h1>Área Pix</h1>
+                    </a>
+                </li>
+                <li class="itensIfooter">
+                    <a href="#">
+                        <span class="material-symbols-outlined">sync_alt</span>
+                        <h1>Transferir</h1>
+                    </a>
+                </li>
+                <li class="itensIfooter">
+                    <a href="../home.html">
+                        <span class="material-symbols-outlined">home</span>
+                        <h1>Início</h1>
+                    </a>
+                </li>
+                <li class="itensIfooter">
+                    <a href="#">
+                        <span class="material-symbols-outlined">help</span>
+                        <h1>Suporte</h1>
+                    </a>
+                </li>
+                <li class="itensIfooter">
+                    <a href="#">
+                        <span class="material-symbols-outlined">account_circle</span>
+                        <h1>Perfil</h1>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </footer>
 
     <script src="../../js/transferencias/pix.js"></script>
+    <script src="../../js/animacoes.js"></script>
 </body>
 
 </html>

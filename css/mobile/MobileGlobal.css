@@ -45,6 +45,27 @@
           width: 70%;
      }
 
+     /* tela pix */
+     .menu {
+          display: none;
+     }
+
+     footer {
+          display: flex;
+          z-index: 3;
+     }
+
+     .elementosNc,
+     .elementosContatos {
+          margin-bottom: 7rem;
+     }
+
+     .loading {
+          width: 100%;
+          height: 100% - 2rem;
+          z-index: 2;
+     }
+
 }
 
 @media (max-width: 425px) {
@@ -150,7 +171,7 @@
      }
 
      .titleAp h1 {
-          font-size: 34px;
+          font-size: 27px;
           font-weight: 600;
           color: var(--background--container);
           text-align: center;
@@ -163,4 +184,30 @@
           width: 90%;
      }
 
+
+     /* tela pix */
+     .menu {
+          display: none;
+     }
+
+     .titleAp p {
+          margin-top: 1rem;
+          font-size: 16px;
+     }
+
+     footer {
+          display: flex;
+          z-index: 3;
+     }
+
+     .elementosNc,
+     .elementosContatos {
+          margin-bottom: 7rem;
+     }
+
+     .loading {
+          width: 100%;
+          height: 100% - 2rem;
+          z-index: 2;
+     }
 }
