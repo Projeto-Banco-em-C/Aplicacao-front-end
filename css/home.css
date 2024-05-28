@@ -2,7 +2,7 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-.menu {
+.menuHome {
     background-color: var(--background--container);
     width: 100%;
     margin: 0;
