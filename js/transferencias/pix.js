@@ -69,6 +69,58 @@ function mudarmascara(elemento) {
     }
 }
 
+//selectpersonalizado
+$(".inputOrgPensonalizado").click(function (event) {
+    event.preventDefault();
+    if ($(".options").hasClass("visibility")) {
+        $(".options").removeClass("visibility").addClass("hidden");
+        $("#iconeArrow").text("keyboard_arrow_down");
+    } else {
+        $(".options").removeClass("hidden").addClass("visibility");
+        $("#iconeArrow").text("keyboard_arrow_up");
+    }
+})
+
+$(".options").on("click", ".itensOptions", function () {
+    var icon = $(this).data("icon");
+    var value = $(this).data("value");
+    var maskClass = $(this).data("mask");
+
+    $("#iconeAtual").text(icon);
+    $("#iconeAtualPix").text(icon);
+    $("#valorAtual").text(value);
+
+    $("#chaveRecebida").val('');
+    $(".options").removeClass("visibility").addClass("hidden");
+
+    $("#chaveRecebida").removeClass("mCpf mCnpj maskTelefone semValidacao");
+    if (maskClass) {
+        $("#chaveRecebida").addClass(maskClass);
+    }
+
+    mudarmascara("#chaveRecebida");
+});
+
+
+function mudarmascara(elemento) {
+    $(elemento).unmask();
+
+    if (!$(elemento).hasClass("semValidacao")) {
+        if ($(elemento).hasClass("maskTelefone")) {
+            $(elemento).mask('(00) 00000-0000');
+            $(elemento).attr('autocomplete', 'on');
+        }
+        if ($(elemento).hasClass("mCpf")) {
+            $(elemento).mask('000.000.000-00', { reverse: true });
+            $(elemento).attr('autocomplete', 'on');
+        }
+        if ($(elemento).hasClass("mCnpj")) {
+            $(elemento).mask('00.000.000/0000-00');
+            $(elemento).attr('autocomplete', 'on');
+        }
+    }
+}
+
 //mandar chave pix
 function validaValoresChavePix(elemento) {
     let preenchido = true;
@@ -290,6 +342,10 @@ async function PegarSaldo(id) {
             console.log('Certo');
             $('#meuSaldo').text(parseFloat(isOk.USU_SALDO.trim()).toLocaleString('pt-BR'));
             $(".areaValor").removeClass("skeletonLoading")
+            $('#userNameMenu').text(isOk.USU_NOME)
+            const iniciais = obterIniciais(isOk.USU_NOME)
+            $('#fotoPerfilMenu').text(iniciais)
+
 
             DadosComprovante.nomeComp = isOk.USU_NOME
             DadosComprovante.cpfComp = isOk.USU_CPF
@@ -444,10 +500,10 @@ async function realizarTransferencias(idUser, idDestino, valordoPixRecebido) {
     const camposOk = validaCamposSenha();
     if (camposOk) {
         const dataJSON = JSON.stringify(
-            { "USU_ID": idUser, "USU_ID_DESTINO": idDestino, "USU_SALDO": valordoPixRecebido }
+            { "USU_ID": idUser, "USU_ID_DESTINO": idDestino, "USU_SALDO": valordoPixRecebido, "TRAN_TIPO": "PIX" }
         );
         try {
-            const response = await fetch('http://localhost:9000/transferir_pix', {
+            const response = await fetch('http://localhost:9000/transferir', {
                 method: 'POST',
                 body: dataJSON,
             });

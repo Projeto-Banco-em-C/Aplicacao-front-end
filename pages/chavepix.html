@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transferir</title>
-    <link rel="stylesheet" href="../../css/global.css">
-    <link rel="stylesheet" href="../../css/transferencias.css">
-    <link rel="stylesheet" href="../../css/mobile/MobileGlobal.css">
-    <link rel="stylesheet" href="../../css/ted.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/transferencias.css">
+    <link rel="stylesheet" href="../css/chavePix.css">
+    <link rel="stylesheet" href="../css/mobile/MobileGlobal.css">
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -33,6 +32,8 @@
     <script src="../../js/libs/jMask.js"></script>
     <script src="../../js/libs/jMask.min.js"></script>
     <script src="../../js/libs/jquery.mask.min.js"></script>
+
+    <title>Chave Pix</title>
 </head>
 
 <body>
@@ -41,10 +42,10 @@
             <div class="itensMenu">
                 <div class="linksBanckUser">
                     <div class="menuUserIcon">
-                        <h1 id="fotoPerfilMenu">EF</h1>
+                        <h1 id="fotoPerfil">EF</h1>
                     </div>
                     <div class="menuUserName">
-                        <h1>Olá <span id="userNameMenu">Eduardo</span></h1>
+                        <h1>Olá <span id="userName">Eduardo</span></h1>
                         <div class="userAccount">
                             <p><a href="#">Perfil</a></p>
                             <span class="material-symbols-outlined iconUserAccount">arrow_forward</span>
@@ -56,7 +57,7 @@
                 <ul class="opcoesBanck">
                     <div class="homeOb">
                         <li class="eleOpb">
-                            <a href="../home.html">
+                            <a href="./home.html">
                                 <span class="material-symbols-outlined">home</span>
                                 <h1>Início</h1>
                             </a>
@@ -149,199 +150,100 @@
             </div>
             <section class="areaTed">
                 <div class="titleAp aptxt">
-                    <h1>Para quem você quer transferir?</h1>
-                    <p>Escolha o tipo de dado e preencha o campo.</p>
+                    <h1>Suas chaves Pix.</h1>
+                    <p>Cadastre agora uma nova chave Pix ou veja suas chaves cadastradas.</p>
                 </div>
-                <div class="FormPix">
-                    <h2 class="titleInputs">Numero da Agências</h2>
-                    <div class="inputOrg">
-                        <span class="material-symbols-outlined" id="iconeAtualPix">person</span>
-                        <input class="inputText obrig" type="text" name="agencia" id="numAgenciaId"
-                            placeholder="Digite o numero de agências" onblur="validaAgencia(this)">
+                <div class="FormChave">
+                    <div class="alinhaFormPix">
+                        <h2 class="titleInputs">Tipo de chave</h2>
+                        <div class="selectPersonalizado">
+                            <div class="inputOrgPensonalizado">
+                                <div class="alinhaIop">
+                                    <span class="material-symbols-outlined" id="iconeAtual">person</span>
+                                    <h1 class="inputChave" id="valorAtual"></h1>
+                                </div>
+                                <span class="material-symbols-outlined" id="iconeArrow">keyboard_arrow_down</span>
+                            </div>
+                        </div>
+                        <div class="options">
+                            <div class="alinhaOp">
+                                <div class="itensOptions" data-icon="person" data-value="CPF" data-mask="mCpf">
+                                    <span class="material-symbols-outlined">person</span>
+                                    <p>CPF</p>
+                                </div>
+                                <div class="itensOptions" data-icon="smartphone" data-value="Celular"
+                                    data-mask="maskTelefone">
+                                    <span class="material-symbols-outlined">smartphone</span>
+                                    <p>Celular</p>
+                                </div>
+                                <div class="itensOptions" data-icon="mail" data-value="E-mail" data-mask="semValidacao">
+                                    <span class="material-symbols-outlined">mail</span>
+                                    <p>E-mail</p>
+                                </div>
+                                <div class="itensOptions" data-icon="person_pin" data-value="Chave aleatoria"
+                                    data-mask="semValidacao">
+                                    <span class="material-symbols-outlined">person_pin</span>
+                                    <p>Chave aleatoria</p>
+                                </div>
+                                <div class="itensOptions" data-icon="group" data-value="CNPJ" data-mask="mCnpj">
+                                    <span class="material-symbols-outlined">group</span>
+                                    <p>CNPJ</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h2 class="titleInputs">Numero da Conta</h2>
-                    <div class="inputOrg">
-                        <span class="material-symbols-outlined" id="iconeAtualPix">person</span>
-                        <input class="inputText obrig" type="text" name="conta" id="numContaId"
-                            placeholder="Digite o Numero da conta" onblur="validaConta(this)">
-                    </div>
-                    <p class="msgErroETed">Conta inexistente!</p>
 
+                    <h2 class="titleInputs">Chave Pix</h2>
+                    <div class="inputOrg">
+                        <span class="material-symbols-outlined" id="iconeAtualPix">person</span>
+                        <input class="inputText obrig" type="text" name="pix" id="chaveRecebida"
+                            placeholder="Digite sua chave pix" onblur="mudarmascara(this)"
+                            oninput="validaCamposChavepix(this)">
+                    </div>
+                    <p class="msgErroChavePix">Chave Pix já cadastrada!</p>
                     <div class="alinhabtn">
                         <div class="alinhabtns">
-                            <div class="btnChavePix valido" id="btnEnviaTed">
-                                Próximo
+                            <div class="btnChavePix valido" id="btnCadastrarChavePix">
+                                Criar Chave
                                 <span class="material-symbols-outlined">arrow_forward</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            <section class="areaValor">
-                <div class="titleAp sl">
-                    <h1 class="">Quanto você quer transferir?</h1>
-                    <p class="">Escolha o valor desejado e preencha o campo.</p>
-                </div>
-                <div class="formValor">
-                    <div class="areaViewValor sl">
-                        <div class="campoViewValor">
-                            <p>R$</p>
-                            <h1 id="valorD">0</h1>
-                            <p id="valorC">00</p>
-                        </div>
-                        <div class="saldoAtual">
-                            <p>R$ <span id="meuSaldo">5,43</span> diponiveis</p>
-                        </div>
+                <div class="contatos">
+                    <div class="titleCon">
+                        <p>Suas chaves Pix</p>
                     </div>
-                    <div class="formularios">
-                        <h2 class="titleInputs sl">Valor</h2>
-                        <div class="inputOrg sl">
-                            <span class="material-symbols-outlined">payments</span>
-                            <input class="inputText mValor obrig" type="text" name="valor" id="valorRecebido"
-                                placeholder="Digite o valor desejado, apenas numeros! " maxlength="12"
-                                onblur="ValidaValor(this)">
+                    <div class="elementosContatos">
+                        <div class="contatoCe sl">
+                            <div class="elementosCce">
+                                <div class="infosCce">
+                                    <h1>Chave PIX:</h1>
+                                    <p><span>435.234.231-23</span></p>
+                                </div>
+                            </div>
                         </div>
-                        <p class="msgErroE">Saldo insuficiente para transição</p>
-                        <p class="msgErroL">Não é possível transferir esse valor</p>
-                        <p class="msgErroH">A partir das 20h não são permitidos o envio de Pix no valor acima de
-                            R$1.000,00 (Mil Reais) para sua segurança. Por favor insira um valor menor ou tente amanhã.
-                        </p>
-                        <div class="alinhabtn">
-                            <div class="alinhabtns">
-                                <div class="btnChavePix sl valido" id="btnConfirmarPix">Próximo<span
-                                        class="material-symbols-outlined">arrow_forward</span>
+                        <div class="contatoCe sl">
+                            <div class="elementosCce">
+                                <div class="infosCce">
+                                    <h1>Chave PIX:</h1>
+                                    <p><span>resce32@gamail.com</span></p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            <section class="confirmaInfos">
-                <div class="titleAp sl">
-                    <h1>Confirme se está tudo certo</h1>
-                    <p>Antes de realizar o pix confirme se esta enviado para o destinatario correto!</p>
-                </div>
-                <div class="infosCf">
-                    <div class="userCf">
-                        <div class="destinatarioCfTed">
-                            <div class="contatoIconCf sl">
-                                <h1 id="fotoPerfilICf">EF</h1>
-                            </div>
-                            <div class="infosUserCfTed sl">
-                                <h1 id="nomeUserCheveICf">Eduardo Franco</h1>
-                                <div class="dadosConta">
-                                    <p>Agencia: <span id="agenciaInfos">0043</span></p>
-                                    <p>Conta: <span id="contaInfos">0034231-9</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mostraValorCf sl">
-                        <h1>R$ <span id="valorDoPix">45,83</span></h1>
-                    </div>
-                    <div class="alinhabtn">
-                        <div class="alinhabtns">
-                            <div class="btnChavePix sl valido" id="btnPedirSenha">Próximo<span
-                                    class="material-symbols-outlined">arrow_forward</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="pedesenha">
-                <div class="titleAp">
-                    <h1>Insira sua senha</h1>
-                    <p>Insira sua senha para confirmação da transferência pix.</p>
-                </div>
-                <div class="FormPixSenha">
-                    <div class="alinhaFormPix">
-                        <h2 class="titleInputs">Senha</h2>
-                        <div class="inputOrg">
-                            <span class="material-symbols-outlined">lock</span>
-                            <input class="inputText obrig" type="password" name="senha" id="confirmSenha"
-                                placeholder="Digite sua chave pix" onblur="validaCamposSenha(this)">
-                        </div>
-                        <p class="msgErroSenha">Senha Incorreta</p>
-                        <div class="alinhabtn">
-                            <div class="alinhabtns">
-                                <div class="btnChavePix valido" id="btnConfirmaTraferenciaTed">Transferir<span
-                                        class="material-symbols-outlined">arrow_forward</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="comprovante" id="printableArea">
-                <div class="infosCpr">
-                    <div class="iconCfr">
-                        <span class="material-symbols-outlined">check</span>
-                    </div>
-                    <div class="textInfosCpr">
-                        <h1>Transferência realizada</h1>
-                        <p>A transferência Ted foi realizada com sucesso</p>
-                    </div>
-                    <div class="barraCpr"></div>
-                    <div class="scrollCpr">
-                        <div class="valorCpr">
-                            <span class="material-symbols-outlined tpVcpr">monetization_on</span>
-                            <div class="txtValorCpr">
-                                <h1>R$ <span id="valorComp">168,00</span></h1>
-                                <p>valor transferido via Ted</p>
-                            </div>
-                        </div>
-                        <div class="enviadoCpr">
-                            <span class="material-symbols-outlined tpVcpr">send</span>
-                            <div class="alinhaEcpr">
-                                <div class="userCpr">
-                                    <div class="txtUserCpr">
-                                        <p>para</p>
-                                        <h1 id="nomeCompDest">Eduardo Franco seco</h1>
-                                        <h2>cpf <span id="cpfCompDest">161.327.546-36</span></h2>
-                                        <h2>ag <span id="agenciaCompDest">0043</span> | conta <span
-                                                id="contaCompDes">0034231-9</span></h2>
-                                    </div>
-                                </div>
-                                <div class="userCpr prxElemUserCpr">
-                                    <div class="txtUserCpr">
-                                        <p>de</p>
-                                        <h1 id="nomeComp">Igor Albiero</h1>
-                                        <h2>cpf <span id="cpfComp">523.123.342-23</span></h2>
-                                        <h2>ag <span id="agenciaComp">0043</span> | conta <span
-                                                id="contaComp">0034231-9</span></h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="othersIforsCpr">
-                            <span class="material-symbols-outlined tpVcpr">format_list_bulleted</span>
-                            <div class="alinhaEcpr">
-                                <div class="otcElement">
-                                    <p>realizado em</p>
-                                    <h2><span id="dataComp">09/11/2023</span> ás <span id="horasComp">18:18:34</span>
-                                    </h2>
-                                </div>
-                                <div class="otcElement">
-                                    <p>via</p>
-                                    <h2>PinguimBanck</h2>
-                                </div>
-                                <div class="otcElement">
-                                    <p>ID da transação</p>
-                                    <h2>E60834574523TSD232CXR234</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="alinhabtn" id="alinhabtn">
-                        <div class="alinhabtns">
-                            <div class="btnChavePix valido" id="printButton">Imprimir<span
-                                    class="material-symbols-outlined">arrow_forward</span>
-                            </div>
+                    <div class="noContacts">
+                        <div class="elementosNc">
+                            <img src="../img/svg/undraw_add_files_re_v09g.svg" alt="">
+                            <h1>Nenhum chave Pix adicionada!</h1>
+                            <p>Cadastre agora sua chave pix nos campos acima para poder realizar transferências via Pix,
+                                e aproveite o melhor e mais rápido modelo de transferência atual!</p>
                         </div>
                     </div>
                 </div>
             </section>
+
         </section>
     </main>
     <footer>
@@ -394,9 +296,8 @@
         </div>
     </footer>
 
-    <script src="../../js/transferencias/ted.js"></script>
-    <script src="../../js/transferencias/pix.js"></script>
-    <script src="../../js/animacoes.js"></script>
+    <script src="../js/cadChavePix.js"></script>
+    <script src="../js/animacoes.js"></script>
 
 </body>
 

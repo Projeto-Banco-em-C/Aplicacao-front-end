@@ -138,10 +138,10 @@ async function realizarTransferenciasTED(idUser, idDestino, valordoPixRecebido) 
     const camposOk = validaCamposSenha();
     if (camposOk) {
         const dataJSON = JSON.stringify(
-            { "USU_ID": idUser, "USU_ID_DESTINO": idDestino, "USU_SALDO": valordoPixRecebido }
+            { "USU_ID": idUser, "USU_ID_DESTINO": idDestino, "USU_SALDO": valordoPixRecebido, "TRAN_TIPO": "TED" }
         );
         try {
-            const response = await fetch('http://localhost:9000/transferir_ted', {
+            const response = await fetch('http://localhost:9000/transferir', {
                 method: 'POST',
                 body: dataJSON,
             });

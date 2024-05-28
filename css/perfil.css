@@ -1,0 +1,232 @@
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.containerPerfil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: scroll;
+}
+
+.containerPerfil::-webkit-scrollbar {
+    display: none;
+}
+
+.headerPerfil {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.bodyContainer {
+    background-color: var(--background--container);
+    width: 100%;
+    margin: 0;
+    height: 16rem;
+    border-radius: 0 0 3rem 3rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.close span {
+    user-select: none;
+    cursor: pointer;
+    color: var(--subtext-color);
+}
+
+.menuUserIcon {
+    background-color: var(--subtext-color-whitePage);
+    height: 3rem;
+    width: 3rem;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.menuUserIcon h1 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--subtext-color);
+}
+
+.infosUser {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.menuUserName h1 {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text-color);
+    margin-left: 0.5rem;
+}
+
+.dadosUser {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 2rem;
+}
+
+.dadosUser p,
+.dadosUser span {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--subtext-color);
+}
+
+.linksPerfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    height: 100%;
+    border-radius: 1rem;
+}
+
+.linksPerfil ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    user-select: none;
+    margin-top: 2rem;
+}
+
+.linksPerfil ul li {
+    list-style: none;
+    width: 100%;
+    padding: 10px;
+    background-color: #d7d7d7;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+}
+
+.eleOpb a span {
+    font-size: 26px;
+    color: var(--background--container);
+}
+
+.eleOpb a h1 {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--background--container);
+    margin-left: 0.5rem;
+}
+
+.eleOpb a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    position: relative;
+}
+
+
+.txtLinksPerfil {
+    display: flex;
+    align-items: center;
+}
+
+.btnContato {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    padding: 10px;
+    border-radius: 100%;
+    background-color: transparent;
+}
+
+.btnContato span {
+    font-size: 16px !important;
+    color: var(--background--container);
+}
+
+.eleOpb a svg {
+    width: 24px;
+    height: 24px;
+}
+
+.skeletonLoading * {
+    position: relative;
+    border: none;
+    user-select: none;
+}
+
+.skeletonLoading .sl::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -4px;
+    background: linear-gradient(-45deg, #8d8d8d, #CCCCCC, #d0d0d0);
+    width: 110%;
+    height: 111%;
+    background-size: 400%;
+    border-radius: 3px;
+    animation: loading 1s linear infinite;
+
+}
+
+@keyframes loading {
+    0% {
+        background-position: 0%;
+    }
+
+    50% {
+        background-position: 100%;
+    }
+
+    100% {
+        background-position: 0%;
+    }
+}
+
+.dadosPessoais {
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    margin-top: 1rem;
+}
+
+.titlePopup {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--background--container);
+    margin-top: 1rem;
+}
+
+.dadosPessoais p {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--background--container);
+    padding: 5px;
+}
+
+.dadosPessoais span {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--subtext-color-whitePage);
+}
+
+div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
+    border: 0;
+    border-radius: .0.5rem;
+    width: 7rem;
+    background: initial;
+    background-color: var(--background--container) !important;
+    color: #fff;
+    font-size: 1em;
+}

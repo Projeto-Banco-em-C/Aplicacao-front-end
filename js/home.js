@@ -33,7 +33,7 @@ async function PegarDados(id) {
 
 var usuId = localStorage.getItem('USU_ID');
 
-PegarDados("15")
+PegarDados(usuId)
 
 // if (usuId !== null) {
 //     PegarDados(usuId)

@@ -1,0 +1,41 @@
+.FormChave {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.infosCce p {
+    margin-left: 5px;
+    margin-top: 0 !important;
+    font-size: 14px;
+    color: var(--subtext-color-whitePage);
+}
+
+.infosCce {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 0.5rem;
+}
+
+.infosCce h1 {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--background--container);
+}
+
+.infosCce p span {
+    font-size: 16px;
+    color: var(--subtext-color-whitePage);
+}
+
+.msgErroChavePix {
+    display: none;
+    font-size: 16px;
+    font-weight: 400;
+    color: red;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+    max-width: 26rem;
+}
