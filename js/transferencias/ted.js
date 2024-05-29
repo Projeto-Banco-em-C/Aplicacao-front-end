@@ -1,3 +1,18 @@
+var usuId = localStorage.getItem('USU_ID');
+
+var DadosComprovante = {
+    valordoPixRecebido: "",
+    nomeCompDest: "",
+    cpfCompDest: "",
+    chavePixCompDest: "",
+    nomeComp: "",
+    cpfComp: "",
+    agenciaComp: "",
+    contaComp: "",
+    IDUserChave: "",
+    agenciaCompDest: "",
+    contaCompDest: ""
+};
 
 //mandar conta Ted
 function validaValoresTed(elemento) {

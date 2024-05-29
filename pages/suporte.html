@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/extrato.css">
+    <link rel="stylesheet" href="../css/suporte.css">
     <link rel="stylesheet" href="../css/transferencias.css">
     <link rel="stylesheet" href="../css/mobile/MobileGlobal.css">
 
@@ -24,16 +24,16 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
     <!-- LIBS INTERNAS -->
-    <script src="../js/libs/LIBSALUS.js"></script>
-    <script src="../js/libs/jMask.js"></script>
-    <script src="../js/libs/jMask.min.js"></script>
-    <script src="../js/libs/jquery.mask.min.js"></script>
+    <script src="../../js/libs/LIBSALUS.js"></script>
+    <script src="../../js/libs/jMask.js"></script>
+    <script src="../../js/libs/jMask.min.js"></script>
+    <script src="../../js/libs/jquery.mask.min.js"></script>
 
-    <title>Extrato</title>
-
+    <title>Suporte</title>
 </head>
 
 <body>
@@ -42,10 +42,10 @@
             <div class="itensMenu">
                 <div class="linksBanckUser">
                     <div class="menuUserIcon">
-                        <h1 id="fotoPerfil">EF</h1>
+                        <h1 id="fotoPerfilMenu">EF</h1>
                     </div>
                     <div class="menuUserName">
-                        <h1>Olá <span id="userName">Eduardo</span></h1>
+                        <h1>Olá <span id="userNameMenu">Eduardo</span></h1>
                         <div class="userAccount">
                             <p><a href="#">Perfil</a></p>
                             <span class="material-symbols-outlined iconUserAccount">arrow_forward</span>
@@ -66,7 +66,7 @@
                     </div>
                     <div class="linksBanck">
                         <li class="eleOpb">
-                            <a href="./pix.html">
+                            <a href="./trasferencias/pix.html">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                     <path
                                         d="M242.4 292.5C247.8 287.1 257.1 287.1 262.5 292.5L339.5 369.5C353.7 383.7 
@@ -137,65 +137,64 @@
                     </div>
                     <div class="barraCprMenu"></div>
                 </ul>
-
-
             </div>
         </section>
-        <section class="containerExtrato">
-            <section class="areaExtrato">
-                <div class="titleAp aptxt">
-                    <h1>Suas atividades</h1>
-                    <p>Abaixo esta listado o extrato de todas transferencias!</p>
+        <section class="areaIA">
+            <div class="elementosIA">
+                <div class="mensagemSemConversa">
+                    <h1>Olá sou a inteligência artificial do Penguin Bank</h1>
+                    <p>Estou aqui para te ajudar com possivel duvidas sobre nosso sistema. Fique avontade para
+                        perguntar.</p>
                 </div>
-                <div class="extrato">
-                    <div class="headerEx">
-                        <div class="filtrosEX">
-                            <span class="material-symbols-outlined">search</span>
-                            <input type="text" id="buscafiltro" name="buscafiltro" placeholder="Buscar">
-                        </div>
-                    </div>
-                    <div class="elementosEx">
-                        <div class="contatoCe sl">
-                            <div class="elementosCce">
-                                <div class="contatoIcon">
-                                    <h1 id="fotoPerfil">EF</h1>
+                <div class="mensagens">
+                    <div class="infosmsg">
+                        <div class="msgIA">
+                            <div class="cardMsgIa">
+                                <div class="menuUserIconIA">
+                                    <h1 id="fotoPerfilMenu">IA</h1>
                                 </div>
-                                <div class="infosCce">
-                                    <h1>Transferencia <span>Pix</span> <span>enviada</span></h1>
-                                    <p><span>para </span> <span class="nameuserex">Eduardo Franco Seco</span></p>
+                                <div class="cardMsg ias">
+                                    <h1>Ola, boa noite, Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                        Assumenda explicabo in quaerat. Quis autem perspiciatis, placeat nam, voluptatum
+                                        provident dolore ab magnam excepturi nihil ipsa sit. Cupiditate officia mollitia
+                                        sequi...</h1>
                                 </div>
-                            </div>
-                            <div class="date negativo">
-                                <h1>- R$ 324</h1>
-                                <p><span>27</span> <span>mai</span></p>
                             </div>
                         </div>
-                        <div class="contatoCe sl">
-                            <div class="elementosCce">
-                                <div class="contatoIcon">
-                                    <h1 id="fotoPerfil">EF</h1>
-                                </div>
-                                <div class="infosCce">
-                                    <h1>Transferencia <span>Pix</span> <span>recebida</span></h1>
-                                    <p><span>de </span> <span class="nameuserex">Igor Albiero</span></p>
-                                </div>
-                            </div>
-                            <div class="date positivo">
-                                <h1><span>+ </span>R$ 324</h1>
-                                <p><span>27</span> <span>mai</span></p>
-                            </div>
-                        </div>
+                        <div class="msgUer">
+                            <div class="cardMsgIa">
+                                <div class="txtCms">
+                                    <div class="cardMsgUser">
+                                        <h1>
+                                            Para enviar dinheiro para o João através do PIX, você deve seguir os
+                                            seguintes passos:
 
-                    </div>
-                    <div class="noContactsEx">
-                        <div class="elementosNc">
-                            <img src="../img/svg/undraw_add_files_re_v09g.svg" alt="">
-                            <h1>Nenhum atividade realizada ainda!</h1>
-                            <p>Aqui mostrará os extrato de toda atividade nesta conta!</p>
+                                            1. Acesse a área do PIX em seu aplicativo bancário ou plataforma online.
+                                            2. Selecione a opção para enviar um PIX.
+                                            3. Adicione João como novo contato PIX, informando o CPF, número de
+                                            telefone, e-mail ou chave aleatória dele.
+                                            4. Insira o valor que deseja transferir.
+                                            5. Confirme todas as informações e finalize a transação.
+
+                                            O João receberá o dinheiro instantaneamente em sua conta bancária vinculada
+                                            à chave PIX informada.
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
+
+                <div class="formIA">
+                    <div class="inputOrgIA">
+                        <span class="material-symbols-outlined" id="iconeAtualPix">person</span>
+                        <input class="inputTextIA obrig" type="text" name="IA" id="IA"
+                            placeholder="Faça alguma pergunta">
+                        <span class="material-symbols-outlined">send</span>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
@@ -247,8 +246,8 @@
             </ul>
         </div>
     </footer>
-    <script src="../js/extrato.js"></script>
-    <script src="../js/animacoes.js"></script>
+
+    <script src="../js/suporte.js"></script>
 </body>
 
 </html>

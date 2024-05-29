@@ -1,0 +1,191 @@
+.areaIA {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.elementosIA {
+    background-color: var(--background--container);
+    width: 95%;
+    height: 95%;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mensagemSemConversa {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.mensagemSemConversa h1 {
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--text-color);
+    max-width: 23rem;
+    text-align: center;
+}
+
+.mensagemSemConversa p {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--subtext-color);
+    margin-top: 1rem;
+    max-width: 30rem;
+    text-align: center
+}
+
+.formIA {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.inputTextIA {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    color: var(--text-color);
+    background-color: transparent;
+    border: none;
+    user-select: none;
+}
+
+.inputOrgIA {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    height: 18px;
+    font-size: 18px;
+    color: var(--primary-color);
+    margin: 0.5rem 0 1rem 0;
+    border-radius: 1rem;
+    border: 2px solid var(--background--container);
+    background-color: #292929;
+    width: 90%;
+}
+
+.inputOrgIA span {
+    color: var(--text-color);
+    user-select: none;
+    cursor: pointer;
+}
+
+
+.mensagemSemConversa {
+    display: none;
+}
+
+.mensagens {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 2rem;
+    overflow: scroll;
+    max-height: 100%;
+}
+
+.mensagens::-webkit-scrollbar {
+    display: none;
+}
+
+
+.msgIA {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 1rem 2rem;
+}
+
+.msgUer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 1rem 2rem;
+}
+
+.cardMsg {
+    background-color: #2b2b2b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 1rem;
+}
+
+.ias {
+    margin-left: 1rem;
+}
+
+.cardMsgIa {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.cardMsg h1 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #cbcbcb;
+    text-align: justify;
+    padding: 5px;
+}
+
+.menuUserIconIA {
+    background-color: var(--subtext-color-whitePage);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    padding: 16px
+}
+
+.menuUserIconIA h1 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--subtext-color);
+}
+
+.infosmsg {
+    display: flex;
+    flex-direction: column;
+}
+
+.txtCms {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.cardMsgUser {
+    background-color: #2b2b2b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 70%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 1rem;
+}
+
+.cardMsgUser h1 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #cbcbcb;
+    text-align: justify;
+    padding: 5px;
+}

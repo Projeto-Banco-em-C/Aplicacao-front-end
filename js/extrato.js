@@ -12,7 +12,6 @@ async function VerContatos(id) {
         });
 
         const isOk = JSON.parse(await response.text());
-
         if (isOk['mensagem'] == 'erro') {
             $(".noContactsEx").css("display", 'flex');
             $(".elementosEx").css("display", 'none');
@@ -20,7 +19,6 @@ async function VerContatos(id) {
         } else {
             $(".elementosEx").empty();
             const contatos = Array.isArray(isOk) ? isOk : [isOk];
-
             contatos.forEach((contato) => {
                 console.log('contato', JSON.stringify(contato))
                 const nome = contato.NOME;
@@ -76,8 +74,7 @@ async function VerContatos(id) {
     }
 }
 
-VerContatos("15")
-
+VerContatos(usuId)
 
 
 //filtro contatos pelo nome
