@@ -162,7 +162,7 @@ main {
 
 .titleAp p {
     margin-top: 0.5rem;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
     color: var(--subtext-color-whitePage);
     max-width: 33rem;

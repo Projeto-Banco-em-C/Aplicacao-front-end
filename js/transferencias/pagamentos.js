@@ -16,7 +16,7 @@ var DadosComprovante = {
     saldoUser: ""
 };
 
-function validaCamposAreaPeg(elemento) {
+function validaCamposAreaPeg() {
     let preenchido = true;
 
     if ($("#codBarras").val() == "") {
@@ -34,6 +34,7 @@ function validaCampoPag(elemento) {
     let inputParent = $(elemento).parent('.inputOrg')
     inputParent.css("border-color", "#121212");
     $(".msgErroPag").css("display", "none")
+    $(".msgErroPagDigito").css("display", "none")
 }
 
 
@@ -42,9 +43,32 @@ $('#btnPagCodigodeBarras').click(function () {
 
     if (camposOk) {
         const codigodeBarras = $('#codBarras').val();
-        PegarDadosCodigodeBarra(codigodeBarras)
+        const digitoOK = ValidarDigito(codigodeBarras)
+        if (digitoOK) {
+            PegarDadosCodigodeBarra(codigodeBarras)
+        } else {
+            $("#codBarras").parent("div").css("border-color", 'red');
+            $(".msgErroPagDigito").css("display", "flex")
+        }
     }
 });
+
+function ValidarDigito(code) {
+    // var campos = quebrarCodigoBarras(code)
+    var campos = (code.replace(/\./g, '')).split(' ');
+    var j = 0
+    for (let i = 0; i < 3; i++) {
+        var campoAtual = campos[i].split('').map(char => parseInt(char))
+        var soma = 0
+        for (let k = 0; k < campoAtual.length - 1; k++) {
+            const valor = ((j % 2) ? 1 : 2) * campoAtual[k]
+            soma += Math.floor(valor / 10) + valor % 10
+            j++
+        }
+        if (10 - (soma % 10) != campoAtual[campoAtual.length - 1]) return false
+    }
+    return true
+}
 
 /// funções pegar dados do codigo de barras
 function PegarDadosCodigodeBarra(codigobarras) {
@@ -116,6 +140,7 @@ async function ValidarContaPag(agencia, conta, valor, validade) {
             console.log('ERRO');
             $(".loading").css("display", "none")
             $(".msgErroPag").css("display", "flex")
+            $("#codBarras").parent("div").css("border-color", 'red');
         } else {
             console.log('Certo');
             $(".areaPagamentos, .loading").hide();
@@ -378,3 +403,8 @@ $(document).ready(function () {
     }
 
 })
+
+$(document).ready(function () {
+    $('#codBarras').mask('00000.00000 00000.000000 00000.000000 0 00000000000000');
+    $('#codBarras').attr('autocomplete', 'on');
+});

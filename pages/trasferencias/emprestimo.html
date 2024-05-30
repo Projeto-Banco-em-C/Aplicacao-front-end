@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../css/transferencias.css">
     <link rel="stylesheet" href="../../css/mobile/MobileGlobal.css">
     <link rel="stylesheet" href="../../css/ted.css">
+    <link rel="stylesheet" href="../../css/emprestimo.css">
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -33,7 +34,7 @@
     <script src="../../js/libs/jMask.min.js"></script>
     <script src="../../js/libs/jquery.mask.min.js"></script>
 
-    <title>Pagamento</title>
+    <title>Emprestimo</title>
 </head>
 
 <body>
@@ -148,59 +149,51 @@
                     <div></div>
                 </div>
             </div>
-            <section class="areaPagamentos">
+            <section class="areaEmprestimo">
                 <div class="titleAp aptxt">
-                    <h1>Quer pagar uma conta?</h1>
-                    <p>Digite o codigo de barras abaixo para poder realizar o pagamento.</p>
+                    <h1>Precisando de um emprestimo?</h1>
+                    <p>Abaixo poderar ver o valor liberardo pelo banco para fazer seu emprestimo. Só escolher o valor e
+                        parcelas ideais e receber seu dinheiro na hora.</p>
                 </div>
+
+                <div class="saldoParaEmprestimo">
+                    <p>Seu valor liberado</p>
+                    <h1>R$ <span>1.324,34</span></h1>
+                </div>
+
                 <div class="FormPagamentos">
-                    <h2 class="titleInputs">Digite o código de barras</h2>
+                    <h2 class="titleInputs">Digite o valor do emprestimo</h2>
                     <div class="inputOrg">
-                        <span class="material-symbols-outlined">barcode</span>
+                        <span class="material-symbols-outlined">payments</span>
                         <input class="inputText obrig" type="text" name="codBarras" id="codBarras"
-                            placeholder="Digite o numero de agências" onblur="validaCampoPag(this)">
+                            placeholder="Digite o numero de agências" onblur="validaCampoEmp(this)">
                     </div>
-                    <p class="msgErroPag">Nenhum código de barras encontrado!</p>
-                    <p class="msgErroPagDigito">Código incorreto!</p>
+                    <p class="msgErroPag">Valor não liberado para emprestimo!</p>
+
+                    <h2 class="titleInputs">Escolha a quantidade de parcelas</h2>
+                    <div class="inputOrg">
+                        <span class="material-symbols-outlined">payments</span>
+                        <select class="inputText" name="parcelas" id="parcelas">
+                            <option value="1">1 x <span>543,43</span> com juros de 3,3%</option>
+                            <option value="1">2 x <span>543,43</span> com juros de 3,3%</option>
+                            <option value="1">3 x <span>543,43</span> com juros de 3,3%</option>
+                            <option value="1">4 x <span>543,43</span> com juros de 3,3%</option>
+                            <option value="1">5 x <span>543,43</span> com juros de 3,3%</option>
+                            <option value="1">6 x <span>543,43</span> com juros de 3,3%</option>
+                            <option value="1">7 x <span>543,43</span> com juros de 3,3%</option>
+                            <option value="1">8 x <span>543,43</span> com juros de 3,3%</option>
+                            <option value="1">9 x <span>543,43</span> com juros de 3,3%</option>
+                            <option value="1">10 x <span>543,43</span> com juros de 3,3%</option>
+                            <option value="1">11 x <span>543,43</span> com juros de 3,3%</option>
+                            <option value="1">12 x <span>543,43</span> com juros de 3,3%</option>
+                        </select>
+                    </div>
 
                     <div class="alinhabtn">
                         <div class="alinhabtns">
-                            <div class="btnChavePix valido" id="btnPagCodigodeBarras">
-                                Próximo
+                            <div class="btnChavePix valido bntEmprestimo" id="btnPagCodigodeBarras">
+                                Realizar o emprestimo
                                 <span class="material-symbols-outlined">arrow_forward</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="confirmaInfos">
-                <div class="titleAp sl">
-                    <h1>Confirme se está tudo certo</h1>
-                    <p>Antes de realizar o pagamento confirme se esta enviado para o destinatario correto!</p>
-                </div>
-                <div class="infosCf">
-                    <div class="userCf">
-                        <div class="destinatarioCfTed">
-                            <div class="contatoIconCf sl">
-                                <h1 id="fotoPerfilICf">EF</h1>
-                            </div>
-                            <div class="infosUserCfTed sl">
-                                <h1 id="nomeUserCheveICf">Eduardo Franco</h1>
-                                <div class="dadosConta">
-                                    <p>Agencia: <span id="agenciaInfos">0043</span></p>
-                                    <p>Conta: <span id="contaInfos">0034231-9</span></p>
-                                    <p>Data validade: <span id="dataValidInfos">04/12/2024</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mostraValorCf sl">
-                        <h1>R$ <span id="valorDaConta">45,83</span></h1>
-                    </div>
-                    <div class="alinhabtn">
-                        <div class="alinhabtns">
-                            <div class="btnChavePix sl valido" id="btnPedirSenha">Próximo<span
-                                    class="material-symbols-outlined">arrow_forward</span>
                             </div>
                         </div>
                     </div>

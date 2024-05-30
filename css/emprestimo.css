@@ -1,0 +1,45 @@
+.areaEmprestimo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bntEmprestimo {
+    width: 12rem !important;
+}
+
+.saldoParaEmprestimo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.saldoParaEmprestimo h1 {
+    margin-top: 1rem;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--background--container);
+}
+
+.saldoParaEmprestimo span {
+    margin-top: 1rem;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--background--container);
+}
+
+.saldoParaEmprestimo p {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--subtext-color-whitePage);
+}
+
+.FormPagamentos {
+    width: 80% !important;
+}
+
+.inputText {
+    width: 100%;
+    margin-left: 5px;
+}
