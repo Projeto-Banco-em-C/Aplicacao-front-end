@@ -6,8 +6,11 @@ var DadosComprovante = {
     agenciaComp: "",
     contaComp: "",
     emprestimoUserDisponivel: "",
-    qtdparcelas: ""
+    qtdparcelas: "",
+    qtdnumParcelas: ""
 };
+
+var taxasJuros = [0.0459, 0.0597, 0.0733, 0.0866, 0.0996, 0.1124, 0.1250, 0.1373, 0.1493, 0.1612, 0.1728];
 
 
 $(".inputOrgPensonalizado").click(function (event) {
@@ -24,6 +27,11 @@ $(".inputOrgPensonalizado").click(function (event) {
 $(".options").on("click", ".itensOptions", function () {
     var texto = $(this).find("p").text();
     $("#valorAtual").text(texto);
+
+    DadosComprovante.qtdparcelas = texto
+
+    var numeroAntesDoX = texto.split(' x ')[0];
+    DadosComprovante.qtdnumParcelas = numeroAntesDoX
 });
 
 
@@ -61,16 +69,14 @@ async function PegarDadosUser(id) {
             DadosComprovante.agenciaComp = agenciaUserAtual
             DadosComprovante.contaComp = contaUserAtual
             DadosComprovante.emprestimoUserDisponivel = emprDis
-
-            var textoComp = $("#valorAtual").find("p").text();
-            DadosComprovante.qtdparcelas = textoComp
         }
 
     } catch (error) {
         console.error('Erro Servidor:', error.message);
     }
 }
-//PegarDadosUser(usuId)
+PegarDadosUser(usuId)
+
 function validaCamposEmprestimo() {
     let preenchido = true;
 
@@ -93,6 +99,7 @@ function validaCamposEmprestimo() {
 function validaCampoEmp(elemento) {
     let inputParent = $(elemento).parent('.inputOrg')
     inputParent.css("border-color", "#121212");
+    juros()
 }
 
 $("#btnEmprestimo").click(function () {
@@ -120,6 +127,39 @@ $("#btnEmprestimo").click(function () {
         }
     }
 })
+
+//colocar parcelas e juros
+
+function juros() {
+    const valordigitado = $("#valorEmpr").val()
+
+    if (valordigitado == "") {
+        let options = `
+            <div class="erroparcelas">
+                <p>Insira o valor acima para visualizar as parcelas!</p>
+            </div>
+        `;
+        $(".alinhaOp").append(options);
+    } else {
+        $(".alinhaOp").empty()
+
+        console.log("valor" + valordigitado);
+        let valorOriginal = parseFloat(valordigitado);
+
+        for (let i = 2; i <= 12; i++) {
+            let taxa = taxasJuros[i - 2];
+            let valorParcela = valorOriginal * (1 + taxa);
+            let options = `
+                <div class="itensOptions">
+                    <p>${i} x <span>${valorParcela.toFixed(2)}</span> com juros de ${(taxa * 100).toFixed(2)}%</p>
+                </div>
+            `;
+            $(".alinhaOp").append(options);
+        }
+    }
+}
+
+juros()
 
 //tela senha
 function validaCamposSenha(elemento) {
@@ -176,18 +216,38 @@ async function confirmarSenhaServerPag(cpf, senha, valor) {
 }
 
 async function realizarEmprestimo(idUser, valordoRecebido) {
+    const qtdp = DadosComprovante.qtdnumParcelas
+    const jurosmensal = taxasJuros[qtdp] * valordoRecebido
+
+    console.log(jurosmensal)
+
+    //data atual
+    var today = new Date();
+    var day = String(today.getDate()).padStart(2, '0');
+    var month = String(today.getMonth() + 1).padStart(2, '0'); // Janeiro é 0!
+    var year = today.getFullYear();
+
+    var dataformatada = day + "/" + month + "/" + year
+
     const camposOk = validaCamposSenha();
     if (camposOk) {
-        const dataJSON = JSON.stringify({ "USU_ID": idUser, "USU_SALDO": valordoRecebido });
+        const dataJSON = JSON.stringify(
+            {
+                "USU_ID": idUser,
+                "EMP_VALOR_TOTAL": valordoRecebido,
+                "EMP_NUM_PARCELAS": qtdp,
+                "EMP_JURUS_MENSAL": jurosmensal,
+                "EMP_DATA_INICIO": dataformatada
+            });
         try {
-            const response = await fetch('http://localhost:9000/', {
+            const response = await fetch('http://localhost:9000/adicionar_emprestimo', {
                 method: 'POST',
                 body: dataJSON,
             });
 
             const isOk = JSON.parse(await response.text());
 
-            if (isOk['mensagem'] == 'ok') {
+            if (isOk['mensagem'] == 'emprestimo cadastrado') {
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
@@ -200,11 +260,8 @@ async function realizarEmprestimo(idUser, valordoRecebido) {
                     $(".comprovante").css("display", 'flex');
                     dadosdoComprovanteEmprestimo()
                 }, 1100)
-            } else if (isOk['mensagem'] == 'erro id repitido') {
-                window.location.href = "../erros.html";
             } else {
-                // window.location.href = "../erros.html";
-                console.log("loucura")
+                window.location.href = "../erros.html";
             }
         } catch (error) {
             console.error('Erro Servidor:', error.message);
@@ -275,6 +332,4 @@ $(document).ready(function () {
     $('#codBarras').mask('00000.00000 00000.000000 00000.000000 0 00000000000000');
     $('#codBarras').attr('autocomplete', 'on');
 });
-
-
 

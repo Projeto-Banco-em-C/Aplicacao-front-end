@@ -43,3 +43,30 @@
     width: 100%;
     margin-left: 5px;
 }
+
+.erroparcelas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.arrumatxtValorCpr {
+    margin-left: 1rem;
+}
+
+.arrumatxtValorCpr p,
+.arrumatxtValorCpr p span {
+    margin-top: 4px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--subtext-color-whitePage);
+}
+
+.arrumatxtValorCpr h1,
+.arrumatxtValorCpr h1 span {
+    margin-top: 4px;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--background--container);
+}
