@@ -117,12 +117,12 @@
 .cardMsg {
     background-color: #2b2b2b;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    justify-content: flex-start;
+    flex-direction: column;
     height: 100%;
     padding: 10px;
     border-radius: 1rem;
+    max-width: 90%;
 }
 
 .ias {
@@ -131,7 +131,7 @@
 
 .cardMsgIa {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
 }
 
@@ -141,6 +141,7 @@
     color: #cbcbcb;
     text-align: justify;
     padding: 5px;
+    max-width: 100%;
 }
 
 .menuUserIconIA {
@@ -159,9 +160,18 @@
     color: var(--subtext-color);
 }
 
+.cardMsgUser h1 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #cbcbcb;
+    text-align: justify;
+    padding: 5px;
+}
+
 .infosmsg {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .txtCms {
@@ -182,10 +192,10 @@
     border-radius: 1rem;
 }
 
-.cardMsgUser h1 {
-    font-size: 16px;
-    font-weight: 400;
-    color: #cbcbcb;
-    text-align: justify;
-    padding: 5px;
+.btnMandaIA {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -93,6 +93,7 @@ main {
     position: relative;
     border: none;
     user-select: none;
+    z-index: 0;
 }
 
 .skeletonLoading .sl::after {

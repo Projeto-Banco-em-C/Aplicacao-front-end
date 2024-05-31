@@ -103,7 +103,7 @@
                             </a>
                         </li>
                         <li class="eleOpb">
-                            <a href="../investimentos.html">
+                            <a href="./investimentos.html">
                                 <span class="material-symbols-outlined">monitoring</span>
                                 <h1>Investimento</h1>
                             </a>
@@ -151,47 +151,52 @@
             </div>
             <section class="areaEmprestimo">
                 <div class="titleAp aptxt">
-                    <h1>Precisando de um emprestimo?</h1>
-                    <p>Abaixo poderar ver o valor liberardo pelo banco para fazer seu emprestimo. Só escolher o valor e
+                    <h1 class="sl">Precisando de um emprestimo?</h1>
+                    <p class="sl">Abaixo poderar ver o valor liberardo pelo banco para fazer seu emprestimo. Só escolher
+                        o valor e
                         parcelas ideais e receber seu dinheiro na hora.</p>
                 </div>
 
-                <div class="saldoParaEmprestimo">
+                <div class="saldoParaEmprestimo sl">
                     <p>Seu valor liberado</p>
-                    <h1>R$ <span>1.324,34</span></h1>
+                    <h1><span id="valorpEmprestimo">R$ 1.324,34</span></h1>
                 </div>
 
                 <div class="FormPagamentos">
-                    <h2 class="titleInputs">Digite o valor do emprestimo</h2>
-                    <div class="inputOrg">
+                    <h2 class="titleInputs sl">Digite o valor do emprestimo</h2>
+                    <div class="inputOrg sl">
                         <span class="material-symbols-outlined">payments</span>
-                        <input class="inputText obrig" type="text" name="codBarras" id="codBarras"
-                            placeholder="Digite o numero de agências" onblur="validaCampoEmp(this)">
+                        <input class="inputText mValor" type="text" name="valorEmpr" id="valorEmpr"
+                            placeholder="Digite o numero de agências" onblur="validaCampoEmp(this)" maxlength="12">
                     </div>
                     <p class="msgErroPag">Valor não liberado para emprestimo!</p>
 
-                    <h2 class="titleInputs">Escolha a quantidade de parcelas</h2>
-                    <div class="inputOrg">
-                        <span class="material-symbols-outlined">payments</span>
-                        <select class="inputText" name="parcelas" id="parcelas">
-                            <option value="1">1 x <span>543,43</span> com juros de 3,3%</option>
-                            <option value="1">2 x <span>543,43</span> com juros de 3,3%</option>
-                            <option value="1">3 x <span>543,43</span> com juros de 3,3%</option>
-                            <option value="1">4 x <span>543,43</span> com juros de 3,3%</option>
-                            <option value="1">5 x <span>543,43</span> com juros de 3,3%</option>
-                            <option value="1">6 x <span>543,43</span> com juros de 3,3%</option>
-                            <option value="1">7 x <span>543,43</span> com juros de 3,3%</option>
-                            <option value="1">8 x <span>543,43</span> com juros de 3,3%</option>
-                            <option value="1">9 x <span>543,43</span> com juros de 3,3%</option>
-                            <option value="1">10 x <span>543,43</span> com juros de 3,3%</option>
-                            <option value="1">11 x <span>543,43</span> com juros de 3,3%</option>
-                            <option value="1">12 x <span>543,43</span> com juros de 3,3%</option>
-                        </select>
+                    <div class="alinhaFormPix">
+                        <h2 class="titleInputs sl">Escolha a quantidade de parcelas</h2>
+                        <div class="selectPersonalizado sl">
+                            <div class="inputOrgPensonalizado">
+                                <div class="alinhaIop">
+                                    <span class="material-symbols-outlined" id="iconeAtual">payments</span>
+                                    <h1 class="inputChave" id="valorAtual"></h1>
+                                </div>
+                                <span class="material-symbols-outlined" id="iconeArrow">keyboard_arrow_down</span>
+                            </div>
+                        </div>
+                        <div class="options">
+                            <div class="alinhaOp">
+                                <div class="itensOptions">
+                                    <p>1 x <span>543,43</span> com juros de 3,3%</p>
+                                </div>
+                                <div class="itensOptions">
+                                    <p>2 x <span>543,43</span> com juros de 3,3%</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="alinhabtn">
+                    <div class="alinhabtn sl">
                         <div class="alinhabtns">
-                            <div class="btnChavePix valido bntEmprestimo" id="btnPagCodigodeBarras">
+                            <div class="btnChavePix valido bntEmprestimo" id="btnEmprestimo">
                                 Realizar o emprestimo
                                 <span class="material-symbols-outlined">arrow_forward</span>
                             </div>
@@ -229,8 +234,8 @@
                         <span class="material-symbols-outlined">check</span>
                     </div>
                     <div class="textInfosCpr">
-                        <h1>Transferência realizada</h1>
-                        <p>A transferência Ted foi realizada com sucesso</p>
+                        <h1>Empréstimo realizada</h1>
+                        <p>O empréstimo foi realizada com sucesso</p>
                     </div>
                     <div class="barraCpr"></div>
                     <div class="scrollCpr">
@@ -238,7 +243,8 @@
                             <span class="material-symbols-outlined tpVcpr">monetization_on</span>
                             <div class="txtValorCpr">
                                 <h1>R$ <span id="valorComp">168,00</span></h1>
-                                <p>Valor pago</p>
+                                <p>De valor</p>
+                                <p>Com parcelas mensais de <span id="parcelasComp">TESTE</span></p>
                             </div>
                         </div>
                         <div class="enviadoCpr">
@@ -246,16 +252,7 @@
                             <div class="alinhaEcpr">
                                 <div class="userCpr">
                                     <div class="txtUserCpr">
-                                        <p>para</p>
-                                        <h1 id="nomeCompDest">TESTE</h1>
-                                        <h2>cpf <span id="cpfCompDest">TESTE</span></h2>
-                                        <h2>ag <span id="agenciaCompDest">TESTE</span> | conta <span
-                                                id="contaCompDes">TESTE</span></h2>
-                                    </div>
-                                </div>
-                                <div class="userCpr prxElemUserCpr">
-                                    <div class="txtUserCpr">
-                                        <p>de</p>
+                                        <p>Enviado para</p>
                                         <h1 id="nomeComp">TESTE</h1>
                                         <h2>cpf <span id="cpfComp">TESTE</span></h2>
                                         <h2>ag <span id="agenciaComp">TESTE</span> | conta <span
@@ -273,7 +270,6 @@
                                     <h2>
                                         <span id="dataComp">09/11/2023</span> ás <span id="horasComp">18:18:34</span>
                                     </h2>
-                                    <p>data validade: <span id="datavalidade">09/11/2023</span></p>
                                 </div>
                                 <div class="otcElement">
                                     <p>via</p>
@@ -346,9 +342,7 @@
             </ul>
         </div>
     </footer>
-
-    <script src="../../js/transferencias/pagamentos.js"></script>
-    <!-- <script src="../../js/transferencias/pix.js"></script> -->
+    <script src="../../js/transferencias/emprestimo.js"></script>
     <script src="../../js/animacoes.js"></script>
 
 </body>

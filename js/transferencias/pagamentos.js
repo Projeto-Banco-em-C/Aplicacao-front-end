@@ -181,7 +181,12 @@ function preencheDadosUserPag(nome, gencia, conta, valor, dataValida) {
     $("#agenciaInfos").text(gencia)
     $("#contaInfos").text(conta)
     $("#dataValidInfos").text(dataValida)
-    $("#valorDaConta").text(valor)
+
+    const emprDisFormatado = parseFloat(valor.replace(/\./g, '').replace(',', '.'));
+    const formattedValue = emprDisFormatado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+
+    $("#valorDaConta").text(formattedValue)
 }
 
 //pegar dados user
@@ -221,10 +226,9 @@ async function PegarDadosUser(id) {
 PegarDadosUser(usuId)
 
 
-
 //confima infos
 $("#btnPedirSenha").click(function () {
-    const saldouser = parseFloat(DadosComprovante.saldoUser.replace(/\./g, '').replace(',', '.'))
+    const saldouser = DadosComprovante.saldoUser
     const valordoboleto = parseFloat(DadosComprovante.valordoRecebido.replace(/\./g, '').replace(',', '.'))
 
     console.log(saldouser, valordoboleto)

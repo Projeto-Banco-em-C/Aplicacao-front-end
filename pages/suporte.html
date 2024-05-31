@@ -26,7 +26,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-
     <!-- LIBS INTERNAS -->
     <script src="../../js/libs/LIBSALUS.js"></script>
     <script src="../../js/libs/jMask.js"></script>
@@ -102,7 +101,7 @@
                             </a>
                         </li>
                         <li class="eleOpb">
-                            <a href="./investimentos.html">
+                            <a href="./trasferencias/investimentos.html">
                                 <span class="material-symbols-outlined">monitoring</span>
                                 <h1>Investimento</h1>
                             </a>
@@ -148,50 +147,19 @@
                 </div>
                 <div class="mensagens">
                     <div class="infosmsg">
-                        <div class="msgIA">
-                            <div class="cardMsgIa">
-                                <div class="menuUserIconIA">
-                                    <h1 id="fotoPerfilMenu">IA</h1>
-                                </div>
-                                <div class="cardMsg ias">
-                                    <h1>Ola, boa noite, Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                        Assumenda explicabo in quaerat. Quis autem perspiciatis, placeat nam, voluptatum
-                                        provident dolore ab magnam excepturi nihil ipsa sit. Cupiditate officia mollitia
-                                        sequi...</h1>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="msgUer">
-                            <div class="cardMsgIa">
-                                <div class="txtCms">
-                                    <div class="cardMsgUser">
-                                        <h1>
-                                            Para enviar dinheiro para o João através do PIX, você deve seguir os
-                                            seguintes passos:
-
-                                            1. Acesse a área do PIX em seu aplicativo bancário ou plataforma online.
-                                            2. Selecione a opção para enviar um PIX.
-                                            3. Adicione João como novo contato PIX, informando o CPF, número de
-                                            telefone, e-mail ou chave aleatória dele.
-                                            4. Insira o valor que deseja transferir.
-                                            5. Confirme todas as informações e finalize a transação.
-
-                                            O João receberá o dinheiro instantaneamente em sua conta bancária vinculada
-                                            à chave PIX informada.
-                                        </h1>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
                 <div class="formIA">
                     <div class="inputOrgIA">
                         <span class="material-symbols-outlined" id="iconeAtualPix">person</span>
-                        <input class="inputTextIA obrig" type="text" name="IA" id="IA"
-                            placeholder="Faça alguma pergunta">
-                        <span class="material-symbols-outlined">send</span>
+                        <input class="inputTextIA obrig" type="text" name="IA" id="msgIAinput"
+                            placeholder="Faça alguma pergunta" autocomplete="off">
+
+                        <button class="btnMandaIA" id="btnMandaIA">
+                            <span class="material-symbols-outlined">send</span>
+                        </button>
+
                     </div>
                 </div>
             </div>

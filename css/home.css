@@ -88,13 +88,16 @@ body::-webkit-scrollbar {
 
 .mbtn {
     margin-left: 1.3rem;
-    cursor: pointer;
     user-select: none
 }
 
 .mbtn span {
     font-size: 28px;
     color: var(--text-color);
+}
+
+.iconslinkshome {
+    cursor: pointer;
 }
 
 .menuInfos {
@@ -341,4 +344,154 @@ body::-webkit-scrollbar {
     flex-direction: column;
     align-items: center;
     text-decoration: none;
+}
+
+#notificacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardNotfica {
+    position: absolute;
+    margin-top: 3rem;
+    background-color: #272727;
+    padding: 19px;
+    border-radius: 1rem;
+    overflow: scroll;
+}
+
+.cardNotfica::-webkit-scrollbar {
+    display: none;
+}
+
+
+.contatoCe {
+    width: 100%;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contatoIcon {
+    border: 2px solid var(--subtext-color);
+    height: 3rem;
+    width: 3rem;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.contatoIcon h1 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--subtext-color);
+}
+
+.elementosCce {
+    display: flex;
+    align-items: center;
+}
+
+.infosCce {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0.5rem;
+}
+
+.infosCce h1 {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.infosCce p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.infosCce p span {
+    font-size: 15px;
+    color: var(--subtext-color);
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: 2rem;
+}
+
+.date p span,
+.date p {
+    font-size: 15px;
+    margin-top: 5px;
+    color: var(--subtext-color);
+}
+
+.date h1,
+.date h1 span {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+
+.negativo h1,
+.negativo h1 span {
+    color: var(--text-color);
+}
+
+.positivo h1,
+.positivo h1 span {
+    color: var(--color-greendark);
+}
+
+.infosCce h1 span {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.alinhabtnmais {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.alinhabtnmais button {
+    background-color: transparent;
+    border: 1px solid var(--subtext-color);
+    padding: 10px;
+    width: 7rem;
+    border-radius: 0.5rem;
+    user-select: none;
+    cursor: pointer;
+}
+
+.alinhabtnmais button:hover {
+    transition: 0.2s;
+    transform: scale(1.1);
+}
+
+.alinhabtnmais button a {
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+
+.visibilitylink {
+    display: block;
+}
+
+.hiddenlink {
+    display: none;
 }
