@@ -12,8 +12,6 @@ async function ValidarCPFServer(cpf) {
 
         const isOk = JSON.parse(await response.text());
 
-        console.log(isOk)
-
         if (isOk['mensagem'] == 'erro') {
             console.log('CPF válido:', cpf);
             $(".loading").css("display", "none")
@@ -97,9 +95,7 @@ $('#btnNextInfos').click(function () {
 
     if (camposOk) {
         $(".loading").css("display", "flex")
-
         const cpf = $('#CampoCPF').val();
-        console.log(cpf)
         ValidarCPFServer(cpf)
         // $(".loading").css("display", "none")
         // $('.forminfos').css("display", "flex")
@@ -182,7 +178,6 @@ $("#btnNextCadastrar").click(async function (event) {
 
     if (camposOk) {
         const dataJSON = buscaDados();
-        console.log(dataJSON)
         try {
             $(".loading").css("display", "flex");
 
@@ -197,7 +192,16 @@ $("#btnNextCadastrar").click(async function (event) {
 
             if (isOk['mensagem'] == 'ok') {
                 console.log('Cadastrado');
-                //Mensagem de SUCESSO e botão para entrar.
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Cadastrado com sucesso",
+                    showConfirmButton: false,
+                    timer: 1000
+                });
+                setTimeout(function () {
+                    window.location.href = "./login.html";
+                }, 1100)
 
             } else {
                 console.log('Erro aou cadastrar');

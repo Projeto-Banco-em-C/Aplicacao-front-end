@@ -58,7 +58,7 @@ $('#btnMandaIA').click(function () {
 
     setTimeout(function () {
 
-        testar() //////////////////////////////////////////////////////////////
+        //testar() //////////////////////////////////////////////////////////////
 
         let IAexpected = `
             <div class="msgIA" id="IAloading">

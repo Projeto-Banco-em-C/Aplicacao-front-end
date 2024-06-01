@@ -261,13 +261,16 @@ body::-webkit-scrollbar {
 
 .infosCartao {
     margin-top: 1rem;
-    background-color: var(--background--container);
+    background: rgb(51, 51, 51);
+    background: radial-gradient(circle, rgba(50, 50, 48, 1) -16%, rgba(18, 18, 18, 1) 58%);
+    border: 1px solid var(--subtext-color);
     padding: 1rem;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 11rem;
+    width: 80%;
 }
 
 .headIc {
@@ -494,4 +497,11 @@ body::-webkit-scrollbar {
 
 .hiddenlink {
     display: none;
+}
+
+.alinhacartao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }

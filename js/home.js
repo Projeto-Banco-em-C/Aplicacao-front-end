@@ -8,8 +8,6 @@ async function PegarDados(id) {
 
         const isOk = JSON.parse(await response.text());
 
-        console.log(isOk)
-
         if (isOk['mensagem'] == 'erro') {
             console.log('ERRO');
             window.location.href = "./erros.html";
@@ -33,12 +31,6 @@ async function PegarDados(id) {
 var usuId = localStorage.getItem('USU_ID');
 
 PegarDados(usuId)
-
-// if (usuId !== null) {
-//     PegarDados(usuId)
-// } else {
-//     window.location.href = "./erros.html";
-// }
 
 $("#visibility").click(function () {
     if ($(this).hasClass("visibility")) {

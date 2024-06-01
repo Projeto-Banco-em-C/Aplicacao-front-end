@@ -1,121 +1,207 @@
-main{
+main {
     display: flex;
     align-items: center;
 }
 
-.container{
-    width: 60%;
+.container {
+    width: 55%;
     height: 100vh;
     background-color: var(--background--container);
 }
 
-.infosContainer{
+.infosContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    margin: 0rem 7rem;
+    margin: 0rem 4rem;
 }
 
-.infosContainer h1{
-    font-size: 46px;
+.titleStartpPage {
+    font-size: 40px;
     font-weight: 600;
-    font-family: var(--font-family-title);
+    color: var(--text-color);
     max-width: 39rem;
+    animation: title 1s ease-out;
+    position: relative;
+    left: 0;
 }
 
-.sptext{
+@keyframes title {
+    0% {
+        opacity: 0;
+        left: -9rem;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+        left: 0px;
+    }
+}
+
+.titleStartpPage span {
+    font-size: 44px;
+    font-weight: 800;
+    color: var(--color-green);
+    font-style: italic;
+}
+
+.sptext {
     font-size: 46px;
     font-weight: 400;
-    font-family: var(--font-family-title);
+    font-family: var(--text-color);
     color: var(--color-green);
     margin: 0 10px;
 }
 
-.icontx{ 
+.icontx {
     font-size: 55px !important;
 }
 
-.title{
+.title {
     margin-bottom: 2rem;
 }
 
-.riscospl{
+.riscospl {
     display: flex;
     align-items: flex-end;
     transform: rotate(30deg);
     margin-left: -1rem;
 }
 
-.alinhaDetalheTx{
+.alinhaDetalheTx {
     display: flex;
     align-items: flex-start;
 
 }
 
-.glup1, .glup2{
-    display: flex;
-    align-items: center;
-}
-
-.infosContainer p{
-    font-size: 20px;
+.infosContainer p {
+    font-size: 18px;
     font-weight: 400;
     color: var(--subtext-color);
     max-width: 34rem;
-}   
+    margin-top: 1rem;
+    animation: sube 1s ease-out;
+    position: relative;
+    left: 0;
+}
 
-.btnContainer{
+@keyframes sube {
+    0% {
+        opacity: 0;
+        left: -9rem;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+        left: 0px;
+    }
+}
+
+
+.btnContainer {
     margin-top: 3rem;
     display: flex;
     align-items: center;
+    animation: btns 1s ease-out;
+    position: relative;
+    top: 0;
 }
 
-.btncadastrar{
+@keyframes btns {
+    0% {
+        opacity: 0;
+        top: 9rem;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+        top: 0px;
+    }
+}
+
+
+.btncadastrar {
     width: 12rem;
     padding: 18px;
     border: none;
-    font-size: 17px;
-    font-weight: 600;
     background-color: var(--color-green);
-    color: var(--background--container);
-    font-family: var(--font-family-title);
     user-select: none;
     cursor: pointer;
     border-radius: 5px;
 }
 
-.btnentrar{
+.btncadastrar a {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--background--container);
+    font-family: var(--font-family-title);
+    text-decoration: none;
+}
+
+.btncadastrar:hover {
+    transition: 0.2s;
+    transform: scale(1.06);
+}
+
+.btnentrar {
     width: 15rem;
     padding: 18px;
     margin-left: 0.5rem;
     border: none;
-    font-size: 17px;
-    font-weight: 600;
     align-items: center;
     background-color: transparent;
-    color: var(--text-color);
-    font-family: var(--font-family-title);
     display: flex;
     user-select: none;
     cursor: pointer;
 }
 
-.btnentrar span{
+.btnentrar a {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text-color);
+    font-family: var(--font-family-title);
+    text-decoration: none;
+}
+
+.btnentrar:hover {
+    transition: 0.2s;
+    transform: scale(1.03);
+}
+
+.btnentrar span {
+    color: var(--text-color);
     margin-left: 5px;
 }
 
-.image img{
+.image img {
     width: 100%;
     height: 100%;
 }
 
-.imgProp{
-    width: 40%;
+.imgProp {
+    width: 45%;
     height: 100vh;
+    background-image: url(../img/zac-ong-JHN1-mpgXjo-unsplash.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.cartaoAnimado{
+.cartaoAnimado {
     display: flex;
     margin-left: -3rem;
     margin-top: 10rem;
@@ -127,38 +213,94 @@ main{
 }
 
 @keyframes movendo {
-    0%{
-        top: 0; 
+    0% {
+        top: 0;
     }
-    
-    50%{
+
+    50% {
         top: -2rem;
     }
 
-    100%{
+    100% {
         top: 0;
     }
 }
 
-/* 
-     0%{
-        top: 31rem;
-        left: 25rem;
-    }
-
-    100%{
-        top: 0;
-        left: 0; 
-    }
-
-*/
-
-.test{
+.test {
     width: 30rem;
     height: 17rem;
-    background-color: blue;
-    border: 1px solid white;
+    background: rgb(51, 51, 51);
+    background: radial-gradient(circle, rgba(50, 50, 48, 1) -16%, rgba(18, 18, 18, 1) 58%);
+    border: 1px solid var(--subtext-color);
     border-radius: 1rem;
     transform: rotate(351deg);
+    animation: vindo 2s ease-out;
+    position: relative;
+    top: 0;
+    left: 0;
 }
 
+@keyframes vindo {
+    0% {
+        left: 9rem;
+        top: 20rem;
+    }
+
+    100% {
+        left: 0;
+        top: 0;
+    }
+}
+
+.chip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 4rem;
+}
+
+.chipcard {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.signal {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: 10px;
+}
+
+.infoscard {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100%;
+    margin: 0rem 2rem;
+}
+
+.infosbank {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.infoscard h1 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--subtext-color);
+}
+
+.marcs {
+    width: 4rem;
+    height: 3rem;
+    margin-bottom: 1rem;
+}
+
+.containerTest {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

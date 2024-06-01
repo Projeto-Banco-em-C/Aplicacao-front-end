@@ -1,4 +1,12 @@
 var usuId = localStorage.getItem('USU_ID');
+
+var DadosComprovante = {
+    valorEmpre: "",
+    tipoEmpre: "",
+    jurosEmpre: ""
+};
+
+
 //graficos 1 com varios valores
 var graphicTwo = {
     series: [{
@@ -20,7 +28,7 @@ var graphicTwo = {
     dataLabels: {
         enabled: true,
         formatter: function (val) {
-            return val + "%";
+            return "R$ " + val;
         },
         offsetY: -20,
         style: {
@@ -83,7 +91,6 @@ var graphicTwo = {
 var chart = new ApexCharts(document.querySelector(".graphicTotal"), graphicTwo);
 chart.render();
 
-
 $("#btnTrocaGrafico").click(function () {
     if ($(".graphicDetails").hasClass("graficovisivel")) {
         $(".graphicDetails").hide().removeClass("graficovisivel");
@@ -95,7 +102,6 @@ $("#btnTrocaGrafico").click(function () {
         $("#txtbtnGraf").text("Ver lucros gerais");
     }
 });
-
 
 $(document).ready(() => {
     const titulos = ['Tesouro direto', 'Poupança', 'CDB', 'LCI'];
@@ -125,7 +131,6 @@ $(document).ready(() => {
     }
 });
 
-
 function inveEscolhido(titulo, iniciais, valor) {
     console.log(titulo, iniciais, valor);
 
@@ -133,10 +138,12 @@ function inveEscolhido(titulo, iniciais, valor) {
     $("#nomeUserInve").text(titulo);
     $("#valorInve").text(valor);
 
+    DadosComprovante.tipoEmpre = titulo
+    DadosComprovante.jurosEmpre = valor
+
     $(".areaInvest").css("display", 'none');
     $(".areaValor").css("display", 'flex');
 }
-
 
 $(document).ready(function () {
     $('#valorRecebido').on('input', function () {
@@ -222,12 +229,26 @@ $("#btnConfirmarPix").click(function (event) {
             $(".msgErroE").css("display", 'flex');
         }
         else {
+            DadosComprovante.valorEmpre = valorPixFloat
+            console.log(valorPixFloat)
             $(".areaValor").css("display", 'none');
             $(".pedesenha").css("display", 'flex');
         }
     }
 })
 
+function validaCamposSenha(elemento) {
+    let preenchido = true;
+
+    if ($("#confirmSenha").val() == "") {
+        preenchido = false;
+        $("#confirmSenha").parent("div").css("border-color", 'red');
+    }
+
+    $(elemento).parent("div").css("border-color", '#121212');
+
+    return preenchido
+}
 
 function CriptografarSenha(senha) {
     senhaCriptografada = CryptoJS.SHA256(senha).toString()
@@ -254,7 +275,11 @@ async function confirmarSenhaServerTED(chavePix, senha) {
 
             const isOk = JSON.parse(await response.text());
             if (isOk['mensagem'] == 'ok') {
-                FazerInvestimento()
+                FazerInvestimento(
+                    DadosComprovante.tipoEmpre,
+                    DadosComprovante.jurosEmpre,
+                    DadosComprovante.valorEmpre
+                )
             } else if (isOk['mensagem'] == 'senha incorreta') {
                 $("#confirmSenha").parent("div").css("border-color", 'red');
                 $("#msgErroSenha").css("display", "flex")
@@ -266,21 +291,24 @@ async function confirmarSenhaServerTED(chavePix, senha) {
     }
 }
 
-async function FazerInvestimento() {
+async function FazerInvestimento(tipo, juros, valor) {
     const camposOk = validaCamposSenha();
+
+    const jurosformatado = juros.replace(",", ".")
+
     if (camposOk) {
         const dataJSON = JSON.stringify(
-            { "USU_ID": idUser, "USU_ID_DESTINO": idDestino, "USU_SALDO": valordoPixRecebido, "TRAN_TIPO": "TED" }
+            { "USU_ID": usuId, "INV_VALOR": valor, "INV_TIPO": tipo, "INV_JUROS": jurosformatado }
         );
         try {
-            const response = await fetch('http://localhost:9000/transferir', {
+            const response = await fetch('http://localhost:9000/investimento', {
                 method: 'POST',
                 body: dataJSON,
             });
 
             const isOk = JSON.parse(await response.text());
 
-            if (isOk['mensagem'] == 'ok') {
+            if (isOk['mensagem'] == 'aplicado') {
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
@@ -290,8 +318,7 @@ async function FazerInvestimento() {
                 });
                 setTimeout(function () {
                     $(".pedesenha").css("display", 'none');
-                    $(".comprovante").css("display", 'flex');
-                    dadosdoComprovanteTED()
+                    window.location.href = "../home.html";
                 }, 1100)
             } else {
                 window.location.href = "../erros.html";

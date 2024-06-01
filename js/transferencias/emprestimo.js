@@ -99,7 +99,7 @@ function validaCamposEmprestimo() {
 function validaCampoEmp(elemento) {
     let inputParent = $(elemento).parent('.inputOrg')
     inputParent.css("border-color", "#121212");
-    $("#alinhaOp").empty()
+    $(".alinhaOp").empty()
     juros()
 }
 
@@ -335,3 +335,65 @@ $(document).ready(function () {
     $('#codBarras').attr('autocomplete', 'on');
 });
 
+
+
+// ver emprestimos 
+
+async function VerContatos(id) {
+    const dataJSON = JSON.stringify({ "USU_ID": id });
+    try {
+        $(".elementosContatos").css("display", 'flex');
+        $(".noContacts").css("display", 'none');
+        $(".elementosContatos").addClass("skeletonLoading")
+
+        const response = await fetch('http://localhost:9000/lista_emprestimo', {
+            method: 'POST',
+            body: dataJSON,
+        });
+
+        const isOk = JSON.parse(await response.text());
+
+        if (isOk['mensagem'] == 'nao possui emprestimos') {
+            $(".noContacts").css("display", 'flex');
+            $(".elementosContatos").css("display", 'none');
+
+        } else {
+            $(".elementosContatos").empty();
+            const contatos = Array.isArray(isOk) ? isOk : [isOk];
+
+            contatos.forEach((contato) => {
+                console.log('contato', JSON.stringify(contato))
+                const valor = Number(contato.EMP_VALOR_TOTAL);
+                const valorconvertido = valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+                const data = contato.EMP_DATA_INICIO;
+                const parcelaAtual = contato.EMP_NUM_PARCELAS_PAGAS;
+                const parcelasToal = contato.EMP_NUM_PARCELAS;
+
+                let projeto = `
+                    <div class="contatoCe sl">
+                        <div class="elementosCce">
+                            <div class="infosCce">
+                                <h1>Empréstimo realizado</h1>
+                                <p>Realizado em: <span>${data}</span></p>
+                                <p>Parcelas: <span>${parcelaAtual}</span> de <span>${parcelasToal}</span></p>
+                            </div>
+                        </div>
+
+                        <h1>${valorconvertido}</h1>
+                    </div>
+                `;
+                $('.elementosContatos').append(projeto);
+            })
+
+            $(".elementosContatos").removeClass("skeletonLoading");
+        }
+
+    } catch (error) {
+        console.error('Erro Servidor:', error.message);
+        $(".noContacts").css("display", 'flex');
+        $(".elementosContatos").css("display", 'none');
+    }
+}
+
+VerContatos(usuId)

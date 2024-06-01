@@ -21,6 +21,61 @@
      .menuInfos {
           width: 60%;
      }
+
+     /* index */
+     .test {
+          width: 23rem;
+          height: 13rem;
+     }
+
+     .titleStartpPage {
+          font-size: 32px;
+     }
+
+     .titleStartpPage span {
+          font-size: 34px;
+     }
+
+     .btncadastrar {
+          width: 15rem;
+          padding: 12px;
+          border: none;
+          background-color: var(--color-green);
+          user-select: none;
+          cursor: pointer;
+          border-radius: 5px;
+     }
+
+     .btnentrar {
+          width: 17rem;
+          padding: 12px;
+          margin-left: 0.5rem;
+          border: none;
+          align-items: center;
+          background-color: transparent;
+          display: flex;
+          user-select: none;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 1rem;
+     }
+
+     .btnContainer {
+          margin-top: 3rem;
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          align-items: center;
+     }
+
+     .btnentrar a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+     }
+
 }
 
 @media (max-width: 786px) {
@@ -66,6 +121,15 @@
           z-index: 2;
      }
 
+     /* index */
+     .infosContainer {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          margin: 0rem 4rem;
+     }
 }
 
 @media (max-width: 425px) {
@@ -209,5 +273,69 @@
           width: 100%;
           height: 100% - 2rem;
           z-index: 2;
+     }
+
+     /* index */
+     .titleStartpPage {
+          font-size: 32px;
+          font-weight: 600;
+          color: var(--text-color);
+          max-width: 39rem;
+          animation: title 1s ease-out;
+          position: relative;
+          left: 0;
+          text-align: center;
+     }
+
+     .titleStartpPage span {
+          font-size: 32px;
+          font-weight: 800;
+          color: var(--color-green);
+          font-style: italic;
+     }
+
+     .infosContainer p {
+          font-size: 16px;
+          text-align: center;
+     }
+
+     .btncadastrar {
+          width: 15rem;
+          padding: 12px;
+          border: none;
+          background-color: var(--color-green);
+          user-select: none;
+          cursor: pointer;
+          border-radius: 5px;
+     }
+
+     .btnentrar {
+          width: 17rem;
+          padding: 12px;
+          margin-left: 0.5rem;
+          border: none;
+          align-items: center;
+          background-color: transparent;
+          display: flex;
+          user-select: none;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 1rem;
+     }
+
+     .btnContainer {
+          margin-top: 3rem;
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          align-items: center;
+     }
+
+     .btnentrar a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
      }
 }

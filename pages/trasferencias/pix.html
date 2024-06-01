@@ -161,7 +161,7 @@
                             <div class="inputOrgPensonalizado">
                                 <div class="alinhaIop">
                                     <span class="material-symbols-outlined" id="iconeAtual">person</span>
-                                    <h1 class="inputChave" id="valorAtual"></h1>
+                                    <h1 class="inputChave" id="valorAtual">CPF</h1>
                                 </div>
                                 <span class="material-symbols-outlined" id="iconeArrow">keyboard_arrow_down</span>
                             </div>
@@ -197,7 +197,7 @@
                     <h2 class="titleInputs">Chave Pix</h2>
                     <div class="inputOrg">
                         <span class="material-symbols-outlined" id="iconeAtualPix">person</span>
-                        <input class="inputText obrig" type="text" name="pix" id="chaveRecebida"
+                        <input class="inputText obrig mCpf" type="text" name="pix" id="chaveRecebida"
                             placeholder="Digite sua chave pix" onblur="mudarmascara(this)"
                             oninput="validaValoresChavePix(this)">
                     </div>
@@ -490,6 +490,14 @@
 
     <script src="../../js/transferencias/pix.js"></script>
     <script src="../../js/animacoes.js"></script>
+    <script>
+        var usuId = localStorage.getItem('USU_ID');
+        var usuCPF = localStorage.getItem('USU_CPF');
+
+        if (usuId == null && usuCPF == null) {
+            window.location.href = "../erros.html";
+        }
+    </script>
 </body>
 
 </html>

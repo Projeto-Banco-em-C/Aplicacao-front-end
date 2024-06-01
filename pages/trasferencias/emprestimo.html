@@ -197,6 +197,39 @@
                         </div>
                     </div>
                 </div>
+                <div class="contatos">
+                    <div class="elementosContatos">
+                        <div class="contatoCe sl">
+                            <div class="elementosCce">
+                                <div class="infosCce">
+                                    <h1>Empréstimo realizado</h1>
+                                    <p>Realizado em: <span>TESTE</span></p>
+                                </div>
+                            </div>
+
+                            <h1>TESTE</h1>
+                        </div>
+                        <div class="contatoCe sl">
+                            <div class="elementosCce">
+                                <div class="infosCce">
+                                    <h1>Empréstimo realizado</h1>
+                                    <p>Realizado em: <span>TESTE</span></p>
+                                </div>
+                            </div>
+
+                            <h1>TESTE</h1>
+                        </div>
+                    </div>
+
+                    <div class="noContacts">
+                        <div class="elementosNc">
+                            <img src="../../img/svg/undraw_transfer_money_re_6o1h.svg" alt="">
+                            <h1>Nenhum emprestimo realizado!</h1>
+                            <p>Para realizar um emprestimo basta ver ser saldo liberado e escolher um valor logo acima!
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </section>
             <section class="pedesenha">
                 <div class="titleAp">
@@ -338,6 +371,14 @@
     </footer>
     <script src="../../js/transferencias/emprestimo.js"></script>
     <script src="../../js/animacoes.js"></script>
+    <script>
+        var usuId = localStorage.getItem('USU_ID');
+        var usuCPF = localStorage.getItem('USU_CPF');
+
+        if (usuId == null && usuCPF == null) {
+            window.location.href = "../erros.html";
+        }
+    </script>
 
 </body>
 

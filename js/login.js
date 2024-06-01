@@ -46,7 +46,6 @@ $("#btnLogar").click(async function (event) {
     if (camposOk) {
         const camposLogin = buscaDadosLogin();
         const dataJSON = JSON.stringify(camposLogin);
-        console.log("Meu json" + dataJSON)
         try {
             $(".loading").css("display", "flex");
 
@@ -56,7 +55,6 @@ $("#btnLogar").click(async function (event) {
 
             });
             const isOk = JSON.parse(await response.text());
-            console.log("json server" + isOk)
 
             if (isOk['mensagem'] == 'ok') {
                 console.log('Logado');
