@@ -338,7 +338,7 @@ $("#btnConfirmarPix").click(function (event) {
         if (saldoUserFloat < valorPixFloat) {
             $("#valorRecebido").parent("div").css("border-color", 'red');
             $(".msgErroE").css("display", 'flex');
-        } else if (saldoUserFloat == 0) {
+        } else if (valorPixFloat == 0) {
             $("#valorRecebido").parent("div").css("border-color", 'red');
             $(".msgErroL").css("display", 'flex');
         }

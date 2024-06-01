@@ -60,10 +60,9 @@ $("#btnLogar").click(async function (event) {
 
             if (isOk['mensagem'] == 'ok') {
                 console.log('Logado');
-                if ($('#Uppercase').is(':checked')) {
-                    localStorage.setItem('USU_ID', isOk.USU_ID);
-                    localStorage.setItem('USU_CPF', camposLogin.USU_CPF);
-                }
+
+                localStorage.setItem('USU_ID', isOk.USU_ID);
+                localStorage.setItem('USU_CPF', camposLogin.USU_CPF);
 
                 setTimeout(function () {
                     window.location.href = "./home.html";
@@ -73,7 +72,11 @@ $("#btnLogar").click(async function (event) {
                 console.log('senha ou email icorretos.');
                 $(".msgErroS").css("display", "flex")
                 $(".loading").css("display", "none");
-            } else {
+
+            } else if (isOk['mensagem'] == 'senha bloqueada') {
+                $(".msgErrobloqueada").css("display", "flex")
+            }
+            else {
                 console.log('Usuario não cadastrado.');
                 $(".msgErroE").css("display", "flex")
                 $(".loading").css("display", "none");

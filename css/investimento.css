@@ -1,0 +1,152 @@
+.areaInvest {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.graphicDetails,
+.graphicTotal {
+    width: 40rem;
+}
+
+.graphicTotal {
+    animation: animarGrafico 2s;
+    position: relative;
+    left: 0;
+}
+
+.graphicDetails {
+    animation: animarGraficoD 2s;
+    position: relative;
+    left: 0;
+}
+
+@keyframes animarGrafico {
+    0% {
+        opacity: 0;
+        left: -100px;
+    }
+
+    100% {
+        opacity: 1;
+        left: 0px;
+    }
+}
+
+@keyframes animarGraficoD {
+    0% {
+        opacity: 0;
+        left: -100px;
+    }
+
+    100% {
+        opacity: 1;
+        left: 0px;
+    }
+}
+
+
+/* .graphicTotal,
+.graphicDetails {
+    display: none;
+} */
+
+.graficovisivel {
+    display: block;
+}
+
+.btnChavePix {
+    width: 12rem;
+}
+
+.cardsInvestimentos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin-top: 3rem
+}
+
+.titgleCardInve {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--subtext-color-whitePage);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.elementosCardInve {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.tiposInve {
+    display: flex;
+    justify-content: space-between;
+    background-color: #d7d7d7;
+    padding: 14px;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.tiposInveNoValor {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.tiposInve:hover,
+.tiposInveNoValor:hover {
+    transition: 0.2s;
+    transform: scale(1.03);
+}
+
+.alinhaintensCIT {
+    display: flex;
+    align-items: center;
+}
+
+.valor {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.valor h1,
+.valor span {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--background--container);
+}
+
+.valor p {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--subtext-color-whitePage);
+}
+
+.contatoIcon {
+    border: 2px solid var(--subtext-color-whitePage);
+}
+
+.contatoIcon span {
+    font-size: 28px;
+    color: var(--subtext-color-whitePage);
+}
+
+.graficos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+}

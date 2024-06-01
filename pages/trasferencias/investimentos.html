@@ -25,6 +25,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
 
     <!-- LIBS INTERNAS -->
@@ -96,9 +97,9 @@
                             </a>
                         </li>
                         <li class="eleOpb">
-                            <a href="#">
-                                <span class="material-symbols-outlined">payments</span>
-                                <h1>Depositar</h1>
+                            <a href="./emprestimo.html">
+                                <span class="material-symbols-outlined">account_balance</span>
+                                <h1>Empréstimo</h1>
                             </a>
                         </li>
                         <li class="eleOpb">
@@ -148,42 +149,44 @@
                     <div></div>
                 </div>
             </div>
-            <section class="areaTed">
+            <section class="areaInvest">
                 <div class="titleAp aptxt">
-                    <h1>Para quem você quer transferir?</h1>
-                    <p>Escolha o tipo de dado e preencha o campo.</p>
+                    <h1>Seus investimento até o momento</h1>
+                    <p>Aqui voce pode visualizar ou fazer investimentos para seu dinheiro render mais.</p>
                 </div>
-                <div class="FormPix">
-                    <h2 class="titleInputs">Numero da Agências</h2>
-                    <div class="inputOrg">
-                        <span class="material-symbols-outlined" id="iconeAtualPix">person</span>
-                        <input class="inputText obrig" type="text" name="agencia" id="numAgenciaId"
-                            placeholder="Digite o numero de agências" onblur="validaAgencia(this)">
-                    </div>
-                    <h2 class="titleInputs">Numero da Conta</h2>
-                    <div class="inputOrg">
-                        <span class="material-symbols-outlined" id="iconeAtualPix">person</span>
-                        <input class="inputText obrig" type="text" name="conta" id="numContaId"
-                            placeholder="Digite o Numero da conta" onblur="validaConta(this)">
-                    </div>
-                    <p class="msgErroETed">Conta inexistente!</p>
+                <div class="graficos">
+                    <h1>Grafico dos ganho total mensal com seus investimento</h1>
+                    <div class="graphicTotal"> </div>
 
-                    <div class="alinhabtn">
-                        <div class="alinhabtns">
-                            <div class="btnChavePix valido" id="btnEnviaTed">
-                                Próximo
-                                <span class="material-symbols-outlined">arrow_forward</span>
-                            </div>
+                    <div class="cardsInvestimentos">
+                        <p class="titgleCardInve">Escolha abaixo um para investir</p>
+                        <div class="elementosCardInve">
+
                         </div>
                     </div>
                 </div>
+
             </section>
             <section class="areaValor">
                 <div class="titleAp sl">
-                    <h1 class="">Quanto você quer transferir?</h1>
-                    <p class="">Escolha o valor desejado e preencha o campo.</p>
+                    <h1>Quanto você quer Investir?</h1>
+                    <p>Escolha o valor desejado e preencha o campo.</p>
                 </div>
                 <div class="formValor">
+                    <div class="tiposInveNoValor">
+                        <div class="alinhaintensCIT sl">
+                            <div class="contatoIcon">
+                                <h1 id="fotoPerfilInve">TESTE</h1>
+                            </div>
+                            <div class="infosCce">
+                                <h1 id="nomeUserInve">TESTE</h1>
+                            </div>
+                        </div>
+                        <div class="valor sl">
+                            <h1><span id="valorInve">TESTE</span>%</h1>
+                            <p>ao mês</p>
+                        </div>
+                    </div>
                     <div class="areaViewValor sl">
                         <div class="campoViewValor">
                             <p>R$</p>
@@ -203,47 +206,12 @@
                                 onblur="ValidaValor(this)">
                         </div>
                         <p class="msgErroE">Saldo insuficiente para transição</p>
-                        <p class="msgErroL">Não é possível transferir esse valor</p>
-                        <p class="msgErroH">A partir das 20h não são permitidos o envio de Pix no valor acima de
-                            R$1.000,00 (Mil Reais) para sua segurança. Por favor insira um valor menor ou tente amanhã.
-                        </p>
+                        <p class="msgErroL">Não é possível investir esse valor</p>
                         <div class="alinhabtn">
                             <div class="alinhabtns">
                                 <div class="btnChavePix sl valido" id="btnConfirmarPix">Próximo<span
                                         class="material-symbols-outlined">arrow_forward</span>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="confirmaInfos">
-                <div class="titleAp sl">
-                    <h1>Confirme se está tudo certo</h1>
-                    <p>Antes de realizar o pix confirme se esta enviado para o destinatario correto!</p>
-                </div>
-                <div class="infosCf">
-                    <div class="userCf">
-                        <div class="destinatarioCfTed">
-                            <div class="contatoIconCf sl">
-                                <h1 id="fotoPerfilICf">EF</h1>
-                            </div>
-                            <div class="infosUserCfTed sl">
-                                <h1 id="nomeUserCheveICf">Eduardo Franco</h1>
-                                <div class="dadosConta">
-                                    <p>Agencia: <span id="agenciaInfos">0043</span></p>
-                                    <p>Conta: <span id="contaInfos">0034231-9</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mostraValorCf sl">
-                        <h1>R$ <span id="valorDoPix">45,83</span></h1>
-                    </div>
-                    <div class="alinhabtn">
-                        <div class="alinhabtns">
-                            <div class="btnChavePix sl valido" id="btnPedirSenha">Próximo<span
-                                    class="material-symbols-outlined">arrow_forward</span>
                             </div>
                         </div>
                     </div>
@@ -265,79 +233,9 @@
                         <p class="msgErroSenha">Senha Incorreta</p>
                         <div class="alinhabtn">
                             <div class="alinhabtns">
-                                <div class="btnChavePix valido" id="btnConfirmaTraferenciaTed">Transferir<span
+                                <div class="btnChavePix valido" id="btnConfirmaInvestimento">Transferir<span
                                         class="material-symbols-outlined">arrow_forward</span>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="comprovante" id="printableArea">
-                <div class="infosCpr">
-                    <div class="iconCfr">
-                        <span class="material-symbols-outlined">check</span>
-                    </div>
-                    <div class="textInfosCpr">
-                        <h1>Transferência realizada</h1>
-                        <p>A transferência Ted foi realizada com sucesso</p>
-                    </div>
-                    <div class="barraCpr"></div>
-                    <div class="scrollCpr">
-                        <div class="valorCpr">
-                            <span class="material-symbols-outlined tpVcpr">monetization_on</span>
-                            <div class="txtValorCpr">
-                                <h1>R$ <span id="valorComp">168,00</span></h1>
-                                <p>valor transferido via Ted</p>
-                            </div>
-                        </div>
-                        <div class="enviadoCpr">
-                            <span class="material-symbols-outlined tpVcpr">send</span>
-                            <div class="alinhaEcpr">
-                                <div class="userCpr">
-                                    <div class="txtUserCpr">
-                                        <p>para</p>
-                                        <h1 id="nomeCompDest">Eduardo Franco seco</h1>
-                                        <h2>cpf <span id="cpfCompDest">161.327.546-36</span></h2>
-                                        <h2>ag <span id="agenciaCompDest">0043</span> | conta <span
-                                                id="contaCompDes">0034231-9</span></h2>
-                                    </div>
-                                </div>
-                                <div class="userCpr prxElemUserCpr">
-                                    <div class="txtUserCpr">
-                                        <p>de</p>
-                                        <h1 id="nomeComp">Igor Albiero</h1>
-                                        <h2>cpf <span id="cpfComp">523.123.342-23</span></h2>
-                                        <h2>ag <span id="agenciaComp">0043</span> | conta <span
-                                                id="contaComp">0034231-9</span></h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="othersIforsCpr">
-                            <span class="material-symbols-outlined tpVcpr">format_list_bulleted</span>
-                            <div class="alinhaEcpr">
-                                <div class="otcElement">
-                                    <p>realizado em</p>
-                                    <h2><span id="dataComp">09/11/2023</span> ás <span id="horasComp">18:18:34</span>
-                                    </h2>
-                                </div>
-                                <div class="otcElement">
-                                    <p>via</p>
-                                    <h2>Penguin Bank</h2>
-                                </div>
-                                <div class="otcElement">
-                                    <p>ID da transação</p>
-                                    <h2>E60834574523TSD232CXR234</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="alinhabtn" id="alinhabtn">
-                        <div class="alinhabtns">
-                            <div class="btnChavePix valido" id="printButton">Imprimir<span
-                                    class="material-symbols-outlined">arrow_forward</span>
                             </div>
                         </div>
                     </div>
@@ -395,8 +293,6 @@
         </div>
     </footer>
 
-
-    <script src="../../js/transferencias/pix.js"></script>
     <script src="../../js/transferencias/investimento.js"></script>
     <script src="../../js/animacoes.js"></script>
 

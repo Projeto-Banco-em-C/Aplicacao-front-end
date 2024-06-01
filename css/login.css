@@ -329,7 +329,8 @@ option {
 .msgErroSenha,
 .msgErroData,
 .msgErroS,
-.msgErroE {
+.msgErroE,
+.msgErrobloqueada {
     display: none;
     font-size: 16px;
     font-weight: 400;

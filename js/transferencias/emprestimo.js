@@ -99,6 +99,7 @@ function validaCamposEmprestimo() {
 function validaCampoEmp(elemento) {
     let inputParent = $(elemento).parent('.inputOrg')
     inputParent.css("border-color", "#121212");
+    $("#alinhaOp").empty()
     juros()
 }
 
@@ -148,7 +149,7 @@ function juros() {
 
         for (let i = 2; i <= 12; i++) {
             let taxa = taxasJuros[i - 2];
-            let valorParcela = valorOriginal * (1 + taxa);
+            let valorParcela = valorOriginal * (1 + taxa) / i;
             let options = `
                 <div class="itensOptions">
                     <p>${i} x <span>${valorParcela.toFixed(2)}</span> com juros de ${(taxa * 100).toFixed(2)}%</p>
@@ -217,9 +218,10 @@ async function confirmarSenhaServerPag(cpf, senha, valor) {
 
 async function realizarEmprestimo(idUser, valordoRecebido) {
     const qtdp = DadosComprovante.qtdnumParcelas
-    const jurosmensal = taxasJuros[qtdp] * valordoRecebido
+    const jurosmensal = (taxasJuros[qtdp] * valordoRecebido) / qtdp
+    const jurosmensalArredondado = jurosmensal.toFixed(2);
 
-    console.log(jurosmensal)
+    console.log(jurosmensalArredondado)
 
     //data atual
     var today = new Date();
@@ -236,7 +238,7 @@ async function realizarEmprestimo(idUser, valordoRecebido) {
                 "USU_ID": idUser,
                 "EMP_VALOR_TOTAL": valordoRecebido,
                 "EMP_NUM_PARCELAS": qtdp,
-                "EMP_JURUS_MENSAL": jurosmensal,
+                "EMP_JURUS_MENSAL": jurosmensalArredondado,
                 "EMP_DATA_INICIO": dataformatada
             });
         try {
