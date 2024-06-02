@@ -5,7 +5,7 @@ async function ValidarCPFServer(cpf) {
     try {
         $(".loading").css("display", "flex");
 
-        const response = await fetch('http://localhost:9000/validacaoCpf', {
+        const response = await fetch(ipServer + 'validacaoCpf', {
             method: 'POST',
             body: dataJSON,
         });
@@ -181,7 +181,7 @@ $("#btnNextCadastrar").click(async function (event) {
         try {
             $(".loading").css("display", "flex");
 
-            const response = await fetch('http://localhost:9000/cadastro', {
+            const response = await fetch(ipServer + 'cadastro', {
                 method: 'POST',
                 body: dataJSON,
 

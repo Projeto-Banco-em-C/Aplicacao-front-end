@@ -11,3 +11,6 @@ function obterIniciais(nomeCompleto) {
 
     return iniciais.toUpperCase();
 }
+
+
+var ipServer = "http://192.168.1.35:9000/"

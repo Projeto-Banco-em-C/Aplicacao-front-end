@@ -57,7 +57,7 @@ async function ValidarContaTed(agencia, conta) {
     const dataJSON = JSON.stringify({ "USU_NUM_CONTA": conta, "USU_NUM_AGENCIA": agencia });
     $(".loading").css("display", "flex")
     try {
-        const response = await fetch('http://localhost:9000/consulta_info_conta', {
+        const response = await fetch(ipServer + 'consulta_info_conta', {
             method: 'POST',
             body: dataJSON,
         });
@@ -130,7 +130,7 @@ async function confirmarSenhaServerTED(chavePix, senha) {
     if (camposOk) {
         const dataJSON = JSON.stringify({ "USU_CPF": chavePix, "USU_SENHA_ACESSO": senha });
         try {
-            const response = await fetch('http://localhost:9000/login', {
+            const response = await fetch(ipServer + 'login', {
                 method: 'POST',
                 body: dataJSON,
             });
@@ -156,7 +156,7 @@ async function realizarTransferenciasTED(idUser, idDestino, valordoPixRecebido) 
             { "USU_ID": idUser, "USU_ID_DESTINO": idDestino, "USU_SALDO": valordoPixRecebido, "TRAN_TIPO": "TED" }
         );
         try {
-            const response = await fetch('http://localhost:9000/transferir', {
+            const response = await fetch(ipServer + 'transferir', {
                 method: 'POST',
                 body: dataJSON,
             });

@@ -49,7 +49,7 @@ $("#btnLogar").click(async function (event) {
         try {
             $(".loading").css("display", "flex");
 
-            const response = await fetch('http://localhost:9000/login', {
+            const response = await fetch(ipServer + 'login', {
                 method: 'POST',
                 body: dataJSON,
 

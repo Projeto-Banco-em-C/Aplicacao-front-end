@@ -43,12 +43,11 @@ $('#verInfos').click(function () {
     });
 });
 
-
 async function PegarDados(id) {
     const dataJSON = JSON.stringify({ "USU_ID": id });
     try {
         $(".headerPerfil").addClass("skeletonLoading")
-        const response = await fetch('http://localhost:9000/dados', {
+        const response = await fetch(ipServer + 'dados', {
             method: 'POST',
             body: dataJSON,
         });

@@ -98,7 +98,7 @@ async function mostraGanhos(id) {
     const dataJSON = JSON.stringify({ "USU_ID": id });
     try {
         $(".areaValor").addClass("skeletonLoading")
-        const response = await fetch('http://localhost:9000/mostraGanhos', {
+        const response = await fetch(ipServer + 'mostraGanhos', {
             method: 'POST',
             body: dataJSON,
         });
@@ -194,7 +194,7 @@ async function PegarSaldo(id) {
     const dataJSON = JSON.stringify({ "USU_ID": id });
     try {
         $(".areaValor").addClass("skeletonLoading")
-        const response = await fetch('http://localhost:9000/dados', {
+        const response = await fetch(ipServer + 'dados', {
             method: 'POST',
             body: dataJSON,
         });
@@ -293,7 +293,7 @@ async function confirmarSenhaServerTED(chavePix, senha) {
     if (camposOk) {
         const dataJSON = JSON.stringify({ "USU_CPF": chavePix, "USU_SENHA_ACESSO": senha });
         try {
-            const response = await fetch('http://localhost:9000/login', {
+            const response = await fetch(ipServer + 'login', {
                 method: 'POST',
                 body: dataJSON,
             });
@@ -326,7 +326,7 @@ async function FazerInvestimento(tipo, juros, valor) {
             { "USU_ID": usuId, "INV_VALOR": valor, "INV_TIPO": tipo, "INV_JUROS": jurosformatado }
         );
         try {
-            const response = await fetch('http://localhost:9000/investimento', {
+            const response = await fetch(ipServer + 'investimento', {
                 method: 'POST',
                 body: dataJSON,
             });

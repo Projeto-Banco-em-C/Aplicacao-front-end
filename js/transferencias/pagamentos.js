@@ -129,7 +129,7 @@ async function ValidarContaPag(agencia, conta, valor, validade) {
     const dataJSON = JSON.stringify({ "USU_NUM_CONTA": conta, "USU_NUM_AGENCIA": agencia });
     $(".loading").css("display", "flex")
     try {
-        const response = await fetch('http://localhost:9000/consulta_info_conta', {
+        const response = await fetch(ipServer + 'consulta_info_conta', {
             method: 'POST',
             body: dataJSON,
         });
@@ -194,7 +194,7 @@ async function PegarDadosUser(id) {
     const dataJSON = JSON.stringify({ "USU_ID": id });
     try {
         $(".areaValor").addClass("skeletonLoading")
-        const response = await fetch('http://localhost:9000/dados', {
+        const response = await fetch(ipServer + 'dados', {
             method: 'POST',
             body: dataJSON,
         });
@@ -285,7 +285,7 @@ async function confirmarSenhaServerPag(chavePix, idDestino, senha, thisValorForm
     if (camposOk) {
         const dataJSON = JSON.stringify({ "USU_CPF": chavePix, "USU_SENHA_ACESSO": senha });
         try {
-            const response = await fetch('http://localhost:9000/login', {
+            const response = await fetch(ipServer + 'login', {
                 method: 'POST',
                 body: dataJSON,
             });
@@ -311,7 +311,7 @@ async function realizarPagamento(idUser, idDestino, valordoRecebido) {
             { "USU_ID": idUser, "USU_ID_DESTINO": idDestino, "USU_SALDO": valordoRecebido, "TRAN_TIPO": "PAGAMENTO" }
         );
         try {
-            const response = await fetch('http://localhost:9000/transferir', {
+            const response = await fetch(ipServer + 'transferir', {
                 method: 'POST',
                 body: dataJSON,
             });

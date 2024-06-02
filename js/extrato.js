@@ -6,7 +6,7 @@ async function VerContatos(id) {
         $(".noContactsEx").css("display", 'none');
         $(".elementosEx").addClass("skeletonLoading")
 
-        const response = await fetch('http://localhost:9000/extrato', {
+        const response = await fetch(ipServer + 'extrato', {
             method: 'POST',
             body: dataJSON,
         });

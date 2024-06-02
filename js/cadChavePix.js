@@ -7,7 +7,7 @@ async function VerChavePix(id) {
         $(".noContacts").css("display", 'none');
         $(".elementosContatos").addClass("skeletonLoading")
 
-        const response = await fetch('http://localhost:9000/lista_chave_pix', {
+        const response = await fetch(ipServer + 'lista_chave_pix', {
             method: 'POST',
             body: dataJSON,
         });
@@ -79,7 +79,7 @@ async function cadastraChavePix(chavePix, id) {
         const dataJSON = JSON.stringify({ "USU_ID": id, "CHA_CODIGO": chavePix });
         $(".loading").css("display", "flex")
         try {
-            const response = await fetch('http://localhost:9000/adicionar_chave_pix', {
+            const response = await fetch(ipServer + 'adicionar_chave_pix', {
                 method: 'POST',
                 body: dataJSON,
             });

@@ -95,7 +95,7 @@ async function ValidarCPFServer(chavPix) {
     const dataJSON = JSON.stringify({ "CHA_CODIGO": chavPix });
     $(".loading").css("display", "flex")
     try {
-        const response = await fetch('http://localhost:9000/consulta_info_pix', {
+        const response = await fetch(ipServer + 'consulta_info_pix', {
             method: 'POST',
             body: dataJSON,
         });
@@ -140,7 +140,7 @@ async function VerContatos(id) {
         $(".noContacts").css("display", 'none');
         $(".elementosContatos").addClass("skeletonLoading")
 
-        const response = await fetch('http://localhost:9000/list_historico_pix', {
+        const response = await fetch(ipServer + 'list_historico_pix', {
             method: 'POST',
             body: dataJSON,
         });
@@ -275,7 +275,7 @@ async function PegarSaldo(id) {
     const dataJSON = JSON.stringify({ "USU_ID": id });
     try {
         $(".areaValor").addClass("skeletonLoading")
-        const response = await fetch('http://localhost:9000/dados', {
+        const response = await fetch(ipServer + 'dados', {
             method: 'POST',
             body: dataJSON,
         });
@@ -373,7 +373,7 @@ $("#btnPedirSenha").click(function (event) {
 async function cadastrarNovoContato(IdCNC, chavepixCNC, nomeCNC) {
     const dataJSON = JSON.stringify({ "USU_ID": IdCNC, "CON_CHAVE": chavepixCNC, "CON_NOME": nomeCNC });
     try {
-        const response = await fetch('http://localhost:9000/adicionar_contato_pix', {
+        const response = await fetch(ipServer + 'adicionar_contato_pix', {
             method: 'POST',
             body: dataJSON,
         });
@@ -422,7 +422,7 @@ async function confirmarSenhaServer(chavePix, senha) {
     if (camposOk) {
         const dataJSON = JSON.stringify({ "USU_CPF": chavePix, "USU_SENHA_ACESSO": senha });
         try {
-            const response = await fetch('http://localhost:9000/login', {
+            const response = await fetch(ipServer + 'login', {
                 method: 'POST',
                 body: dataJSON,
             });
@@ -450,7 +450,7 @@ async function realizarTransferencias(idUser, idDestino, valordoPixRecebido) {
             { "USU_ID": idUser, "USU_ID_DESTINO": idDestino, "USU_SALDO": valordoPixRecebido, "TRAN_TIPO": "PIX" }
         );
         try {
-            const response = await fetch('http://localhost:9000/transferir', {
+            const response = await fetch(ipServer + 'transferir', {
                 method: 'POST',
                 body: dataJSON,
             });

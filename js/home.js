@@ -1,7 +1,7 @@
 async function PegarDados(id) {
     const dataJSON = JSON.stringify({ "USU_ID": id });
     try {
-        const response = await fetch('http://localhost:9000/dados', {
+        const response = await fetch(ipServer + 'dados', {
             method: 'POST',
             body: dataJSON,
         });
@@ -73,7 +73,7 @@ $("#mandaparaIA").click(function () {
 async function VerContatos(id) {
     const dataJSON = JSON.stringify({ "USU_ID_ORIGEM": id });
     try {
-        const response = await fetch('http://localhost:9000/extrato', {
+        const response = await fetch(ipServer + 'extrato', {
             method: 'POST',
             body: dataJSON,
         });

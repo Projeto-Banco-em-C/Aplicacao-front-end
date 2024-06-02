@@ -39,7 +39,7 @@ async function PegarDadosUser(id) {
     const dataJSON = JSON.stringify({ "USU_ID": id });
     try {
         $(".areaEmprestimo").addClass("skeletonLoading")
-        const response = await fetch('http://localhost:9000/dados', {
+        const response = await fetch(ipServer + 'dados', {
             method: 'POST',
             body: dataJSON,
         });
@@ -196,7 +196,7 @@ async function confirmarSenhaServerPag(cpf, senha, valor) {
     if (camposOk) {
         const dataJSON = JSON.stringify({ "USU_CPF": cpf, "USU_SENHA_ACESSO": senha });
         try {
-            const response = await fetch('http://localhost:9000/login', {
+            const response = await fetch(ipServer + 'login', {
                 method: 'POST',
                 body: dataJSON,
             });
@@ -242,7 +242,7 @@ async function realizarEmprestimo(idUser, valordoRecebido) {
                 "EMP_DATA_INICIO": dataformatada
             });
         try {
-            const response = await fetch('http://localhost:9000/adicionar_emprestimo', {
+            const response = await fetch(ipServer + 'adicionar_emprestimo', {
                 method: 'POST',
                 body: dataJSON,
             });
@@ -346,7 +346,7 @@ async function VerContatos(id) {
         $(".noContacts").css("display", 'none');
         $(".elementosContatos").addClass("skeletonLoading")
 
-        const response = await fetch('http://localhost:9000/lista_emprestimo', {
+        const response = await fetch(ipServer + 'lista_emprestimo', {
             method: 'POST',
             body: dataJSON,
         });

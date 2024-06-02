@@ -165,6 +165,20 @@
           height: 100%;
           margin: 0rem 4rem;
      }
+
+     .FormPagamentos {
+          width: 90% !important;
+     }
+
+     .container p {
+          max-width: 20rem;
+     }
+
+     .container img {
+          width: 16rem;
+          height: 16rem;
+     }
+
 }
 
 @media (max-width: 425px) {
