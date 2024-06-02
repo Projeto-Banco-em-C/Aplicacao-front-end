@@ -286,7 +286,7 @@ main {
 }
 
 .infoscard h1 {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 600;
     color: var(--subtext-color);
 }
@@ -303,4 +303,23 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.logo {
+    width: 38px;
+    height: 38px;
+    margin-right: 10px;
+}
+
+.infosContainer img {
+    width: 10rem;
+    height: 10rem;
+    margin-bottom: 2rem;
+}
+
+.logobank {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }

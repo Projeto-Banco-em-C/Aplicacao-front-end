@@ -29,7 +29,7 @@
     font-size: 26px;
     font-weight: 600;
     color: var(--text-color);
-    max-width: 23rem;
+    max-width: 31rem;
     text-align: center;
 }
 
@@ -140,13 +140,10 @@
 }
 
 .menuUserIconIA {
-    background-color: var(--subtext-color-whitePage);
-    border-radius: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     user-select: none;
-    padding: 16px
 }
 
 .menuUserIconIA h1 {
@@ -225,4 +222,9 @@
     80% {
         background-position: 0% 50%, 50% 50%, 100% 100%;
     }
+}
+
+.menuUserIconIA img {
+    width: 56px;
+    height: 56px;
 }

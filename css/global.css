@@ -1,7 +1,7 @@
 :root {
     --primary-color: rgb(8, 8, 8);
     --text-color: #fff;
-    --background-color: rgb(238, 238, 240);
+    --background-color: #fcfcfc;
     --font-family: "Roboto", sans-serif;
     --font-family-title: "Poppins", sans-serif;
     --subtext-color: #adadad;
@@ -11,6 +11,8 @@
     --color-green: #4FFF80;
 
 }
+
+/* rgb(238, 238, 240) */
 
 * {
     color: var(--primary-color);

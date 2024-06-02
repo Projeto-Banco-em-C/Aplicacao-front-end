@@ -1,4 +1,38 @@
-@media (max-width: 1300px) {
+@media (min-width: 1920px) {
+     .test {
+          width: 38rem;
+          height: 23rem;
+     }
+
+     .titleStartpPage {
+          font-size: 54px;
+     }
+
+     .titleStartpPage span {
+          font-size: 57px;
+     }
+
+     .btncadastrar {
+          width: 15rem;
+          padding: 19px;
+     }
+
+     .btncadastrar a {
+          font-size: 19px;
+     }
+
+     .infosContainer img {
+          width: 13rem;
+          height: 13rem;
+     }
+
+     .btnentrar a {
+          font-size: 20px;
+     }
+
+     .btnentrar {
+          width: 18rem;
+     }
 
      .imgProp,
      .container {
@@ -10,6 +44,7 @@
           width: 50%;
      }
 }
+
 
 @media (max-width: 1024px) {
 

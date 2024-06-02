@@ -107,7 +107,7 @@ body::-webkit-scrollbar {
     list-style: none;
     width: 100%;
     padding: 10px;
-    background-color: #d7d7d7;
+    background-color: rgb(217 217 217);
     margin-bottom: 1rem;
     border-radius: 0.5rem;
 }

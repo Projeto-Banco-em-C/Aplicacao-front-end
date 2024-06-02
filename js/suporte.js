@@ -58,13 +58,13 @@ $('#btnMandaIA').click(function () {
 
     setTimeout(function () {
 
-        //testar() //////////////////////////////////////////////////////////////
+        testar() //////////////////////////////////////////////////////////////
 
         let IAexpected = `
             <div class="msgIA" id="IAloading">
                 <div class="cardMsgIa">
                     <div class="menuUserIconIA">
-                        <h1 id="fotoPerfilMenu">IA</h1>
+                        <img src="../img/pinguim_pqueno.png" alt="">
                     </div>
                     <div class="cardMsg ias">
                         <div class="dots"></div>
@@ -106,7 +106,7 @@ function testar() {
         <div class="msgIA">
             <div class="cardMsgIa">
                 <div class="menuUserIconIA">
-                    <h1 id="fotoPerfilMenu">IA</h1>
+                    <img src="../img/pinguim_pqueno.png" alt="">
                 </div>
                 <div class="cardMsg ias">
                     <h1 id="textoAnimado"></h1>
