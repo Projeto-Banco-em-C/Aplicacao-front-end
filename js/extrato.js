@@ -20,12 +20,15 @@ async function VerContatos(id) {
             $(".elementosEx").empty();
             const contatos = Array.isArray(isOk) ? isOk : [isOk];
             contatos.forEach((contato) => {
-                console.log('contato', JSON.stringify(contato))
                 const nome = contato.NOME;
                 const tipo = contato.TIPO
                 const valor = contato.VALOR
                 const data = contato.DATA
                 const iniciais = obterIniciais(nome);
+
+                // Formatar o valor
+                const valorformat = Number(valor.replace(",", "."));
+                const valorconvertido = Math.abs(valorformat).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
                 // Separar a string data
                 const partes = data.split('/');
@@ -56,7 +59,7 @@ async function VerContatos(id) {
                             </div>
                         </div>
                         <div class="date ${valor.startsWith('-') ? 'negativo' : 'positivo'}">
-                            <h1 class="valorEx"><span>${valor.startsWith('-') ? '-' : '+'} </span>R$ ${Math.abs(valor)}</h1>
+                            <h1 class="valorEx"><span>${valor.startsWith('-') ? '-' : '+'} </span>${valorconvertido}</h1>
                             <p class="dataEx"><span>${dia}</span> <span>${mesesAbreviados[mes]}</span></p>
                         </div>
                     </div>   

@@ -13,4 +13,4 @@ function obterIniciais(nomeCompleto) {
 }
 
 
-var ipServer = "http://192.168.1.35:9000/"
+var ipServer = "http://localhost:9000/"

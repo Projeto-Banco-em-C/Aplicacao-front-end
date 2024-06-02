@@ -42,8 +42,27 @@ main {
 }
 
 .containerHead h1 {
-    padding: 3rem;
+    font-size: 38px;
+    font-weight: 800;
     color: var(--text-color);
+    font-style: italic;
+}
+
+.containerHead p {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--subtext-color);
+}
+
+.containerHead img {
+    width: 5rem;
+    height: 5rem;
+}
+
+.txtTitleLogin {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
 }
 
 .infos {
@@ -206,16 +225,6 @@ select:focus-visible {
 .linkEsqueceuSenha a:hover {
     color: var(--subtext-color-whitePage);
 }
-
-/* .infosContainer::after {
-    content: '';
-    display: flex;
-    width: 100%;
-    margin: 1rem 0;
-    height: 2px;
-    border-radius: 2px;
-    background-color: var(--subtext-color-whitePage);
-} */
 
 .ncont {
     margin-left: 1rem;

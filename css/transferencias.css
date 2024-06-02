@@ -596,7 +596,8 @@ input:focus {
 .msgErroH,
 .msgErroSenha,
 .msgErroConf,
-.msgErroEasa {
+.msgErroEasa,
+.msgErroS {
     display: none;
     font-size: 16px;
     font-weight: 400;

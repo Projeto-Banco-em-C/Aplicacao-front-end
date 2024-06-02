@@ -45,6 +45,11 @@
      }
 }
 
+@media (max-width: 1100px) {
+     .elementosContainer {
+          width: 46%;
+     }
+}
 
 @media (max-width: 1024px) {
 
@@ -111,6 +116,20 @@
           align-items: center;
      }
 
+     .elementosContainer {
+          width: 46%;
+     }
+
+     .contatoIcon h1 {
+          font-size: 12px;
+          font-weight: 600;
+          color: var(--subtext-color);
+     }
+
+     .contatoIcon {
+          height: 2rem;
+          width: 2rem;
+     }
 }
 
 @media (max-width: 786px) {
@@ -179,6 +198,105 @@
           height: 16rem;
      }
 
+     .container img {
+          width: 6rem;
+          height: 6rem;
+     }
+
+     /* IA */
+
+     .elementosIA {
+          background-color: var(--background--container);
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          flex-direction: column;
+          border-radius: 0;
+     }
+
+     .formIA {
+          margin-bottom: 3rem;
+     }
+
+     .msgIA {
+          margin: 1rem 1rem;
+     }
+
+     .menuUserIconIA img {
+          width: 42px;
+          height: 42px;
+     }
+
+     .headerPerfil {
+          width: 90%;
+     }
+
+     .linksPerfil {
+          width: 90%;
+     }
+
+     .contatos {
+          width: 90%;
+     }
+
+     .FormChave {
+          width: 90%;
+     }
+
+     #notificacao {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+     }
+
+     .cardNotfica {
+          position: absolute;
+          margin-top: 3rem;
+          background-color: #272727;
+          padding: 0;
+          border-radius: 1rem;
+          overflow: scroll;
+          width: 100%;
+          left: 0;
+     }
+
+     .date {
+          margin-left: 0;
+     }
+
+     .contatoCe {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 2rem 10px 10px 10px;
+     }
+
+     .alinhabtnmais {
+          margin-bottom: 1rem;
+     }
+
+     .contatoCe {
+          display: flex;
+          align-items: center;
+          margin: 2rem 10px 10px 10px;
+          width: 90%;
+     }
+
+     .date h1,
+     .date h1 span {
+          font-size: 18px;
+          font-weight: 500;
+          display: flex;
+     }
+
+     .headerEx {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 90%;
+     }
 }
 
 @media (max-width: 425px) {
@@ -225,7 +343,11 @@
           display: flex;
           align-items: flex-start;
           flex-direction: column;
-          margin-left: 1rem;
+          margin-left: 2rem;
+     }
+
+     .menuHome {
+          height: 18rem;
      }
 
      .menuUserName {
@@ -265,7 +387,7 @@
      }
 
      .itensMI {
-          margin-left: 1rem;
+          margin-left: 2rem;
      }
 
      .elementosContainer {
@@ -297,8 +419,17 @@
           width: 90%;
      }
 
+     .titleCon p {
+          font-size: 14px;
+     }
 
-     /* tela pix */
+     .titleAp {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 90%;
+     }
+
      .menu {
           display: none;
      }
@@ -322,6 +453,10 @@
           width: 100%;
           height: 100% - 2rem;
           z-index: 2;
+     }
+
+     .alinhabtns {
+          margin-bottom: 2rem;
      }
 
      /* index */

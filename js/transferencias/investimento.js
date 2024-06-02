@@ -1,9 +1,11 @@
 var usuId = localStorage.getItem('USU_ID');
+var isSaque = false
 
 var DadosComprovante = {
-    valorEmpre: "",
-    tipoEmpre: "",
-    jurosEmpre: ""
+    valorInvest: "",
+    tipoInvest: "",
+    jurosInvest: "",
+    valorSaque: ""
 };
 
 var dataBanco = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -163,11 +165,13 @@ function inveEscolhido(titulo, iniciais, valor) {
     $("#nomeUserInve").text(titulo);
     $("#valorInve").text(valor);
 
-    DadosComprovante.tipoEmpre = titulo
-    DadosComprovante.jurosEmpre = valor
+    DadosComprovante.tipoInvest = titulo
+    DadosComprovante.jurosInvest = valor
 
     $(".areaInvest").css("display", 'none');
     $(".areaValor").css("display", 'flex');
+
+    mostrarInvestimento(usuId, DadosComprovante.tipoInvest)
 }
 
 $(document).ready(function () {
@@ -183,12 +187,8 @@ $(document).ready(function () {
 
         $('#valorD').text(parseFloat(parteInteira).toLocaleString('pt-BR'));
         $('#valorC').text(centavos);
-
-        var valorNumerico = parseFloat(valor) / 100
-        valorDoPixFormatado = valorNumerico.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
     });
 });
-
 
 async function PegarSaldo(id) {
     const dataJSON = JSON.stringify({ "USU_ID": id });
@@ -216,6 +216,32 @@ async function PegarSaldo(id) {
 }
 PegarSaldo(usuId)
 
+async function mostrarInvestimento(id, tipo) {
+    const dataJSON = JSON.stringify({ "USU_ID": id, "INV_TIPO": tipo });
+    try {
+        $(".areaValor").addClass("skeletonLoading")
+        const response = await fetch(ipServer + 'mostrarInvestimento', {
+            method: 'POST',
+            body: dataJSON,
+        });
+
+        const isOk = JSON.parse(await response.text());
+
+        if (isOk['mensagem'] == 'erro') {
+            console.log('ERRO');
+            $(".areaValor").removeClass("skeletonLoading")
+
+        } else {
+            console.log('Certo');
+            $('#saldoDisponivelInve').text(parseFloat(isOk.VALOR.trim()).toLocaleString('pt-BR'));
+            $(".areaValor").removeClass("skeletonLoading")
+        }
+
+    } catch (error) {
+        console.error('Erro Servidor:', error.message);
+    }
+}
+
 function ValidaValor(elemento) {
     let preenchido = true;
     $(".formularios input").each(function () {
@@ -231,7 +257,7 @@ function ValidaValor(elemento) {
     $(elemento).parent("div").css("border-color", '#121212');
     $(".msgErroE").css("display", 'none');
     $(".msgErroL").css("display", 'none');
-
+    $(".msgErroS").css("display", 'none');
 
     return preenchido
 }
@@ -242,20 +268,47 @@ $("#btnConfirmarPix").click(function (event) {
 
     if (camposOk) {
         const saldoUserFloat = parseFloat($("#meuSaldo").text().replace(/\./g, '').replace(',', '.'));
-        const valorPixFloat = parseFloat($("#valorRecebido").val().replace(/\./g, '').replace(',', '.'));
+        const valorInvestiFloat = parseFloat($("#valorRecebido").val().replace(/\./g, '').replace(',', '.'));
 
-        console.log(saldoUserFloat, valorPixFloat)
+        console.log(saldoUserFloat, valorInvestiFloat)
 
-        if (valorPixFloat == 0) {
+        if (valorInvestiFloat == 0) {
             $("#valorRecebido").parent("div").css("border-color", 'red');
             $(".msgErroL").css("display", 'flex');
-        } else if (saldoUserFloat < valorPixFloat) {
+        } else if (saldoUserFloat < valorInvestiFloat) {
             $("#valorRecebido").parent("div").css("border-color", 'red');
             $(".msgErroE").css("display", 'flex');
         }
         else {
-            DadosComprovante.valorEmpre = valorPixFloat
-            console.log(valorPixFloat)
+            DadosComprovante.valorInvest = valorInvestiFloat
+            console.log(valorInvestiFloat)
+            $(".areaValor").css("display", 'none');
+            $(".pedesenha").css("display", 'flex');
+        }
+    }
+})
+
+// button sacar
+$("#btnSacarPix").click(function () {
+    const camposOk = ValidaValor();
+
+    if (camposOk) {
+        const saldoDisponivelInve = parseFloat($("#saldoDisponivelInve").text().replace(/\./g, '').replace(',', '.'));
+        const valorSaqueFloat = parseFloat($("#valorRecebido").val().replace(/\./g, '').replace(',', '.'));
+
+        console.log(saldoDisponivelInve, valorSaqueFloat)
+
+        if (valorSaqueFloat == 0) {
+            $("#valorRecebido").parent("div").css("border-color", 'red');
+            $(".msgErroS").css("display", 'flex');
+        } else if (saldoDisponivelInve < valorSaqueFloat) {
+            $("#valorRecebido").parent("div").css("border-color", 'red');
+            $(".msgErroE").css("display", 'flex');
+        }
+        else {
+            isSaque = true
+            DadosComprovante.valorSaque = valorSaqueFloat
+            console.log(valorSaqueFloat)
             $(".areaValor").css("display", 'none');
             $(".pedesenha").css("display", 'flex');
         }
@@ -285,10 +338,10 @@ $("#btnConfirmaInvestimento").click(function () {
     var senhaUserS = $("#confirmSenha").val()
 
     const senhaCriptografada = CriptografarSenha(senhaUserS);
-    confirmarSenhaServerTED(usuCPF, senhaCriptografada)
+    confirmarSenhaServerInvestimento(usuCPF, senhaCriptografada)
 })
 
-async function confirmarSenhaServerTED(chavePix, senha) {
+async function confirmarSenhaServerInvestimento(chavePix, senha) {
     const camposOk = validaCamposSenha();
     if (camposOk) {
         const dataJSON = JSON.stringify({ "USU_CPF": chavePix, "USU_SENHA_ACESSO": senha });
@@ -300,11 +353,19 @@ async function confirmarSenhaServerTED(chavePix, senha) {
 
             const isOk = JSON.parse(await response.text());
             if (isOk['mensagem'] == 'ok') {
-                FazerInvestimento(
-                    DadosComprovante.tipoEmpre,
-                    DadosComprovante.jurosEmpre,
-                    DadosComprovante.valorEmpre
-                )
+                if (isSaque) {
+                    FazerSaquedoInvestimento(
+                        DadosComprovante.tipoInvest,
+                        DadosComprovante.valorSaque
+                    )
+                } else {
+                    FazerInvestimento(
+                        DadosComprovante.tipoInvest,
+                        DadosComprovante.jurosInvest,
+                        DadosComprovante.valorInvest
+                    )
+                }
+
             } else if (isOk['mensagem'] == 'senha incorreta') {
                 $("#confirmSenha").parent("div").css("border-color", 'red');
                 $("#msgErroSenha").css("display", "flex")
@@ -337,7 +398,43 @@ async function FazerInvestimento(tipo, juros, valor) {
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title: "Transferência realizada",
+                    title: "Investimento realizado",
+                    showConfirmButton: false,
+                    timer: 1000
+                });
+                setTimeout(function () {
+                    $(".pedesenha").css("display", 'none');
+                    window.location.href = "../home.html";
+                }, 1100)
+            } else {
+                window.location.href = "../erros.html";
+            }
+        } catch (error) {
+            console.error('Erro Servidor:', error.message);
+        }
+    }
+}
+
+async function FazerSaquedoInvestimento(tipo, valor) {
+    const camposOk = validaCamposSenha();
+
+    if (camposOk) {
+        const dataJSON = JSON.stringify(
+            { "USU_ID": usuId, "INV_TIPO": tipo, "INV_VALOR": valor }
+        );
+        try {
+            const response = await fetch(ipServer + 'removeInvestimento', {
+                method: 'POST',
+                body: dataJSON,
+            });
+
+            const isOk = JSON.parse(await response.text());
+
+            if (isOk['mensagem'] == 'ok') {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Saque Realizado",
                     showConfirmButton: false,
                     timer: 1000
                 });

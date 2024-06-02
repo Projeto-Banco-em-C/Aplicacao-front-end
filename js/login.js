@@ -62,10 +62,7 @@ $("#btnLogar").click(async function (event) {
                 localStorage.setItem('USU_ID', isOk.USU_ID);
                 localStorage.setItem('USU_CPF', camposLogin.USU_CPF);
 
-                setTimeout(function () {
-                    window.location.href = "./home.html";
-                }, 500)
-
+                window.location.href = "./home.html";
             } else if (isOk['mensagem'] == 'senha incorreta') {
                 console.log('senha ou email icorretos.');
                 $(".msgErroS").css("display", "flex")

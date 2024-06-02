@@ -218,7 +218,7 @@ async function confirmarSenhaServerPag(cpf, senha, valor) {
 
 async function realizarEmprestimo(idUser, valordoRecebido) {
     const qtdp = DadosComprovante.qtdnumParcelas
-    const jurosmensal = (taxasJuros[qtdp] * valordoRecebido) / qtdp
+    const jurosmensal = (taxasJuros[qtdp - 2] * valordoRecebido) / qtdp
     const jurosmensalArredondado = jurosmensal.toFixed(2);
 
     console.log(jurosmensalArredondado)

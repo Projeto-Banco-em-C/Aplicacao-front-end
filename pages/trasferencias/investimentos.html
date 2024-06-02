@@ -165,7 +165,6 @@
                         </div>
                     </div>
                 </div>
-
             </section>
             <section class="areaValor">
                 <div class="titleAp sl">
@@ -195,6 +194,7 @@
                         </div>
                         <div class="saldoAtual">
                             <p>R$ <span id="meuSaldo">5,43</span> diponiveis</p>
+                            <p>R$ <span id="saldoDisponivelInve">0</span> diponiveis para saque</p>
                         </div>
                     </div>
                     <div class="formularios">
@@ -205,11 +205,19 @@
                                 placeholder="Digite o valor desejado, apenas numeros! " maxlength="12"
                                 onblur="ValidaValor(this)">
                         </div>
-                        <p class="msgErroE">Saldo insuficiente para transição</p>
+                        <p class="msgErroE">Saldo insuficiente</p>
                         <p class="msgErroL">Não é possível investir esse valor</p>
+                        <p class="msgErroS">Não é possível sacar esse valor</p>
                         <div class="alinhabtn">
                             <div class="alinhabtns">
-                                <div class="btnChavePix sl valido" id="btnConfirmarPix">Próximo<span
+                                <div class="btnChavePix sl valido" id="btnConfirmarPix">Investir<span
+                                        class="material-symbols-outlined">arrow_forward</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="alinhabtn">
+                            <div class="alinhabtns">
+                                <div class="btnChavePix sl valido" id="btnSacarPix">Sacar<span
                                         class="material-symbols-outlined">arrow_forward</span>
                                 </div>
                             </div>
@@ -233,7 +241,7 @@
                         <p class="msgErroSenha">Senha Incorreta</p>
                         <div class="alinhabtn">
                             <div class="alinhabtns">
-                                <div class="btnChavePix valido" id="btnConfirmaInvestimento">Transferir<span
+                                <div class="btnChavePix valido" id="btnConfirmaInvestimento">Investir<span
                                         class="material-symbols-outlined">arrow_forward</span>
                                 </div>
                             </div>
