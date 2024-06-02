@@ -516,3 +516,19 @@ body::-webkit-scrollbar {
     align-items: center;
     width: 100%;
 }
+
+.menuUserNameHome {
+    margin-left: 1rem;
+}
+
+.menuUserNameHome h1 {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.menuUserNameHome h1 span {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-color);
+}

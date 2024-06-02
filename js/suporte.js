@@ -309,3 +309,35 @@ async function MessageReply() {
         console.error('Erro Servidor:', error.message);
     }
 }
+
+
+
+
+// menu
+var usuId = localStorage.getItem('USU_ID');
+async function PegarSaldo(id) {
+    const dataJSON = JSON.stringify({ "USU_ID": id });
+    try {
+        $(".areaValor").addClass("skeletonLoading")
+        const response = await fetch(ipServer + 'dados', {
+            method: 'POST',
+            body: dataJSON,
+        });
+
+        const isOk = JSON.parse(await response.text());
+
+        if (isOk['mensagem'] == 'erro') {
+            console.log('ERRO');
+            window.location.href = "../erros.html";
+        } else {
+            console.log('Certo');
+            $('#userNameMenu').text(isOk.USU_NOME)
+            const iniciais = obterIniciais(isOk.USU_NOME)
+            $('#fotoPerfilMenu').text(iniciais)
+        }
+
+    } catch (error) {
+        console.error('Erro Servidor:', error.message);
+    }
+}
+PegarSaldo(usuId)

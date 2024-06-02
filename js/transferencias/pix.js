@@ -293,7 +293,6 @@ async function PegarSaldo(id) {
             const iniciais = obterIniciais(isOk.USU_NOME)
             $('#fotoPerfilMenu').text(iniciais)
 
-
             DadosComprovante.nomeComp = isOk.USU_NOME
             DadosComprovante.cpfComp = isOk.USU_CPF
             DadosComprovante.agenciaComp = isOk.USU_NUM_AGENCIA

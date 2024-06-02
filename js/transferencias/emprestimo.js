@@ -63,6 +63,9 @@ async function PegarDadosUser(id) {
             const formattedValue = emprDisFormatado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
             $("#valorpEmprestimo").text(formattedValue)
+            $('#userNameMenu').text(isOk.USU_NOME)
+            const iniciais = obterIniciais(isOk.USU_NOME)
+            $('#fotoPerfilMenu').text(iniciais)
 
             DadosComprovante.nomeComp = nomeUserAtual
             DadosComprovante.cpfComp = cpfUserAtual
@@ -132,29 +135,36 @@ $("#btnEmprestimo").click(function () {
 //colocar parcelas e juros
 
 function juros() {
-    const valordigitado = $("#valorEmpr").val()
+    const valordigitado = $("#valorEmpr").val();
 
     if (valordigitado == "") {
         let options = `
-            <div class="erroparcelas">
-                <p>Insira o valor acima para visualizar as parcelas!</p>
-            </div>
-        `;
+        <div class="erroparcelas">
+            <p>Insira o valor acima para visualizar as parcelas!</p>
+        </div>
+    `;
         $(".alinhaOp").append(options);
     } else {
-        $(".alinhaOp").empty()
+        $(".alinhaOp").empty();
 
-        console.log("valor" + valordigitado);
-        let valorOriginal = parseFloat(valordigitado);
+        console.log("valor " + valordigitado);
+
+        // Remover todos os pontos (.) usados como separadores de milhar
+        let valorSemPontos = valordigitado.replace(/\./g, '');
+
+        // Substituir a última vírgula (,) pelo ponto decimal (.)
+        let valorCorreto = valorSemPontos.replace(/,([^,]*)$/, '.$1');
+
+        let valorOriginal = parseFloat(valorCorreto);
 
         for (let i = 2; i <= 12; i++) {
             let taxa = taxasJuros[i - 2];
             let valorParcela = valorOriginal * (1 + taxa) / i;
             let options = `
-                <div class="itensOptions">
-                    <p>${i} x <span>${valorParcela.toFixed(2)}</span> com juros de ${(taxa * 100).toFixed(2)}%</p>
-                </div>
-            `;
+            <div class="itensOptions">
+                <p>${i} x <span>${valorParcela.toFixed(2)}</span> com juros de ${(taxa * 100).toFixed(2)}%</p>
+            </div>
+        `;
             $(".alinhaOp").append(options);
         }
     }
@@ -329,13 +339,6 @@ $(document).ready(function () {
     }
 
 })
-
-$(document).ready(function () {
-    $('#codBarras').mask('00000.00000 00000.000000 00000.000000 0 00000000000000');
-    $('#codBarras').attr('autocomplete', 'on');
-});
-
-
 
 // ver emprestimos 
 

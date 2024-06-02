@@ -70,6 +70,39 @@
             </div>
         </section>
     </main>
+
+    <script src="./js/animacoes.js"></script>
+    <script>
+        var now = new Date();
+        var dia = String(now.getDate());
+
+        if (dia === '15') {
+            mandaDia('atualiza_emprestimo', dia);
+        } else if (dia === '16') {
+            mandaDia('atualizaInvestimentos', dia);
+        }
+
+        async function mandaDia(endpoint, dia) {
+            const dataJSON = JSON.stringify({ "DATA": dia });
+            try {
+                const response = await fetch(ipServer + endpoint, {
+                    method: 'POST',
+                    body: dataJSON,
+                });
+
+                const isOk = JSON.parse(await response.text());
+
+                if (isOk['mensagem'] === 'ok') {
+                    console.log('ok');
+                }
+            } catch (error) {
+                console.error('Erro Servidor:', error.message);
+            }
+        }
+
+
+
+    </script>
 </body>
 
 </html>

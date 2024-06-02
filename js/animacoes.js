@@ -12,5 +12,18 @@ function obterIniciais(nomeCompleto) {
     return iniciais.toUpperCase();
 }
 
+$('#sairdaconta').click(function () {
+    localStorage.removeItem('USU_ID');
+    localStorage.removeItem('USU_CPF');
+
+    window.location.href = '../index.html';
+});
+
+$('#sairdacontaTrasferencias').click(function () {
+    localStorage.removeItem('USU_ID');
+    localStorage.removeItem('USU_CPF');
+
+    window.location.href = '../../index.html';
+});
 
 var ipServer = "http://localhost:9000/"

@@ -134,10 +134,3 @@ $(document).ready(async function () {
     });
 });
 
-$('#sairdaconta').click(function () {
-    localStorage.removeItem('USU_ID');
-    localStorage.removeItem('USU_CPF');
-
-    window.location.href = '../index.html';
-});
-

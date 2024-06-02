@@ -212,6 +212,10 @@ async function PegarDadosUser(id) {
             const contaUserAtual = isOk.USU_NUM_CONTA
             const saldoUserAtual = isOk.USU_SALDO
 
+            $('#userNameMenu').text(isOk.USU_NOME)
+            const iniciais = obterIniciais(isOk.USU_NOME)
+            $('#fotoPerfilMenu').text(iniciais)
+
             DadosComprovante.nomeComp = nomeUserAtual
             DadosComprovante.cpfComp = cpfUserAtual
             DadosComprovante.agenciaComp = agenciaUserAtual

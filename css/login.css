@@ -33,12 +33,13 @@ main {
 }
 
 .containerHead {
-    height: 23%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--background--container);
+    padding: 30px;
+    margin-bottom: 1rem;
 }
 
 .containerHead h1 {

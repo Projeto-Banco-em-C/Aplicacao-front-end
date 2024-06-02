@@ -207,6 +207,9 @@ async function PegarSaldo(id) {
         } else {
             console.log('Certo');
             $('#meuSaldo').text(parseFloat(isOk.USU_SALDO.trim()).toLocaleString('pt-BR'));
+            $('#userNameMenu').text(isOk.USU_NOME)
+            const iniciais = obterIniciais(isOk.USU_NOME)
+            $('#fotoPerfilMenu').text(iniciais)
             $(".areaValor").removeClass("skeletonLoading")
         }
 
