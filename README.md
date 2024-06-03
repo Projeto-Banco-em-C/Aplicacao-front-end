@@ -43,7 +43,7 @@
 </p>
 <br>
 <br>
- <div align="center"><img src="./img/codigo.pgn"></div>
+ <div align="center"><img src="./img/codigo.png"></div>
 <br>
 <br>
 <p>E o projeto está todo dividido em vários arquivos para separar as páginas da banco. Para todas as telas desenvolvidas do Front End foi utilizado algumas bibliotecas como biblioteca de máscaras para campos,
