@@ -25,14 +25,14 @@
   <br>
   <br>
   Por escolha do grupo optamos em aceitar um desafio maior com base no conhecimentos de cada integrante do grupo e desenvolvemos uma interface Web, o 
-  Front End da aplicação no qual foi criado com as linguem de marcação HTML, CSS e a a linguagem de programação Javascript utilizando sua biblioteca JQuery, O grupo optou por não utilizar um framework 
+  Front End da aplicação no qual foi criado com as linguagens de marcação HTML, CSS e a a linguagem de programação Javascript utilizando sua biblioteca JQuery, O grupo optou por não utilizar um framework 
   como React  por facilidade de execução do projeto em qualquer maquinha, já que o grupo não irar hospedar o sistema completo na Web.
   <br>
   <br>
   Já na criação do Back End de início teve grande complicação de como 
-  usar uma API(Interface de Programação de Aplicação) a qual deriva se responsável por realizar a ponde de comunicação entra os dois lados da aplicação, pôs a linguem C não tem ferramentas necessárias passar essa criação, 
-  assim necessitando utilizar diversas bibliotecas para realizar parte. Igual mente necessária para a conexão com o Banco de dados o qual também necessitou de bibliotecas externas para realizar a conexão, o SQLite que foi 
-  escolhido por ser um banco digamos portável onde não requer um aplicativo para ele rodar. Por fim no repositório desta organização no GitHub está dividido em dois o Front End. e o Back End. 
+  usar uma API(Interface de Programação de Aplicação) a qual deriva se responsável por realizar a ponde de comunicação entra os dois lados da aplicação, pôs a linguagem C não tem ferramentas necessárias passar essa criação, 
+  assim necessitando utilizar diversas bibliotecas para realizar parte. Igualmente necessária para a conexão com o Banco de dados o qual também necessitou de bibliotecas externas para realizar a conexão, o SQLite que foi 
+  escolhido por ser um banco, digamos, portável onde não requer um aplicativo para ele rodar. Por fim no repositório desta organização no GitHub está dividido em dois o Front End. e o Back End. 
 </p>
 
 # Detalhes do Front End
@@ -46,7 +46,7 @@
  <div align="center"><img src="./img/codigo.png"></div>
 <br>
 <br>
-<p>E o projeto está todo dividido em vários arquivos para separar as páginas da banco. Para todas as telas desenvolvidas do Front End foi utilizado algumas bibliotecas como biblioteca de máscaras para campos,
+<p>O projeto está todo dividido em vários arquivos para separar as páginas da banco. Para todas as telas desenvolvidas do Front End foi utilizado algumas bibliotecas como biblioteca de máscaras para campos,
   bibliotecas de alertas entre outras, mas todo foram criadas com HTML, CSS e seus detalhes com JQuery. O Website conta com sistema de responsabilidade funcionando para diversos dispositivos e tamanhos de telas, 
   como na imagem abaixo visto como ficar em um smartphone.
 </p>
@@ -70,7 +70,7 @@ responder as perguntas com base a documentação da aplicação.
     git clone https://github.com/Projeto-Banco-em-C/aplicacao-front-end.git
 
 
-Apos isso é dentro da pasta abra o arquivo `index.html` isso com o servidor Back End rodando! o qual o passo a passo de como rodar está esplicado  <a href="https://github.com/eduardofranco572">aqui</a>
+Após isso é dentro da pasta abra o arquivo `index.html` isso com o servidor Back End rodando! o qual o passo a passo de como rodar está esplicado  <a href="https://github.com/eduardofranco572">aqui</a>
 <br>
 <br>
 
