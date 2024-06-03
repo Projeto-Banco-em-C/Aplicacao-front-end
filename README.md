@@ -6,13 +6,16 @@
      <h2>Penguin Bank é um banco digital <i>Web</i> onde você terá diversos benefícios desde conta gratuita, empréstimos, transações, investimentos e muito mais. Venha ser um <b>Pinguim</b>.</h2>
     <br>
     <br>
-    <img src="">
+    <img src="./img/gifmaislento.gif">
     <br>
     <br>
-    <img src="">
+    <img src="./img/img1.png">
     <br>
     <br>
-    <img src="">
+    <img src="./img/img2.png">
+    <br>
+    <br>
+    <img src="./img/img3.png">
 </div>
 <br>
 <p align="justify">
