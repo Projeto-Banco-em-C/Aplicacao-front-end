@@ -43,7 +43,7 @@
 </p>
 <br>
 <br>
- <div align="center"><img src=""></div>
+ <div align="center"><img src="./img/codigo.pgn"></div>
 <br>
 <br>
 <p>E o projeto está todo dividido em vários arquivos para separar as páginas da banco. Para todas as telas desenvolvidas do Front End foi utilizado algumas bibliotecas como biblioteca de máscaras para campos,
@@ -52,7 +52,7 @@
 </p>
 <br>
 <br>
- <div align="center"><img src=""></div>
+ <div align="center"><img src="./img/img4.png"></div>
 <br>
 <br>
 <p>No sistema de suporte do site estamos utilizando um uma IA(inteligência artificial) especificamente a API do da OpenAI a qual libera o GPT-4 configurado com uma documentação para poder 
