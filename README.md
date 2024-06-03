@@ -24,13 +24,13 @@
   realização das regras de negócio da aplicação. 
   <br>
   <br>
-  Por escolha do grupo optamos em aceitar um desafio maior com base no conhecimentos de cada integrante do grupo e desenvolvemos uma interface Web, o 
+  Por escolha do grupo optamos em aceitar um desafio maior com base nos conhecimentos de cada integrante do grupo e desenvolvemos uma interface Web, o 
   Front End da aplicação no qual foi criado com as linguagens de marcação HTML, CSS e a a linguagem de programação Javascript utilizando sua biblioteca JQuery, O grupo optou por não utilizar um framework 
-  como React  por facilidade de execução do projeto em qualquer maquinha, já que o grupo não irar hospedar o sistema completo na Web.
+  como React  por facilidade de execução do projeto em qualquer máquina, já que o grupo não irá hospedar o sistema completo na Web.
   <br>
   <br>
   Já na criação do Back End de início teve grande complicação de como 
-  usar uma API(Interface de Programação de Aplicação) a qual deriva se responsável por realizar a ponde de comunicação entra os dois lados da aplicação, pôs a linguagem C não tem ferramentas necessárias passar essa criação, 
+  usar uma API(Interface de Programação de Aplicação) a qual deriva se responsável por realizar a ponte de comunicação entre os dois lados da aplicação, pois a linguagem C não tem ferramentas necessárias passar essa criação, 
   assim necessitando utilizar diversas bibliotecas para realizar parte. Igualmente necessária para a conexão com o Banco de dados o qual também necessitou de bibliotecas externas para realizar a conexão, o SQLite que foi 
   escolhido por ser um banco, digamos, portável onde não requer um aplicativo para ele rodar. Por fim no repositório desta organização no GitHub está dividido em dois o Front End. e o Back End. 
 </p>
