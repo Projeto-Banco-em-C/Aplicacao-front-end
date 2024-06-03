@@ -14,7 +14,7 @@ var dataBanco = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 function graphic() {
     var graphicTwo = {
         series: [{
-            name: 'Inflation',
+            name: 'valor ganho',
             data: dataBanco
         }],
         chart: {
@@ -106,7 +106,8 @@ async function mostraGanhos(id) {
         });
 
         const isOk = JSON.parse(await response.text());
-        isOk.forEach((dados) => {
+        const contatos = Array.isArray(isOk) ? isOk : [isOk];
+        contatos.forEach((dados) => {
             dataBanco[parseInt(dados.MES)] = parseInt(dados.VALOR)
         })
 
