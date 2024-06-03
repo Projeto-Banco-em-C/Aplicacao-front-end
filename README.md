@@ -70,7 +70,7 @@ responder as perguntas com base a documentação da aplicação.
     git clone https://github.com/Projeto-Banco-em-C/aplicacao-front-end.git
 
 
-Após isso é dentro da pasta abra o arquivo `index.html` isso com o servidor Back End rodando! o qual o passo a passo de como rodar está esplicado  <a href="https://github.com/eduardofranco572">aqui</a>
+Após isso é dentro da pasta abra o arquivo `index.html` isso com o servidor Back End rodando! o qual o passo a passo de como rodar está esplicado  <a href="https://github.com/Projeto-Banco-em-C/aplicacao-back-end">aqui</a>
 <br>
 <br>
 
