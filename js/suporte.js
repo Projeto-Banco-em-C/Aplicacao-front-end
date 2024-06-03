@@ -1,10 +1,11 @@
 var idthread
 var idrun
 var message_id
+var idloop = 0
 
-var chaveAuthorization = "APIKEY"
+var chaveAuthorization = "API KEY"
 
-//iniciaIA()
+iniciaIA()
 
 async function iniciaIA() {
     const url = "https://api.openai.com/v1/threads";
@@ -35,7 +36,7 @@ $('#btnMandaIA').click(function () {
     const mensagemUser = $("#msgIAinput").val()
     console.log(mensagemUser)
 
-    //sendMessage(mensagemUser)
+    sendMessage(mensagemUser)
 
     let projeto = `
         <div class="msgUer">
@@ -58,7 +59,7 @@ $('#btnMandaIA').click(function () {
 
     setTimeout(function () {
 
-        testar() //////////////////////////////////////////////////////////////
+        //testar() //////////////////////////////////////////////////////////////
 
         let IAexpected = `
             <div class="msgIA" id="IAloading">
@@ -113,15 +114,12 @@ function testar() {
                 </div>
             </div>  
         </div>  
+
     `;
     $(".infosmsg").append(projeto);
 
-    var typed = new Typed('#textoAnimado', {
-        strings: [RespostaIA],
-        typeSpeed: 1,
-        showCursor: false,
-        contentType: 'html'
-    });
+
+
 
 }
 
@@ -277,28 +275,29 @@ async function MessageReply() {
         console.log("mansgem formatada antiga" + MessageIAFormata)
         console.log("mansgem formatada" + MsgFormatada)
 
-        $("#IAloading").css("display", "none")
+        //$("#IAloading").css("display", "none")
+        $("#IAloading").remove()
 
         let projeto = `
             <div class="msgIA">
                 <div class="cardMsgIa">
                     <div class="menuUserIconIA">
-                        <h1 id="fotoPerfilMenu">IA</h1>
+                        <img src="../img/pinguim_pqueno.png" alt="">
                     </div>
                     <div class="cardMsg ias">
-                        <h1 id="textoAnimado"></h1>
+                        <h1 id="textoAnimado">${RespostaIA}</h1>
                     </div>
                 </div>  
             </div>  
         `
         $(".infosmsg").append(projeto);
 
-        var typed = new Typed('#textoAnimado', {
-            strings: [RespostaIA],
-            typeSpeed: 2,
-            showCursor: false,
-            contentType: 'html'
-        });
+        // var typed = new Typed(`#textoAnimado${idloop}`, {
+        //     strings: [RespostaIA],
+        //     typeSpeed: 2,
+        //     showCursor: false,
+        //     contentType: 'html'
+        // });
 
         console.log("aqui MessageReply fim")
 
